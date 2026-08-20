@@ -1,0 +1,34 @@
+# Generated/binary deliverables (Markdown is the canonical source)
+*.doc
+*.docx
+*.pdf
+*.ppt
+*.pptx
+*.zip
+
+# Generated diagrams, exports, and rendered assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+*.mmd
+*.html
+
+# R/Pandoc/editor cache and temporary files
+*_files/
+*.knit.md
+*.utf8.md
+.Rhistory
+.RData
+.Ruserdata
+~$*
+*.tmp
+*.bak
+*.log
+
+# Track source documents (including Markdown and R Markdown)
+!*.rmd
+!*.md
+!*.lua
