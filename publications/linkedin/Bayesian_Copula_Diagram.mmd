@@ -1,0 +1,38 @@
+%%{init: {"flowchart": {"defaultRenderer": "elk"}}}%%
+graph TD
+    %% Subgraph: Data Engineering & Neural Embeddings
+    subgraph DE [Heterogeneous Multimodal Feature Store]
+        DB[(Telematics / Ledger)] -->|Debezium CDC| Kafka[Apache Kafka]
+        Kafka --> Flink[Apache Flink]
+        Flink -->|High-Freq Windowing| GRU[GRU Layer]
+        Flink -->|ACID Sync| Lake[(Lakehouse)]
+        Lake -->|Temporal Table Joins| Trans[Transformer Layer]
+        GRU --> Fusion{Cross-Attention Fusion}
+        Trans --> Fusion
+        Fusion -->|Dense Vector Φ_t| VectorSpace((Vector Representation))
+    end
+    
+    %% Subgraph: Hierarchical Bayesian Inference
+    subgraph HBM [Hierarchical Bayesian Underwriting]
+        VectorSpace --> BinomialAgg[Binomial Aggregation]
+        BinomialAgg --> B_Splines[B-Spline Mapping]
+        
+        Priors(Hierarchical Priors) --> MCMC[HMC / NUTS Sampler]
+        B_Splines --> MCMC
+        
+        MCMC -->|Non-Centered Param| MarginalPD[Marginal PD Posteriors]
+    end
+
+    %% Subgraph: Copula and Joint Risk Pricing
+    subgraph COP [Joint Tail Risk Pricing]
+        MarginalPD --> Clayton[Asymmetric Clayton Copula]
+        MacroShock(Macroeconomic Shock Factor θ) --> Clayton
+        Clayton -->|Lower Tail Dependence| UL[Unexpected Loss Quantification]
+    end
+    
+    DE --> HBM
+    HBM --> COP
+
+    style DE fill:#2980b9,color:#fff,stroke:#1f618d
+    style HBM fill:#8e44ad,color:#fff,stroke:#732d91
+    style COP fill:#e74c3c,color:#fff,stroke:#c0392b
