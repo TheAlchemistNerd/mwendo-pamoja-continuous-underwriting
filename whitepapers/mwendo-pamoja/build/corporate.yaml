@@ -1,0 +1,37 @@
+geometry: "margin=1in"
+fontsize: 12pt
+linestretch: 1.3
+mainfont: "Arial"
+classoption: twoside
+colorlinks: true
+linkcolor: MidnightBlue
+urlcolor: MidnightBlue
+toccolor: MidnightBlue
+header-includes:
+  - \usepackage{graphicx}
+  - \setkeys{Gin}{width=\linewidth,keepaspectratio}
+  - \usepackage{parskip}
+  - \usepackage{sectsty}
+  - \usepackage[dvipsnames]{xcolor}
+  - \sectionfont{\color{MidnightBlue}\Large}
+  - \subsectionfont{\color{MidnightBlue}\large}
+  - \subsubsectionfont{\color{MidnightBlue}\normalsize}
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyhf{}
+  - \fancyhead[LO]{\footnotesize\color{MidnightBlue} \textbf{Mwendo Pamoja:} Bridging Continuous Underwriting with Institutional Capital for Gig Driver's Economic Resilience}
+  - \fancyhead[LE]{\footnotesize\color{MidnightBlue} \textbf{Nevil Maloba}}
+  - \fancyfoot[C]{\thepage}
+  - \renewcommand{\headrulewidth}{0.4pt}
+  - \renewcommand{\footrulewidth}{0.4pt}
+  - \setlength{\headheight}{28pt}
+  - \usepackage{etoolbox}
+  - \makeatletter
+  - \patchcmd{\maketitle}{\thispagestyle{plain}}{\thispagestyle{empty}}{}{}
+  - \apptocmd{\maketitle}{\clearpage}{}{}
+  - \let\oldincludegraphics\includegraphics
+  - \renewcommand{\includegraphics}[2][]{\begin{center}\oldincludegraphics[#1]{#2}\end{center}}
+  - \makeatother
+  - \AtBeginDocument{\thispagestyle{empty}}
+  - \usepackage{titlesec}
+  - \newcommand{\sectionbreak}{\clearpage}

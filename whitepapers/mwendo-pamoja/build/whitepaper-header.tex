@@ -1,0 +1,174 @@
+% Mwendo Pamoja publication layer. Loaded after corporate.yaml.
+\usepackage{fontspec}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage{pdflscape}
+\usepackage[most]{tcolorbox}
+\usepackage{multicol}
+
+\definecolor{DeepBlue}{HTML}{2E4A62}
+\definecolor{LinkBlue}{HTML}{0078D4}
+\definecolor{SlateGray}{HTML}{5E6B75}
+\definecolor{MistBlue}{HTML}{EAF2F8}
+\definecolor{WarmGold}{HTML}{D3A43B}
+
+\setmainfont{Georgia}
+\setsansfont{Arial}
+\setmonofont{Consolas}
+\setmathfont{Cambria Math}
+\setstretch{1.15}
+\setlength{\emergencystretch}{3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.62em plus 0.10em minus 0.08em}
+\geometry{top=0.88in,bottom=0.92in,inner=0.92in,outer=0.80in,headheight=29pt,headsep=15pt,footskip=28pt}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=LinkBlue,
+  filecolor=LinkBlue,
+  urlcolor=LinkBlue,
+  citecolor=LinkBlue,
+  pdftitle={Mwendo Pamoja: Continuous Underwriting for Insurtech, Embedded Finance, and Institutional Capital},
+  pdfauthor={Nevil Maloba},
+  pdfsubject={A Kenya-first white paper on gig-driver economic resilience, continuous underwriting, insurance, embedded finance, and project finance}
+}
+
+\titleformat{\section}
+  {\color{DeepBlue}\Large\bfseries\sffamily}
+  {\thesection}{0.75em}{}
+\titleformat{\subsection}
+  {\color{DeepBlue}\large\bfseries\sffamily}
+  {\thesubsection}{0.65em}{}
+\titleformat{\subsubsection}
+  {\color{DeepBlue}\normalsize\bfseries\sffamily}
+  {\thesubsubsection}{0.55em}{}
+\titlespacing*{\section}{0pt}{2.1em}{0.75em}
+\titlespacing*{\subsection}{0pt}{1.65em}{0.55em}
+\titlespacing*{\subsubsection}{0pt}{1.25em}{0.4em}
+
+\DeclareCaptionFont{deepblue}{\color{DeepBlue}}
+\captionsetup{font=small,labelfont={bf,deepblue},textfont=it,skip=6pt}
+
+\newtcolorbox{MwendoNote}{
+  enhanced,
+  breakable,
+  colback=MistBlue,
+  colframe=LinkBlue,
+  coltitle=DeepBlue,
+  title=NOTE,
+  fonttitle=\sffamily\bfseries,
+  boxrule=0.8pt,
+  arc=1.5mm,
+  left=3mm,
+  right=3mm,
+  top=2mm,
+  bottom=2mm,
+  before skip=0.8em,
+  after skip=0.8em
+}
+
+\newtcolorbox{MwendoImportant}{
+  enhanced,
+  breakable,
+  colback=WarmGold!12,
+  colframe=WarmGold,
+  coltitle=DeepBlue,
+  title=IMPORTANT,
+  fonttitle=\sffamily\bfseries,
+  boxrule=0.9pt,
+  arc=1.5mm,
+  left=3mm,
+  right=3mm,
+  top=2mm,
+  bottom=2mm,
+  before skip=0.8em,
+  after skip=0.8em
+}
+
+\newcommand{\CurrentPart}{White Paper}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\footnotesize\color{DeepBlue}\sffamily\bfseries Mwendo Pamoja}
+\fancyhead[LO,RE]{\footnotesize\color{SlateGray}\sffamily\CurrentPart}
+\fancyfoot[LE,RO]{\footnotesize\color{SlateGray}\sffamily\thepage}
+\fancyfoot[LO,RE]{\footnotesize\color{SlateGray}\sffamily White Paper \textbar{} August 2026}
+\renewcommand{\headrulewidth}{0.45pt}
+\renewcommand{\footrulewidth}{0.30pt}
+
+\renewcommand{\contentsname}{Contents}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{0}
+
+\newcommand{\WhitePaperCover}{%
+  \begin{titlepage}
+  \thispagestyle{empty}
+  \pagecolor{DeepBlue}
+  \color{white}
+  \vspace*{0.12\textheight}
+  {\sffamily\bfseries\fontsize{18}{22}\selectfont MWENDO PAMOJA\par}
+  \vspace{1.1em}
+  {\color{WarmGold}\rule{0.32\textwidth}{2.2pt}\par}
+  \vspace{2.6em}
+  {\sffamily\bfseries\fontsize{34}{41}\selectfont
+  Continuous Underwriting for\par
+  Insurtech, Embedded Finance,\par
+  and Institutional Capital\par}
+  \vspace{2.2em}
+  {\sffamily\fontsize{16}{22}\selectfont
+  A Kenya-first architecture for gig-driver economic resilience\par}
+  \vfill
+  {\sffamily\fontsize{12}{17}\selectfont
+  Narrative and Technical White Paper\par
+  \vspace{0.65em}
+  Nevil Maloba\par
+  \vspace{0.35em}
+  {\color{white}nevillemaloba@gmail.com}\par
+  \vspace{0.35em}
+  August 2026\par}
+  \vspace*{0.06\textheight}
+  \end{titlepage}
+  \nopagecolor
+  \color{black}
+  \pagestyle{fancy}
+}
+
+\newcommand{\WhitePaperPart}[2]{%
+  \clearpage
+  \thispagestyle{empty}
+  \gdef\CurrentPart{#1}
+  \markboth{#1}{#1}
+  \phantomsection
+  \addcontentsline{toc}{part}{#1: #2}
+  \vspace*{0.20\textheight}
+  \begin{flushleft}
+  {\sffamily\bfseries\color{LinkBlue}\fontsize{16}{20}\selectfont #1\par}
+  \vspace{1.0em}
+  {\color{WarmGold}\rule{0.22\textwidth}{2.0pt}\par}
+  \vspace{1.5em}
+  {\sffamily\bfseries\color{DeepBlue}\fontsize{25}{31}\selectfont #2\par}
+  \vspace{2.0em}
+  {\sffamily\color{SlateGray}\large Mwendo Pamoja White Paper\par}
+  \end{flushleft}
+  \vfill
+  \clearpage
+}
+
+\AtBeginEnvironment{longtable}{\small}
+\renewcommand{\arraystretch}{1.16}
+
+\setlength{\columnsep}{0.34in}
+\setlength{\columnseprule}{0.25pt}
+\def\columnseprulecolor{\color{MistBlue}}
