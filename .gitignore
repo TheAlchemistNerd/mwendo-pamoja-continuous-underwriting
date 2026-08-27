@@ -1,4 +1,48 @@
-# Generated/binary deliverables (Markdown is the canonical source)
+# Local-only history and working material
+/_archive/
+/scratchpad/
+/revision_backups/
+
+# Dependency directories and package-manager caches
+/node_modules/
+**/node_modules/
+**/.pnpm-store/
+**/.npm/
+
+# Python, R, and editor state
+**/__pycache__/
+*.py[cod]
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+Thumbs.db
+
+# Document, diagram, and rendering caches
+**/.mermaid_cache/
+**/tmp/
+**/temp/
+**/temp_excel/
+**/build-output/
+**/output/
+**/outputs/
+*_files/
+*.knit.md
+*.utf8.md
+
+# Build diagnostics and inspection output
+*.aux
+*.toc
+*.out
+*.log
+*.inspect.ndjson
+*.tmp
+*.bak
+
+# Office lock files
+~$*
+
+# Raw office sources and generic generated deliverables
 *.doc
 *.docx
 *.pdf
@@ -6,29 +50,21 @@
 *.pptx
 *.zip
 
-# Generated diagrams, exports, and rendered assets
+# Retain only deliberately curated publication artifacts
+!whitepapers/mwendo-pamoja/dist/Mwendo_Pamoja_Continuous_Underwriting_White_Paper_Final.pdf
+!presentations/**/release/*.pptx
+
+# Generated raster/vector previews are ignored by default
 *.png
 *.jpg
 *.jpeg
 *.gif
 *.svg
 *.webp
-*.mmd
 *.html
 
-# R/Pandoc/editor cache and temporary files
-*_files/
-*.knit.md
-*.utf8.md
-.Rhistory
-.RData
-.Ruserdata
-~$*
-*.tmp
-*.bak
-*.log
+# Curated source assets remain eligible for version control
+!assets/
+!assets/**
 
-# Track source documents (including Markdown and R Markdown)
-!*.rmd
-!*.md
-!*.lua
+# Excel workbooks are intentionally not ignored. They may contain

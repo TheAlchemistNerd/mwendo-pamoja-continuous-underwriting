@@ -1,72 +1,122 @@
 # Mwendo Pamoja
-## Continuous Underwriting Platform for the Gig Economy
 
-**Mwendo Pamoja** is an advanced insurtech and embedded finance platform designed to continuously understand, predict, and stabilize the cash flow of gig-economy workers (ride-hailing drivers, delivery couriers, boda boda operators). It bridges continuous underwriting powered by deep learning and Bayesian inference with institutional capital to build gig-economy resilience.
+**Continuous underwriting for gig-economy resilience**
 
-📄 **[Read the Final Comprehensive White Paper Here](revised_with_sources/output/pdf/Mwendo_Pamoja_Continuous_Underwriting_White_Paper_Final.pdf)**
+Mwendo Pamoja is an insurtech and embedded-finance research and implementation programme for gig-economy drivers. It combines governed telematics and wallet data, explicit liquidity features, redundancy-controlled Bayesian underwriting, policy and compliance controls, intervention design, KESONIA-linked pricing, and ring-fenced SPV finance.
 
----
+The repository is organized around canonical publications, controlled implementation specifications, supporting research, and auditable financial artefacts. Numerical projections remain illustrative until replaced by validated portfolio data, executed agreements, and approved accounting, legal, actuarial, and model-governance decisions.
 
-## 🛑 The Problem: The Correlated Default Cascade
-Traditional static credit scoring fails gig workers due to "temporal blindness." Traditional models rely on 30-day lagging indicators, meaning lenders cannot see cash flow suffocation happening in real-time.
+[Read the final comprehensive white paper](whitepapers/mwendo-pamoja/dist/Mwendo_Pamoja_Continuous_Underwriting_White_Paper_Final.pdf)
 
-For gig workers, a single economic shock (e.g., fuel price spike, algorithmic demand drop, or a blown tire) can push their net operational income below their minimum debt service requirements (the **Suffocation Threshold**, $I_{\text{net}} < S$). 
+## Core architectural question
 
-This triggers a **Correlated Default Cascade**:
-1. A missed microloan payment leads to vehicle impoundment.
-2. The driver simultaneously defaults on larger obligations, such as **Insurance Premium Financing (IPF)**.
-3. The platform deactivates the uninsured driver, wiping out 100% of their earning capacity.
+> How can an insurtech and embedded-finance platform observe a driver's changing operating state early enough to support fair intervention, continuously recalibrate risk, and protect both livelihoods and ring-fenced receivable cash flows without confusing prediction, policy, accounting, or regulation?
 
-## 💡 The Solution: Continuous Underwriting & Shared Value
-Mwendo Pamoja abandons punitive, extractive lending in favor of an **automated safety net** that creates shared value for drivers, insurers, and banking partners. 
+The canonical decision sequence is:
 
-By analyzing high-frequency telematics and macroeconomic context in real-time, the engine predicts the Suffocation Threshold before it is breached. Proactive interventions—such as dynamic premium holidays, smart routing, and targeted micro-rewards—keep the driver on the road, protecting their livelihood while securing the yield for financial counterparties.
+```text
+Raw telematics, trip, wallet, repayment, insurance, and macro events
+                               |
+                  Flink event and feature services
+                       /                       \
+          GRU and Transformer              Explicit Liquidity
+          neural representation             Feature Path
+                       \                       /
+             Redundancy-controlled hierarchical
+                    Bayesian underwriting
+                               |
+                Credit Policy and Compliance Gate
+                               |
+             Credit action, intervention, servicing,
+                 SPV eligibility, and monitoring
+```
 
----
+The neural branch and Explicit Liquidity Feature Path have separate feature ownership. CFA, DLR, Earnings Velocity, Repayment Velocity, wallet volatility, reserve balance, time since depletion, utilization, and approved financial interactions are not duplicated as engineered neural inputs. Hard-coded credit, contractual, regulatory, concentration, reserve, and operational rules remain downstream in the Credit Policy and Compliance Gate.
 
-## 🏗️ System Architecture & Technology Stack
-The platform is built on a sophisticated dual-regime AI architecture designed for institutional-grade reliability, regulatory explainability, and algorithmic fairness.
+## Repository map
 
-### 1. Data Engineering Pipeline (Point-in-Time Correctness)
-- **Edge Capture (10Hz):** Vehicle telemetry (IMU, GNSS, OBD-II) captures kinematic behavioral indicators (e.g., harsh braking, circadian fatigue).
-- **Streaming CDC:** Debezium captures real-time wallet transactions and ledger events.
-- **Apache Flink:** Processes streams using strict dual-timestamp "As-Of" joins to guarantee **Point-in-Time Correctness**, mathematically preventing look-ahead bias during model training.
+| Path | Purpose |
+|---|---|
+| `whitepapers/mwendo-pamoja/` | Canonical seven-part white paper, glossary, publication build configuration, and final PDF. |
+| `whitepapers/telematics-relativities/` | Standalone actuarial research on Bayesian credibility and exposure-normalised telematics relativities. |
+| `docs/transaction/` | Strategic partnership memorandum, HoldCo technical pitch, SPV term sheet, and retained source material. |
+| `docs/controlled-specifications/` | Implementation, legal-boundary, accounting, data, model-governance, SPV, and programme-control specifications. |
+| `docs/governance/` | Editorial standards, revision ledgers, canonical baseline, source index, inconsistency reports, and remediation plans. |
+| `docs/research/` | KESONIA, RegTech, data-architecture, Bayesian, neural, and implementation research notes. |
+| `docs/implementation/` | Launch and execution material that supports programme delivery. |
+| `financial_models/spv/` | Illustrative SPV workbook, model guide, generator source, and validation records. |
+| `presentations/lender-dfi/` | Lender and DFI presentation source. Release decks are added only after visual approval. |
+| `publications/linkedin/` | Shorter public articles derived from the core research. |
+| `_archive/` | Ignored local snapshots, superseded artefacts, source extractions, and historical deliverables. |
+| `scratchpad/` | Ignored working notes, caches, renderings, inspections, and temporary build output. |
 
-### 2. Dual-Regime Neural Network
-- **High-Frequency Branch (GRU):** A Gated Recurrent Unit (GRU) processes 14 days of daily telematics and transactional kinematics to output a latent "desperation profile."
-- **Low-Frequency Branch (Transformer):** A Multi-Head Self-Attention Transformer processes 24 months of macroeconomic history (e.g., fuel indices, platform matching elasticity).
-- **Cross-Attention Fusion:** Dynamically weights the driver's short-term behavioral stress against the long-term structural macroeconomic context.
+## Canonical publications
 
-### 3. Hierarchical Bayesian Inference & Explicit Liquidity Feature Path
-To avoid the regulatory "black box," critical linear financial variables (like Wallet Cash-Flow Asymmetry) use the **Explicit Liquidity Feature Path** to route directly to a **Hierarchical Bayesian Logistic Regression** layer. The engine fuses complex neural patterns with explicit liquidity features to output a *full probability distribution of default* complete with explicit uncertainty quantification (Credible Intervals). Hard-coded rules remain in the separate **Credit Policy and Compliance Gate**.
+The Mwendo Pamoja white paper is assembled from:
 
-### 4. Tail-Risk Copulas & Dynamic Credit Decisions
-- **Asymmetric Clayton Copulas:** Models joint default probabilities (tail dependence) across different product lines during macroeconomic shocks, proving to financiers that the system can withstand correlated downside contagion.
-- **Dynamic Bayesian Credit Limits:** Uses live posterior default probabilities to expand or compress a driver's credit limits dynamically, acting as an automated risk governor.
+1. Product Architecture and Cascades.
+2. Deep Temporal Representation and Feature Engineering.
+3. Bayesian Underwriting and Asymmetric Copulas.
+4. Regulatory Orchestration and Interventions.
+5. Enterprise ERP and Telemetry.
+6. KESONIA Pricing and Capital Orchestration.
+7. Implementation Roadmap and Execution.
+8. Interdisciplinary Field Map and Technical Glossary.
 
----
+The narrative papers explain the human problem, microeconomics, business structure, computation, mathematical design, and financing proposition. The companion controlled specifications define boundaries, owners, interfaces, controls, tests, and implementation conditions. Executed contracts, applicable Kenyan law, approved accounting policy, independent validation, and production evidence prevail over both.
 
-## 🏛️ Project Finance Structure
-To protect institutional capital and ensure yield predictability, the lending assets are isolated from the technology operating company.
+## White-paper build
 
-Loans and IPF policies are sold in a true-sale configuration to a bankruptcy-remote **Special Purpose Vehicle (SPV)**. The SPV capitalization is tranched into Class A (Senior Debt), Class B (Mezzanine), and Equity/First-Loss (retained by Mwendo Pamoja to guarantee alignment of incentives).
+The publication build uses Pandoc, XeLaTeX, the corporate metadata file, and the Mermaid Lua filter.
 
----
+```powershell
+powershell -ExecutionPolicy Bypass -File .\whitepapers\mwendo-pamoja\build\build_whitepaper.ps1
+```
 
-## ⚖️ Regulatory Compliance & ESG
-Mwendo Pamoja is uniquely structured to generate shared value while maintaining strict compliance with banking and insurance regulatory frameworks:
+Local assembly and rendering intermediates are written beneath `scratchpad/` and are not committed. The reviewed release PDF is retained in `whitepapers/mwendo-pamoja/dist/`.
 
-- **Basel IV & IFRS 9:** Automates the 3-Stage Expected Credit Loss (ECL) pipeline with dynamic Significant Increase in Credit Risk (SICR) triggers.
-- **IFRS 17:** Stochastic modeling generates Fulfillment Cash Flows (FCF) and precise Risk Adjustments for insurance premium financing.
-- **Algorithmic Fairness:** Embedded **Equalized Odds** constraints and Maximum Mean Discrepancy (MMD) regularization guarantee that the AI does not use geographic or behavioral proxies to redline marginalized driver populations.
+## Financial model
 
-### Proactive Driver Protection Mechanisms
-- **Premium Holidays:** Dynamic pausing of IPF payments during localized demand shocks.
-- **Micro-Reward Bridging:** Targeted high-yield routes to help distressed drivers catch up on arrears.
-- **Fatigue Mitigation Routing:** Algorithmic dispatch rules to prevent dangerous circadian fatigue.
-- **ZEV Smart Fleet Routing:** Routing EV drivers toward functional rapid-charging infrastructure to mitigate charging downtime.
+The SPV workbook is a 36-month illustrative project-finance model containing the capital stack, origination assumptions, product schedules, collections, losses, debt schedules, reserves, overcollateralisation, waterfall, covenants, returns, sensitivities, and source audit.
 
----
+It is a diligence and structuring prototype, not an executed financing model. Assumptions marked illustrative or provisional must be replaced with a portfolio tape, agreed note terms, legal and tax advice, verified servicing data, and independently reviewed formulas before lender reliance.
 
-## 📖 Glossary
-For a comprehensive breakdown of the technical, economic, and architectural terms used across this project, please see the [`glossary.md`](revised_with_sources/glossary.md) file.
+Excel workbooks are intentionally eligible for version control because they may contain substantive SPV financial models. Temporary Office files and intermediate recalculation copies remain ignored.
+
+## Presentation status
+
+The lender and DFI deck source is retained for future refinement. The earlier generated PPTX remains in the ignored local archive because it has not yet passed the desired visual-quality threshold. A presentation will enter `presentations/lender-dfi/release/` only after slide-level rendering, overflow, source, numerical tie-out, and readability checks pass.
+
+## Evidence and governance
+
+The repository distinguishes:
+
+- source-backed values;
+- derived values;
+- illustrative assumptions;
+- scenario shocks;
+- calculated outputs;
+- internal policy rules;
+- contractual covenants;
+- accounting requirements;
+- regulatory requirements; and
+- statistical or model-governance conventions.
+
+The annotated source index uses one stable IEEE sequence. The consistency audit and controlled baseline record how terminology, probability measures, feature ownership, pricing, SPV economics, accounting, and regulatory scope were reconciled.
+
+## Local material and backups
+
+`_archive/` and `scratchpad/` are intentionally excluded from Git. The pre-reorganization snapshot dated 27 August 2026 contains SHA-256 hashes and preserves the full source and deliverable state, excluding only reproducible dependency and rendering caches.
+
+Because ignored folders are not protected by GitHub, local archives should also be copied periodically to independent storage.
+
+## Remote policy
+
+Recommended repository name: `mwendo-pamoja-continuous-underwriting`.
+
+The current repository should be treated as private-first because its Git history contains transaction documents, financial terms, technical specifications, and internal review material. A public edition should be produced as a sanitized publication repository rather than by assuming that `.gitignore` removes files from earlier commits.
+
+## Contact
+
+Neville Maloba<br>
+[nevillemaloba@gmail.com](mailto:nevillemaloba@gmail.com)
