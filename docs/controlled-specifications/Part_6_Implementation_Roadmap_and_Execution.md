@@ -9,6 +9,8 @@ status: "Execution baseline for sponsor, lender, insurer, platform, servicer, an
 
 The implementation objective is to prove that Mwendo Pamoja can improve driver cash-flow resilience and produce a transparent, controllable receivables portfolio without creating unacceptable customer, legal, accounting, model, operational, or investor risk.
 
+The technical evidence gates for observation units, P-splines, Pólya-Gamma inference, survival timing, complete loss components, posterior artifacts, ECL, and SPV reconciliation are defined in `CREDIT_RISK_MODEL_AND_LOSS_ARCHITECTURE_SPECIFICATION.md` and must be represented in the phase acceptance packs below.
+
 The roadmap does not assume that a complete institutional platform can be delivered safely in six months. A bounded shadow and live pilot can be achieved earlier if data rights, product contracts, financial modelling, controls, and independent validation are ready. Full scale follows only after measured evidence.
 
 The programme is organised around decision gates, not software activity. A phase finishes when its evidence is accepted by accountable owners, not when a development team reports that code is complete.

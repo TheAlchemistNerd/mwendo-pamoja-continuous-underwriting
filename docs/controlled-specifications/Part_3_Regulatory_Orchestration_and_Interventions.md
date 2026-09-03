@@ -9,6 +9,8 @@ status: "Controlled design specification for legal, compliance, accounting, risk
 
 Mwendo Pamoja combines credit, insurance-premium finance, wallet collections, telematics, and behavioural interventions. Its regulatory design must therefore begin with legal-entity and activity analysis, not with a single technology label. This chapter defines the control perimeter for the proposed Kenyan pilot and the evidence needed before any automated action is used in production.
 
+The typed model payload, decision taxonomy, treatment ledger, and selective-label controls are defined in `CREDIT_RISK_MODEL_AND_LOSS_ARCHITECTURE_SPECIFICATION.md`. This chapter remains authoritative for decision rights, legal and policy classification, customer protection, and evidence approval.
+
 The platform is intended to help a licensed lender, insurer, platform, servicer, and bankruptcy-remote special-purpose vehicle coordinate decisions. It does not transfer the legal obligations of those parties to the model or to the technology provider. Each decision remains attributable to an authorised entity, an approved policy, a versioned model or rule, and a named human owner.
 
 The design follows five principles:

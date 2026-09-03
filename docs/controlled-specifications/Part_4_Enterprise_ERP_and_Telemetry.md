@@ -9,6 +9,8 @@ status: "Target-state capability and control specification"
 
 Mwendo Pamoja requires a controlled bridge from high-frequency operational events to contractual balances, accounting entries, investor reports, and reproducible regulatory evidence. No single product is the system of record for every layer. The architecture therefore assigns each fact to an authoritative capability and reconciles facts as they cross boundaries.
 
+The common contract-and-risk spine, posterior artifact, marginal timing path, EAD and recovery components, and ECL handoff are specified in `CREDIT_RISK_MODEL_AND_LOSS_ARCHITECTURE_SPECIFICATION.md`. This chapter governs their system-of-record placement, reconciliation, accounting-event interface, and retention.
+
 Microsoft Dynamics 365 Finance is the proposed enterprise resource planning and general-ledger endpoint. It is not assumed to be the native loan-servicing engine, insurance-policy administration system, feature store, model registry, asset-liability management engine, or immutable evidence vault. Any product selection remains subject to a documented capability fit-gap, licensing, performance, control, and total-cost assessment.
 
 The design has four goals:

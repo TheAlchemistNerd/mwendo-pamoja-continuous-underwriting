@@ -122,6 +122,10 @@ A scaled gig-economy portfolio can produce many daily credit, insurance, wallet,
 - **Wallet and collection ledger:** Tracks settlement ownership, authorised deductions, reversals, residuals, driver reserves, and controlled SPV collections. It is not called escrow without the legal account structure.
 - **SPV asset register and waterfall:** Tracks eligibility, purchase, note balances, reserves, tests, and priority of payments.
 
+The credit-risk extension adds a common contract-and-risk spine to these systems. At minimum it carries driver, product, facility, contract, risk-episode, vehicle, policy, platform, geography, and cohort keys; contractual schedule and next due date; limit, utilisation, principal, interest, fees, arrears, modification, default, cure, and closure states; event, availability, decision, label-maturity, accounting, and cash-realisation times; current and stressed EAD; recovery, refund, cost, and write-off cash flows; intervention and policy versions; and model, calibration, feature, hierarchy, and posterior-artifact versions. Each field has one authoritative owner and an effective-time history.
+
+The risk platform retains the granular posterior and timing paths. The servicing ledger retains contractual balances and states. The ECL engine retains scenario-weighted accounting estimates. The SPV register retains purchased-asset and waterfall facts. D365 receives approved accounting events and reconciliation keys. This distribution allows every institution to use the same economic episode without asking the general ledger to store posterior draws or the model registry to become a receivables ledger.
+
 Telematics does not become a journal. Financial product events are reconciled and transformed into balanced journal batches. Posting may occur intraday or at a controlled cut-off, with idempotency key, debit-credit balance, entity, currency, account, dimension, source event, reversal reference, approval, and period status. OData or the Data Management Framework is selected after throughput testing. Driver-level auditability remains in the product ledger and evidence store even when the GL receives a summary.
 
 #### 1.3.2. Mapping the governed pricing service to product and accounting systems
@@ -152,6 +156,22 @@ The HLR is an evidence source, not a staging oracle. The approved SICR service e
 
 The base configuration uses a governed ECL engine outside the general ledger, with D365 controlling approved journals, consolidation, workflow, and reporting. A native or hybrid D365 route remains available if the fit-gap test proves that it reproduces the reporting entity's approved methodology, contract-level cash flows, scenario logic, effective-interest discounting, overlays, and audit evidence [8].
 
+The governing quantity is the probability-weighted present value of cash shortfalls. For scenario \(s\) and cash-flow date \(\tau\),
+
+$$
+ECL_i
+=
+\sum_s w_s
+\sum_\tau
+\left(
+CF^{\mathrm{contract}}_{i,\tau}
+-CF^{\mathrm{expected}}_{i,s,\tau}
+\right)
+DF_{i,\tau}.
+$$
+
+The expected cash flow includes scheduled exposure, drawdown, cure, prepayment, modification, ordinary recovery, eligible IPF refund, costs, and their timing. The factorised PD-LGD-EAD form below is a controlled computational representation only when its marginal default convention, exposure path, loss severity, cash timing, and discounting reproduce the approved cash-shortfall methodology.
+
 For scenario (s) and future interval \(\tau\), the controlled calculation can be represented as:
 
 $$
@@ -166,6 +186,8 @@ PD_{i,s,\tau}
 $$
 
 with the horizon, marginal or conditional PD convention, cure and recovery treatment, scenario weights, and discount factor defined in the accounting methodology. The HLR contributes calibrated evidence; the approved SICR and ECL services determine how that evidence enters staging and measurement.
+
+The fixed-horizon HLR and the timing challenger enter through an approved reconciliation layer. Cumulative PD is never multiplied afresh in each month. Where the survival model is used, monthly marginal default probability is \(q_{i,m}=S_i(t_{m-1})-S_i(t_m)\). Where only horizon PD is approved, a documented term-structure allocation converts it to marginal cash-flow intervals and is calibrated back to the horizon total. The accounting engine records which route and artifact version generated each estimate.
 
 The approved output passed to D365 contains the legal entity and reporting period; instrument or portfolio identifier; approved IFRS 9 stage; PD, LGD, EAD, scenario, model, rule, and overlay versions; opening and closing allowance; impairment movement; modification, write-off, recovery, and reversal identifiers; maker-checker status; posting profile; dimensions; journal date; currency; and reconciliation key. The loan subledger remains capable of reproducing the contract balance and ECL source data even when the general ledger receives an aggregated entry.
 

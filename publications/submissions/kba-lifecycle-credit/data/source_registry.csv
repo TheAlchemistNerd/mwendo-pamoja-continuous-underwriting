@@ -1,0 +1,11 @@
+source_id,authority,source_name,url,frequency,unit_of_observation,planned_use,extraction_status
+CBK-KESONIA,Central Bank of Kenya,KESONIA official series,https://www.centralbank.go.ke/kesonia/,Business day,Date-rate,Benchmark transmission,Automated
+CBK-KESONIA-INDEX,Central Bank of Kenya,KESONIA compounded index,https://www.centralbank.go.ke/kesonia-compounded-index/,Business day,Date-index,Accrual control and benchmark transmission,Automated
+CBK-WAR,Central Bank of Kenya,Commercial Banks Weighted Average Rates,https://www.centralbank.go.ke/commercial-banks-weighted-average-rates/,Monthly,Month-rate vector,Market-rate transmission,Automated
+CBK-SUPERVISION,Central Bank of Kenya,Bank Supervision and Banking Sector Reports,https://www.centralbank.go.ke/reports/bank-supervision-and-banking-sector-reports/,Quarterly and annual,Publication,Asset quality and credit conditions,Manual document index pending
+KBA-MSME-LP,Kenya Bankers Association,MSME Credit Analysis Loan Performance,https://msmedata.kba.co.ke/kba/loan-performance,Monthly snapshot,Dashboard table and headline,MSME asset quality and product composition,Automated snapshot
+KBA-MSME-METHOD,Kenya Bankers Association,MSME Credit Analysis Methodology,https://msmedata.kba.co.ke/kba/methodology,Versioned,Methodology page,Definitions and denominator controls,Manual version snapshot pending
+KBA-TCC,Kenya Bankers Association,Total Cost of Credit portal,https://www.costofcredit.co.ke/site/interest-rate,Product update,Bank-product disclosure,Pricing dispersion and benchmark basis,Client-side endpoint discovery pending
+CBK-RBCPM,Central Bank of Kenya,Revised Risk-Based Credit Pricing Model,https://www.centralbank.go.ke/wp-content/uploads/2025/08/Revised-Risk-based-Credit-Pricing-Model.pdf,Policy document,Document,Canonical pricing definitions,Manual document snapshot pending
+KBA-CALL-2026,Kenya Bankers Association,15th Annual Banking Research Conference Call for Papers,https://www.kba.co.ke/wp-content/uploads/2026/03/KBA-Call-for-Papers-2026-Advert-3.pdf,Annual call,Document,Submission requirements and theme,Verified
+

@@ -9,6 +9,8 @@ status: "Controlled financial-methodology specification; commercial terms remain
 
 This chapter connects the Central Bank of Kenya's KESONIA-based customer-pricing framework to product cash flows, SPV funding, debt service, reserves, the priority of payments, investor returns, accounting interfaces, and stress testing. It keeps five economically different quantities separate:
 
+`CREDIT_RISK_MODEL_AND_LOSS_ARCHITECTURE_SPECIFICATION.md` governs the path from calibrated borrower posterior through timing, EAD, cure, recovery, refund, dependence, and monthly cohort cash. This chapter governs how those cash flows enter pricing, ALM, reserves, tranches, and the waterfall.
+
 1. the reference rate used in a customer contract;
 2. the customer's risk-based pricing premium and fees;
 3. the coupon or yield promised to an SPV investor;

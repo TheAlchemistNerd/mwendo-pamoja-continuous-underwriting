@@ -156,6 +156,8 @@ where the terms are defined for that product and signs remain consistent. For a 
 
 Gate B requires reconciled sample journeys, versioned schemas, data-quality thresholds, correction procedures, lineage evidence, and proof that a product balance can be reproduced from its events.
 
+The same gate now requires five connected credit-state ledgers: identity and exposure; obligations and contractual state; decisions and actions; outcomes and label maturity; and recoveries and cash flows. Each record carries event, availability, decision, label-maturity, accounting, and cash-realisation times. The team must reproduce both a matured fixed-horizon label and a right-censored at-risk episode from the same source history before advanced modelling begins.
+
 ## 4. Phase 2: launch the transparent baseline first
 
 The first shadow underwriting service should use the Explicit Liquidity Feature Path and a deliberately simple baseline model. This gives operations a system they can understand while the programme learns which data are reliable and which interventions actually help.
@@ -169,6 +171,8 @@ The Credit Policy and Compliance Gate remains downstream. It applies debt caps, 
 ### 4.2. A baseline that can lose gracefully
 
 Begin with a regularised logistic or monotonic additive model using the explicit features, existing bureau information where lawfully available, and essential product metadata. Run it in shadow mode against the partner's current process. Record disagreement, not merely average accuracy.
+
+Nonlinear explicit effects begin with governed P-splines: a moderately rich B-spline basis, a documented difference penalty, centred effects, validated support, and product deviations only where partial pooling and evidence justify them. The knot protocol, penalty order, smoothing-scale prior, boundary rule, and back-transformation are versioned. B-spline RW1 and AR1 formulations remain appendix challengers so that the team can compare shape and time assumptions without silently discarding the earlier research.
 
 The baseline is acceptable only if it passes out-of-time and out-of-group validation, shows usable calibration by product and material subgroup, and supports operational reason codes. Useful diagnostics include the Brier score
 
@@ -220,11 +224,25 @@ The expectation is trained without fold $k(i)$ and applied to observations in th
 
 If the combined model does not improve decision-relevant held-out performance after complexity and operational cost, the explicit-only model remains champion. Innovation is preserved by testing it honestly, not by making deployment inevitable.
 
-### 5.2. Copulas as portfolio challengers
+### 5.2. Offline inference and the timing challenger
+
+Full posterior estimation remains offline. The reference implementation uses NUTS or HMC, while Pólya-Gamma augmentation is benchmarked as a blocked Gibbs strategy for the complete HLR. Conditional on the Pólya-Gamma variables and scale parameters, the global, spline, residual-neural, hierarchy, interaction, and selected time blocks receive sparse Gaussian updates. Partial pooling remains intact. The comparison reports posterior agreement, calibration, tail behaviour, group shrinkage, effective sample size per second, and operational reproducibility.
+
+Production loads a signed posterior artifact containing the approved feature schema, basis and penalty, residualisation and whitening transforms, posterior representation, hierarchy mappings, calibration, support ranges, reason concepts, and fallback. It performs no MCMC during a credit request.
+
+A hierarchical piecewise-exponential proportional-hazards model enters as a timing challenger. The risk-set builder uses entry, event, censoring, intervention, modification, closure, and time-valid covariate intervals. Its survival curve must reconcile to the HLR at shared horizons. A Gamma frailty or shared longitudinal-liquidity component remains an advanced challenger, used only when repeated matured episodes and measurement-error evidence support the additional structure.
+
+### 5.3. Complete the loss chain before dependence
+
+Before a copula is promoted, the programme builds separate EAD, cure, LGD, ordinary recovery, IPF-refund, recovery-cost, and recovery-delay components. Each component has its own target, horizon, source, validation, and owner. The cash-flow engine converts fixed-horizon or marginal default probabilities into monthly product cohorts, then one-year loss, ultimate loss, ECL cash shortfalls, economic-capital views, and SPV waterfall results.
+
+Dependence is layered in order: observed common factors, hierarchical platform and geography effects, within-driver multi-product linkage, and only then residual copula dependence. This ordering reduces the chance that one tail parameter absorbs omitted factors and duplicated signal.
+
+### 5.4. Copulas as portfolio challengers
 
 Fit Clayton, survival Clayton, Gumbel, Gaussian, Student-$t$, and other defensible candidates where data support them. Compare tail fit, parameter stability, conditional loss estimates, and stress behaviour. The selected model informs portfolio scenarios and a negotiated reserve overlay; it does not automatically change a customer's price, the advance rate, or the CRA.
 
-Gate D requires independent model review, reproducible training, model and feature registries, approval of the champion-challenger result, fairness analysis, data-drift response, uncertainty limits, and a documented decision on whether the copula evidence is mature enough for transaction use.
+Gate D requires independent model review, reproducible training, model and feature registries, P-spline and residualisation validation, agreement testing between NUTS and any Pólya-Gamma implementation, censoring and risk-set review, HLR-survival horizon reconciliation, EAD and recovery validation, approval of the champion-challenger result, fairness analysis, data-drift response, uncertainty limits, and a documented decision on whether residual copula evidence is mature enough for transaction use.
 
 ## 6. Phase 4: a controlled product pilot
 
@@ -269,6 +287,8 @@ sequenceDiagram
 ```
 
 Measure outcomes at driver, product, and portfolio level. Driver measures include uninterrupted insured days, days able to work, net cash sufficiency after essential commitments, complaints, overrides, and repeat distress. Product measures include arrears cure, roll rates, cancellation, utilisation, repayment, loss, recovery, and modification cost. Portfolio measures include concentration, liquidity, cash timing, and expected versus realised loss.
+
+Every offer, restriction, referral, override, and intervention enters an action ledger with the pre-action score and uncertainty, eligible population, decision owner, customer response, executed terms, exposure change, cost bearer, outcome window, censoring, cure, default, recovery, complaint, and appeal. The evaluation design accounts for selective labels created by approvals, declines, freezes, and treatments. Where feasible, phased rollout, randomised encouragement, or another lawful comparison design estimates the effect of support rather than attributing every later cure to the model.
 
 ### 6.2. KESONIA without hidden repricing
 

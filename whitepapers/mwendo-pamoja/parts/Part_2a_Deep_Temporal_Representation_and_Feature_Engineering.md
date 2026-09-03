@@ -252,6 +252,34 @@ When no new low-frequency record has been committed since the last join, the pip
 
 The feature-store pattern formalises the retrieval contract. A spine containing decision time and entity identifiers is joined to versioned feature views using documented availability and validity rules. The returned training frame is accepted only after automated leakage tests, boundary cases, replay comparison, source-to-feature lineage, and sign-off on label timing.
 
+## 4.1. The Credit-State Ledger and Five Clocks
+
+Point-in-time correctness becomes operational when every training row can be reconstructed from five connected ledgers. The **identity and exposure ledger** links the driver, product, facility, contract, vehicle, platform, policy, geography, and risk episode. The **obligation ledger** records schedules, due amounts, limits, draws, repayments, policy finance, arrears, and modifications. The **decision and action ledger** records the model artifact, feature snapshot, calibrated estimate, policy version, human approval, intervention, notice, and override. The **outcome and maturity ledger** records product-specific default, cure, closure, censoring, and the date on which a label became observable. The **recovery and cash-flow ledger** records collections, IPF refunds, write-offs, recoveries, costs, delays, and SPV allocation.
+
+These ledgers preserve five times whose names should not be collapsed:
+
+| Clock | Meaning | Principal control |
+|---|---|---|
+| Event time \(T_e\) | When the underlying activity occurred | Source sequence and correction lineage |
+| Availability time \(T_a\) | When the platform could lawfully and technically use it | Point-in-time feature join |
+| Decision time \(T_d\) | When a score or action was produced | Immutable decision snapshot |
+| Label-maturity time \(T_m\) | When the full product outcome window became observable | Training eligibility and censoring |
+| Cash-realisation time \(T_c\) | When collection, refund, cost, or recovery affected cash | ECL, loss, and SPV cohort timing |
+
+A feature is eligible only when
+
+$$
+T_a\le T_d,
+$$
+
+and a fully matured supervised label can enter a training cutoff \(T_{\mathrm{train}}\) only when
+
+$$
+T_m\le T_{\mathrm{train}}.
+$$
+
+Rows that have entered the risk set but have not completed the outcome window are not silently labelled as non-defaults. The fixed-horizon HLR uses matured binary outcomes or a formally approved censoring treatment. The timing challenger in Part 2b uses the same ledgers to construct at-risk exposure intervals and right-censored event histories. This common source prevents the logistic and survival views from becoming two inconsistent credit histories.
+
 
 # 5. Feature Engineering for the Gig Economy
 
@@ -349,7 +377,7 @@ Here $N_B$ is the number of valid days in the preceding 90-day baseline, and mis
 
 **Reserve Pocket Balance (\(R_i(t)\)):** The driver-owned or contractually controlled reserve balance and a separately calculated ratio to due obligations. The feature registry must state ownership and availability. It is not the SPV Cash Reserve Account.
 
-**Processing:** These features bypass the neural encoders. Continuous terms enter through centered, scaled, and QR-orthogonalised B-spline bases. Half-Student-\(t\) priors may be used for positive group scales, while coefficient blocks receive regularising shrinkage [10]-[12]. Heavy tails do not allow shocks to "escape without penalty"; they reduce over-shrinkage of genuinely large effects while retaining regularisation.
+**Processing:** These features bypass the neural encoders. The governed main specification evaluates a moderately rich B-spline basis and applies a difference penalty, producing a P-spline effect whose roughness is controlled separately from knot count. The basis degree, boundary knots, interior knots, difference order, penalty matrix, centring transform, support range, clipping rule, and back-transformation are versioned in the feature registry. A QR or penalty-compatible reparameterisation may be used for numerical conditioning, but it must preserve the penalty's null space and interpretation. B-spline with RW1 and AR(1) coefficient priors remain documented challengers in Part 2b's appendix rather than disappearing from the research programme. Half-Student-\(t\) priors may be used for positive group scales, while coefficient blocks receive regularising shrinkage [10]-[12].
 
 ## 5.4. Gig-Economy Specific Interaction Effects
 
@@ -523,6 +551,10 @@ Underwriting streams can be missing because a source is unavailable, a driver is
 At each defined evaluation interval, the fusion layer outputs \(\boldsymbol{\Phi}_{it}\), a neural representation of short-term sequence and longer structural context. Before it reaches the HLR, Part 2b residualises it against the explicit and metadata blocks out of fold. The Explicit Liquidity Features enter separately through centered and orthogonalised spline and interaction bases.
 
 Part 2b begins at that interface. It preserves the narrative ambition of a full posterior distribution, but calibrates the HLR so that dimensionality, redundancy, multicollinearity, hierarchy, and out-of-time uncertainty are controlled rather than hidden.
+
+The boundary is implemented as a signed **model-input artifact**, not an informal tensor handoff. For every score it carries the observation-unit key, product and horizon, decision timestamp, explicit-feature values and versions, P-spline basis version, raw and residual neural artifact versions, metadata and quality flags, feature support indicators, missingness reasons, source ages, and a snapshot manifest. Training also stores the fold-specific residualisation and scaling transformations. Production stores the approved full-development transformations and a numerical parity hash.
+
+The online service never estimates a posterior or refits a residualisation model during the request. It applies the approved feature definitions, basis, projection, calibration, and posterior scoring artifact. A parity suite replays representative observations through offline and online implementations and compares explicit features, basis rows, residual embeddings, linear predictors, calibrated PDs, uncertainty summaries, and reason contributions within approved tolerances. A mismatch routes to the explicit-only fallback or manual process rather than becoming an invisible model change.
 
 
 

@@ -1,244 +1,1214 @@
 # Bayesian Credibility and Exposure-Normalised Telematics Relativities
 
+## A unified actuarial architecture for pricing, reserving, capital and risk transfer in gig-economy motor insurance
+
+**Author:** Neville Maloba  
+**Contact:** nevillemaloba@gmail.com  
+**Status:** Technical white paper  
+**Date:** August 2026
+
 ## Abstract
-The transition from static pricing variables to high-frequency telematics in the gig economy presents a fundamental challenge for motor insurance underwriting. While deep neural networks excel at extracting kinematic and environmental patterns from massive data streams, their raw outputs lack the interpretability, tariff neutrality, and regulatory transparency required by modern actuarial standards, such as the International Financial Reporting Standard 17 (IFRS 17). This paper introduces a comprehensive hybrid quantitative architecture that integrates actuarial variables with residualised neural embeddings within a Hierarchical Bayesian framework. By formally separating claim frequency (utilizing a Negative Binomial distribution) and claim severity (employing a conditional Gamma distribution) and scaling them via exposure-normalised modulating variables, the model ensures that telematics redistributes risk fairly without silently inflating the aggregate base tariff. Furthermore, Hierarchical Bayes serves as a mathematically rigorous generalization of classical Bühlmann-Straub credibility, addressing sparse data cohorts through partial pooling. Ultimately, this framework provides a continuous, theoretically sound, and transparent underwriting mechanism.
 
-## 1. Introduction
+Two drivers can operate the same vehicle in the same city and still create very different insurance risks. One may work predictable daytime routes, accumulate exposure gradually and maintain a stable pattern of braking, speed and rest. The other may chase late-night demand across unfamiliar corridors, compress recovery time between shifts and encounter a changing mixture of congestion, weather and road conditions. A conventional tariff correctly supplies the portfolio foundation, but it cannot observe every change in exposure or behaviour as it emerges.
 
-### 1.1 Background
-The rapid evolution of Usage-Based Insurance (UBI) has fundamentally altered the landscape of motor insurance, particularly within the rapidly expanding gig economy. Historically, actuaries relied on static rating factors, such as policyholder age, vehicle class, and geographic territory, to assign drivers to discrete and rigid tariff cells. These generalized linear model (GLM) frameworks provided long-term stability and high interpretability, satisfying stringent regulatory requirements for transparency and fairness [1]. However, in a modern gig-economy context, where drivers experience extreme volatility in working hours, urban congestion, and platform-driven incentive structures, static variables systematically fail to capture the true, dynamic risk profile of the individual policyholder. A driver traversing a hazardous urban corridor during peak surge pricing faces an entirely different risk environment than one operating in a quiet suburban zone, exposing the fundamental limitations of static models.
+This paper develops a hybrid actuarial and Insurtech architecture for converting those changing conditions into governed insurance quantities. The framework separates claim frequency, conditional claim severity and non-driving loss; measures exposure explicitly; assigns interpretable telematics variables to an Explicit Telematics Feature Path; and allows a gated recurrent unit to learn additional sequence information. Cross-fitted residualisation removes the component of each neural embedding that is predictable from the explicit rating variables. A regularised horseshoe prior then controls the remaining embedding coefficients within a hierarchical Bayesian frequency-severity model. The construction reduces redundant representation without claiming that neural coordinates are intrinsically orthogonal or causally pure.
 
-### 1.2 Problem Statement
-The advent of high-frequency telematics, incorporating GPS, accelerometer, and onboard diagnostic data, offers a profound observational advantage for risk assessors. Modern machine learning architectures, including Gradient Boosting Machines and deep neural networks, can ingest these massive, high-dimensional streams to detect complex, non-linear kinematic patterns such as hard braking, aggressive cornering rhythms, and driver fatigue [2]. Yet, despite their undeniable predictive power, the direct application of raw neural network outputs to insurance pricing is highly problematic for regulated markets. Unconstrained neural networks function as opaque black boxes, making it exceedingly difficult for actuaries to explain precisely how a specific driving event translates into a premium adjustment. This opacity directly violates a critical requirement under prevailing actuarial standards and consumer protection regulations [1]. Furthermore, deep learning models are inherently prone to causal confusion and the implicit double-counting of baseline exposure metrics.
+The paper's central contribution is an exposure-normalised actuarial modulating variable. Posterior frequency and severity relativities are combined and recalibrated within approved tariff cells so that telematics redistributes expected loss around the portfolio foundation instead of silently changing its indicated aggregate level. Recursive Gamma-Poisson and inverse-Gamma-Gamma updating shows how individual experience acquires credibility over time without discarding prior evidence. The predictive loss distribution then flows into occurrence, reporting and payment development; RBNS, IBNR and IBNER reserves; one-year and ultimate economic capital; and the pricing and monitoring of quota-share, excess-of-loss and aggregate protections. IFRS 17 is treated as a governed accounting interface to these cash-flow estimates, distinct from ratemaking and internal economic capital.
 
-### 1.3 Purpose
-To bridge this widening gap between predictive capability and regulatory compliance, this paper proposes a hybrid architecture that combines the predictive capacity of deep learning with the structural rigor of actuarial science. The concept of an exposure-normalised actuarial modulating variable is introduced. Rather than replacing the conventional tariff structure, the neural embedding is orthogonalized (residualised) against actuarial features, ensuring it only captures incremental behavioral risk. The resulting metrics are subsequently fed into a Hierarchical Bayesian Logistic Regression engine. The objectives of this paper are threefold:
+The result is a coherent chain from human driving conditions to exposure, technical price, claim settlement, reserve uncertainty, capital consumption and risk transfer. It supports safer interventions and more responsive pricing while preserving actuarial interpretability, portfolio calibration and auditable ownership of every material variable.
 
-1. The actuarial modulating variable is formally defined with a strict separation of frequency and severity.
-2. Bayesian partial pooling is demonstrated as an extension of classical credibility theory to resolve data sparsity in high-dimensional UBI portfolios.
-3. The methodology is grounded in robust accounting and statistical principles, adhering strictly to IFRS 17 standards.
+## 1. The human and economic setting
 
-## 2. Theoretical Foundations and Actuarial Principles
+### 1.1 Two drivers, one tariff cell, different working lives
 
-Before defining the mechanical integration of telematics, it is completely necessary to establish the theoretical boundaries of insurance risk pricing and the mathematical heritage of the models employed. In standard quantitative finance, derivatives existing within complete markets can often be priced accurately by constructing a perfect replicating portfolio. However, motor insurance liabilities inherently operate in fundamentally incomplete markets, where no traded financial asset perfectly replicates the collision risk of a specific gig-economy driver navigating a dense urban corridor. Acknowledging this inherently incomplete market structure, the advanced underwriting framework strictly models actual accident frequency, claim severity, and operational cash flows based solely on empirically observed historical losses. The pure premium is estimated directly from the data, adding commercial, capital, and risk margins post-estimation, thereby entirely avoiding any unrelated financial pricing detours that assume complete market dynamics.
+Consider Amina and Kamau, two app-based drivers in Nairobi. They use vehicles of the same age and value, live in the same broad rating territory and buy the same annual motor cover. On the proposal form they look similar. During an ordinary week, however, their economic lives diverge.
 
-### 2.1 Revisiting Credibility Theory
+Amina works five planned daytime shifts. She rejects long pick-ups that would place her far from her preferred corridor, takes regular breaks and finishes before the evening traffic becomes most volatile. Kamau works whenever household cash is tight. A platform incentive encourages him to complete a late-night trip sequence, fuel prices reduce the margin on each kilometre, and a loan repayment is due the next morning. He continues after fatigue has begun to alter his reactions. The additional distance matters because it creates more opportunities for a claim. The altered braking, cornering and rest pattern matters because it may change the expected claim rate per kilometre. The road, vehicle and speed at impact matter because they influence the cost if a collision occurs.
 
-A central challenge in usage-based insurance is evaluating the specific risk of a brand new driver or a newly launched geographic corridor where historical data remains exceptionally sparse. If an actuary relies solely on the individual's brief and incomplete driving record, the resulting premium will be dangerously volatile. Conversely, relying entirely on the broader portfolio average ignores the specific telematics signals that usage-based insurance inherently aims to capture. Classical actuarial science addresses this exact dilemma via credibility theory. The seminal Bühlmann-Straub model provides a greatest accuracy linear approximation for calculating a credibility-weighted premium. This classical formula is represented mathematically as:
-$$ \hat{R} = Z\bar{X} + (1-Z)M $$
-Here, $Z \in [0,1]$ is the calculated credibility factor, $\bar{X}$ is the individual's uniquely observed experience, and $M$ is the overarching collective portfolio mean [4].
+These are related but different actuarial questions:
 
-Bühlmann credibility is considered highly tractable in practice because it strictly requires only the first two moments (the mean and the variance) of the underlying risk distribution. It effectively acts as a variance-components model that borrows strength directly from the collective pool to stabilize highly volatile individual estimates [4], [5]. However, classical credibility theory exhibits significant structural limitations when applied directly to high-frequency, multi-dimensional telematics data. Primarily, it yields a single point estimate rather than generating a full probability distribution, completely masking the underlying uncertainty of the prediction. Hierarchical Bayesian modeling serves as the mathematically rigorous generalization of this classical actuarial credibility. By treating the underlying risk parameters as random variables drawn directly from a global portfolio-level hyperprior distribution, the advanced Bayesian framework intrinsically performs automated partial pooling across all observed cohorts [6].
+- **Exposure** asks how much insured activity took place, measured through an approved base such as kilometres, active driving hours or covered days.
+- **Frequency risk** asks how many claims are expected per exposure unit.
+- **Severity risk** asks how much a claim is expected to cost, conditional on occurrence.
+- **Temporary safety state** describes an acute condition, such as fatigue or sensor-detected instability, that may justify a warning, routing intervention or rest recommendation.
+- **Persistent actuarial risk** describes sufficiently stable and validated evidence that may support a future tariff relativity.
+- **Claims development** describes the path from occurrence through reporting, case estimation, payment, recovery and closure.
+- **Capital risk** describes adverse variation beyond the central estimate that the insurer must be able to absorb.
+- **Risk transfer** allocates selected portions of the gross loss distribution to a reinsurer or another protection provider.
 
-In remarkably data-sparse clusters (for example, a completely new gig driver with only fifty kilometers of tracked exposure), the Bayesian posterior is naturally shrunk toward the global portfolio mean. This prevents the mathematical model from assigning an artificially zero default probability simply because no claims have yet occurred in that brief window. As the driver accumulates highly credible experience on the platform, the growing likelihood function eventually dominates the initial prior, and the posterior estimate pulls cleanly away from the collective mean [6], [7]. This dynamic perfectly mirrors the established behavior of the classical credibility factor $Z$, but with the critical operational advantage of producing a full, continuous posterior distribution. This complete posterior allows the underwriter to extract not just the expected claim rate, but also the Highest Density Interval.
+The driver experiences these distinctions as one economic reality. A disrupted working week can reduce income, change operating choices and weaken the capacity to maintain the vehicle. The insurer experiences them across different ledgers, models and decision horizons. A sound architecture connects those views without collapsing them.
 
-## 3. The Actuarial Modulating Variable Framework
+### 1.2 The tariff remains the foundation
 
-### 3.1 Frequency and Severity Separation
+Risk classification is an actuarial system for grouping risks with similar expected outcomes, not a claim that all members of a class behave identically. ASOP No. 12 emphasises that a classification system should relate differences in expected outcomes to differences in risk characteristics and should be reviewed as experience emerges [1]. Property and casualty ratemaking guidance likewise treats the selection of a measurable, verifiable and reasonably proportional exposure base as a central design decision [2].
 
-To implement a robust and transparent telematics-driven pricing engine within a heavily regulated environment, the raw kinematic inputs must be mathematically structured into highly interpretable actuarial quantities. A firm baseline is established by the conventional tariff cell assigned to each driver, denoted as $c(i)$, alongside a continuously tracked exposure base, denoted as $E_{it}$. This exposure base typically represents the total kilometers driven or the total active insured hours recorded during a specific time period $t$. The foundational framework adheres strictly to the fundamental actuarial principle of deliberately separating expected claim frequency from conditional claim severity. Modeling these two dimensions independently allows underwriters to isolate variables that strictly cause accidents from those that merely exacerbate the resulting financial damage. For instance, severe fatigue may drastically increase the sheer likelihood of a collision occurring, while driving a significantly more expensive or fragile vehicle will exponentially increase the ultimate financial severity of that specific event.
+For Mwendo Pamoja, established rating variables remain the tariff foundation: vehicle class and value, coverage, territory, driver and vehicle history, use class, deductibles and other approved factors. Telematics adds two capabilities. First, it measures exposure more faithfully. Second, it supplies behavioural and contextual evidence that may distinguish risks within an existing cell. The model therefore begins with a base expected loss, not with a neural score.
 
-The absolute number of claims for driver $i$ at time $t$, denoted as $N_{it}$, is modeled using a Negative Binomial distribution governed by a dispersion parameter $\phi$. This specific choice accounts for the variance overdispersion frequently observed in massive motor insurance portfolios, where a small minority of drivers generate a disproportionate number of claims. The mean claim rate is mathematically defined as $\mu_{it}$, with exposure $E_{it}$ entering the logarithmic link function strictly as a proportional offset. This offset guarantees that the analytical trap of confusing a driver who simply drives more kilometers with a driver who is actually more dangerous per kilometer is avoided. The complete frequency model is defined as:
-$$ \log \mu_{it} = \log E_{it} + \alpha_{c(i)} + f(X_{it}) + \beta_h^\top\widetilde h_{it} + u_i + u_g + u_v $$
-Here, $\alpha_{c(i)}$ represents the base tariff, $f(X_{it})$ captures contextual variables, $\widetilde h_{it}$ is the residualised neural representation, and the $u$ terms capture specific driver, geographic, and vehicle random effects.
+The Kenyan operating context adds clear institutional boundaries. Insurance business is conducted by licensed insurers under the Insurance Act, which also establishes record-keeping and prudential responsibilities [3]. Compulsory third-party motor cover is grounded in the Insurance (Motor Vehicle Third Party Risks) Act [4]. Location, device and behavioural data are personal-data processing activities. High-risk profiling therefore belongs within a purpose-limited governance design, supported by a data-protection impact assessment where the processing is likely to create high risk to a data subject's rights and freedoms [5]. The model architecture must be commercially useful inside those boundaries.
 
-Conditional on a claim actually occurring, meaning $N_{it} > 0$, the resulting financial severity is modeled independently using a Gamma distribution. This distribution is highly appropriate for severity modeling because it restricts outputs to strictly positive values and naturally accommodates the heavy right-tailed skew characteristic of motor collision repair costs. The expected conditional severity, denoted as $\mu^{\mathrm{sev}}_{it}$, is modeled logarithmically to ensure mathematical stability. The full severity equation is defined as:
-$$ \log \mu^{\mathrm{sev}}_{it} = \delta_{c(i)} + g(X_{it}) + \gamma_h^\top\widetilde h_{it} + v_g + v_v $$
-In this formulation, $\delta_{c(i)}$ represents the baseline severity tariff, while $v_g$ and $v_v$ represent geographic and vehicle-specific severity random effects. By multiplying the expected frequency by this conditional severity, the expected pure premium for the driver is generated. The pure premium represents the exact mathematical expectation of raw loss costs, defined simply as:
-$$ PP_{it} = E_{it} \lambda_{it} \mu^{\mathrm{sev}}_{it} $$
-This forms the core foundation of the usage-based tariff.
+### 1.3 The core architectural question
 
-### 3.2 Tariff Neutrality Constraint
+The central question is not whether a neural network can predict claims. It is:
 
-To integrate these neural predictions seamlessly into a regulated tariff, two distinct exposure-normalised actuarial modulating variables are defined. The frequency modulator, $M^{\mathrm{freq}}_{it}$, is defined as the ratio of the dynamically adjusted frequency $\lambda_{it}$ to the static baseline frequency $\lambda_{0,c(i)}$. Similarly, the severity modulator, $M^{\mathrm{sev}}_{it}$, is defined as the ratio of the dynamic severity $\mu^{\mathrm{sev}}_{it}$ to the static baseline severity $\mu^{\mathrm{sev}}_{0,c(i)}$. Isolating these two distinct metrics provides underwriters with transparent, actionable intelligence. It clearly illuminates whether a specific telematics behavior indicates that a driver is simply more likely to have a minor fender bender, or whether they are uniquely predisposed to generating catastrophic, high-severity collisions. Most critically, these modulators must be mathematically constrained so that their exposure-weighted average across the entire base tariff cell is strictly calibrated to equal exactly one.
+> How can high-frequency telematics contribute incremental, credible and explainable evidence to an actuarial tariff, while the same predictive distribution supports claims reserves, capital decisions and risk-transfer monitoring?
 
-This strict calibration property is formally defined by ensuring the sum of $E_{it}M_{it}$ divided by the sum of total exposure $E_{it}$ precisely equals one. This mathematical constraint guarantees tariff neutrality. It ensures that the telematics algorithm redistributes the premium burden internally, charging demonstrably hazardous drivers more while discounting safe drivers, without silently inflating or deflating the aggregate collected premium of the entire insurance pool. Finally, the commercial premium must account for risks existing entirely independently of driving behavior, such as vehicle theft or weather catastrophes. Therefore, the total premium is defined as:
-$$ \text{Premium}_{it} = B_{it} + PP_{it} + \text{Expenses}_{it} + \text{Reinsurance}_{it} + \text{Margin}_{it} $$
-The baseline component $B_{it}$ ensures that a permanently parked vehicle still contributes to systemic administrative and non-driving catastrophic exposures, preventing the dangerous assumption that zero driven miles equates to zero financial risk for the insurer.
+The answer requires a sequence of controlled transformations. Raw events become validated exposure and features. Explicit variables and neural sequence representations enter a hierarchical model through distinct paths. Posterior estimates become calibrated relativities. Claims then emerge and settle through a separate development process. Gross losses are converted to gross and net reserves, capital and treaty metrics. Accounting receives governed cash-flow outputs; safety operations receive timely interventions.
 
-## 4. Integrating Neural Representations
+Figure 1 summarises that chain.
 
-### 4.1 The Dual-Regime Architecture
-
-High-frequency telematics sequences offer exceptionally rich kinematic insight for insurance risk assessment, but properly processing them requires a sophisticated computational architecture capable of handling vastly disparate time scales. A bespoke Dual-Regime Neural Architecture is proposed to process transient micro-kinematics and broader macro-structural context simultaneously, before ultimately being orthogonalized against actuarial baseline features. This architectural split recognizes that the gig economy operates on fundamentally different physical and economic clock cycles. The microscopic second-by-second steering wheel inputs and braking behaviors represent immediate operational stress, while the slow-moving monthly shifts in fuel prices, municipal emission mandates, and localized platform commission rates dictate the broader structural constraints acting upon the driver. Fusing these disparate signals directly would inevitably overwhelm the learning process with high-frequency noise. Therefore, the model establishes two completely distinct encoding modules tailored to the natural frequency of the respective data streams they ingest.
-
-#### 4.1.1 High-Frequency Kinematic Encoder
-
-The first primary module is the High-Frequency Kinematic Encoder, designed to process raw driver behavior captured at granular intervals ranging from one to ten Hertz. This highly detailed data stream includes dense readings such as global positioning velocity, tri-axial accelerometer forces, and precise gyroscope angular velocity. To efficiently compress this continuous telemetry sequence, a specialized Gated Recurrent Unit architecture is deliberately employed. The chosen recurrent network systematically processes these sequential input tensors to capture immediate, transient kinematic events like abrupt hard braking or intense cornering aggression. By continuously updating its internal hidden state across the entire sequential window, the recurrent unit effectively learns the localized operational rhythm and the rapidly accumulating fatigue signature of the targeted driver. At the absolute conclusion of the evaluation window, the recurrent network consistently outputs a dense temporal representation vector. This vector represents a highly compressed, short-term encapsulation of the driver's current behavioral state.
-
-The GRU processes the sequential telemetry input tensor, $\mathbf{x}_t$, maintaining a continuous hidden state $\mathbf{h}_t$. At each precise time step $t$, the recurrent unit mathematically executes a sequence of defined gating mechanisms. First, the update gate $\mathbf{z}_t$ critically determines exactly how much of the previously accumulated hidden state must be carried forward into the future:
-$$ \mathbf{z}_t = \sigma(\mathbf{W}_z \mathbf{x}_t + \mathbf{U}_z \mathbf{h}_{t-1} + \mathbf{b}_z) $$
-Simultaneously, the reset gate $\mathbf{r}_t$ rigorously controls how much of the previous state remains strictly relevant to the current candidate state formulation:
-$$ \mathbf{r}_t = \sigma(\mathbf{W}_r \mathbf{x}_t + \mathbf{U}_r \mathbf{h}_{t-1} + \mathbf{b}_r) $$
-The proposed candidate hidden state $\tilde{\mathbf{h}}_t$ is then formulated as:
-$$ \tilde{\mathbf{h}}_t = \tanh(\mathbf{W}_h \mathbf{x}_t + \mathbf{U}_h (\mathbf{r}_t \odot \mathbf{h}_{t-1}) + \mathbf{b}_h) $$
-Finally, the absolute hidden state interpolation is derived precisely via:
-$$ \mathbf{h}_t = (1-\mathbf{z}_t) \odot \mathbf{h}_{t-1} + \mathbf{z}_t \odot \tilde{\mathbf{h}}_t $$
-This mathematical output yields a dense temporal vector flawlessly encapsulating short-term physical strain.
-
-#### 4.1.2 Low-Frequency Contextual Encoder
-
-The second primary module is the Low-Frequency Contextual Encoder, designed to process broader environmental and spatial states that inherently evolve at a considerably slower mathematical rate. These structural elements encompass macroscopic indicators such as localized municipal inflation metrics, shifting traffic density patterns across specific urban corridors, and constantly changing platform algorithmic pricing regimes. Because these critical structural variables change gradually over time, a multi-head self-attention Transformer network processes this low-frequency sequence. Unlike traditional recurrent models that struggle with lengthy dependencies, the self-attention mechanism seamlessly creates direct mathematical paths among all temporal positions within the extended contextual evaluation window. This unique structural advantage allows the deep neural network to capture complex, long-range dependencies precisely without suffering from catastrophic gradient degradation. By running multiple parallel attention heads simultaneously over the entire sequence, the model can efficiently dedicate specific independent attention heads to track localized weather seasonality while other heads track platform pricing elasticity.
-
-The fundamental mathematical engine driving this contextual understanding is the scaled dot-product attention formulation. The input sequence is first linearly projected into distinct Query $\mathbf{Q}$, Key $\mathbf{K}$, and Value $\mathbf{V}$ continuous matrices. The core attention mechanism is mathematically formalized as:
-$$ \text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\frac{\mathbf{Q}\mathbf{K}^T}{\sqrt{d_k}}\right)\mathbf{V} $$
-The critical scaling denominator $\sqrt{d_k}$ prevents the resulting dot products from growing excessively large in magnitude, which would otherwise improperly push the softmax function into destructive saturation regions possessing near-zero gradients. To preserve strict sequence ordering, sinusoidal positional encodings are injected prior to the primary attention computation. Each distinct Transformer block rigorously follows a modern pre-norm architectural design, deliberately substituting legacy activation functions with a smooth SwiGLU feed-forward network containing a specialized SiLU activation function. Ultimately, the network strictly applies global average pooling across the entire temporal dimension to compress the sequence into a cohesive, singular macro-regime context vector.
-
-### 4.2 Cross-Attention Feature Fusion
-
-Once the distinct representations are encoded, they must be merged intelligently, avoiding a naive concatenation that ignores their inherent relational dynamics. This is achieved via a dedicated Cross-Attention Feature Fusion layer. In this specialized mechanism, the highly dynamic, short-term output vector from the recurrent unit serves exclusively as the query. Conversely, the slow-moving, structural context vector generated by the Transformer serves as both the key and the value. The mathematical definition follows the multi-head attention formulation:
-$$ \boldsymbol{\Phi}_{it} = \text{Attention}(\mathbf{h}_T^{\text{GRU}}\mathbf{W}^Q, \mathbf{c}_{L,\tau}\mathbf{W}^K, \mathbf{c}_{L,\tau}\mathbf{W}^V) $$
-This specific arrangement allows the network to calculate dynamic attention weights that actively amplify or suppress structural factors precisely when the immediate behavioral state indicates escalating operational risk. For example, if the recurrent network detects acute yaw oscillation indicative of sleep deprivation, the cross-attention layer can immediately amplify the mathematical weight of late-night operational hours. The resulting fused tensor represents a comprehensive, time-varying covariate vector combining microscopic physical behavior with macroscopic economic context.
-
-### 4.3 Neural Residualisation
-
-A severe redundancy problem inevitably arises if this sophisticated neural network implicitly learns to reconstruct the deterministic demographic or mileage metrics already present within the baseline actuarial model. This redundancy would double-count the risk signal, fundamentally violating the independence assumptions necessary for the regression. To prevent this, a cross-fitted residualisation strategy adapted from principles of Double Machine Learning is executed. The fused neural representation, $\boldsymbol{\Phi}_{it}$, is orthogonally projected against the actuarial baseline features, $\mathbf{X}_{it}$, to extract the pure residual component, mathematically formalized as:
-$$ \widetilde{\mathbf h}_{it} = \boldsymbol{\Phi}_{it} - \widehat{\mathbb E}_{-k(i)}\left[\boldsymbol{\Phi}_{it}\mid\mathbf{X}_{it}\right] $$
-This mathematical projection is fitted strictly out-of-fold to eliminate the possibility of data leakage during the training process. By enforcing this strict orthogonality, the entire neural branch is mathematically restricted to capturing only the pure, incremental predictive value of the complex telematics sequences that the foundational actuarial variables miss. Additionally, Penalized Splines (P-splines) are continuously tested alongside standard B-splines to govern the baseline features through discrete difference penalties, further preventing over-adaptation. The resulting residualized vector seamlessly enters the downstream Bayesian engine.
-
-To strictly keep this high-dimensional neural representation block from completely overwhelming the carefully calibrated and interpretable foundational actuarial model, the rigorous mathematical implementation mandates a specific architectural governance protocol:
-
-1. A fixed low-dimensional informational bottleneck is selected inside the designated training folds.
-2. Rigorous mathematical standardization and feature whitening are fitted securely on the training data.
-3. A strongly regularized horseshoe or comparable mathematical block-shrinkage prior is applied to the neural coefficients.
-4. Entirely separate shrinkage scales are maintained for the actuarial, neural, interaction, and metadata blocks.
-5. Strong mathematical heredity is enforced for all calculated interactions.
-6. Non-centered hierarchical model effects are parameterized strictly with a sum-to-zero identification constraint.
-7. Strict ablation gates require stable incremental predictive value over the actuarial baseline model.
-
-Ultimately, the resulting seamlessly residualized neural vector directly enters the downstream Bayesian engine.
-
-## 5. Spatio-Temporal Dynamics and State-Space Modeling
-
-In continuous telematics underwriting, a policyholder's inherent risk profile is never completely static. A driver's underlying structural risk must be meticulously untangled mathematically from transient environmental states and platform-driven behavioral shifts. Gig-economy drivers operate within highly volatile macroeconomic environments, meaning a baseline risk level established during a period of high fuel prices and low urban congestion may not transport cleanly to a period of economic expansion and dense traffic. To address this structural reality, Autoregressive Order One priors are implemented on all structural macro coefficients. This specific prior specification is defined mathematically as:
-$$ \delta_{k,t} \sim \mathcal{N}\left(\mu_k + \rho_k(\delta_{k,t-1} - \mu_k), \sigma_{\delta_k}^2\right) $$
-Here, the parameter $\mu_k$ represents the long-run stationary mean of the coefficient, the parameter $\rho_k$ governs the strict persistence of shocks, and the final term captures the innovation variance. This sophisticated prior specifically allows the predictive model to smoothly adapt to shifting macro regimes over time.
-
-A critical and persistent failure mode of naive telematics pricing algorithms is causal confusion. An unconstrained mathematical model may repeatedly observe hard braking events and automatically penalize the gig driver for aggressive and hazardous behavior. However, if that specific hard braking occurs exclusively on heavily deteriorated road surfaces or within specific geographic zones containing uniquely high pedestrian density, the kinematics may actually represent highly defensive driving in a dangerous environment. By utilizing hierarchical geography and platform variables, the sophisticated model isolates the driver's intrinsic behavioral risk from the shared structural risk of their operating environment. If an entire localized cohort suddenly exhibits significantly elevated braking within a specific geohash due to a sudden road closure, the spatial intercept cleanly absorbs this environmental variance. This critical hierarchical mechanism successfully protects the individual driver's personalized modulating variable from an entirely unjustified premium penalty.
-
-While continuous data collection fundamentally enables real-time analytical responses, altering a regulated insurance premium continuously creates highly dangerous operational feedback loops. If an algorithm detects acute fatigue in a driver, immediately raising their insurance premium could severely exacerbate their immediate financial pressures, forcing them to drive significantly longer hours and thereby heavily compounding the very fatigue risk the algorithm identified. To solve this, the proposed framework separates continuous pricing adjustments from immediate behavioral interventions. The sophisticated Bayesian posterior continuously estimates the precise risk state, but acute kinematic triggers are routed strictly to an operational intervention gate rather than triggering an instantaneous pricing update. This intervention gate may automatically mandate a mandatory rest period or temporarily freeze platform dispatch. The actual actuarial tariff is deliberately updated only on defined periodic intervals, smoothing extreme volatility and preventing the model from corrupting its own future training data.
-
-## 6. Hierarchical Bayesian Inference and Dependence Modeling
-
-### 6.1 Asymmetric Copulas
-
-The primary mathematical constraint of running Hierarchical Bayesian modeling in usage-based insurance is maintaining strict computational tractability. While earlier sections correctly modeled frequency and severity as entirely independent statistical distributions, real-world telematics data inherently exhibits strong dependence between the two dimensions. For example, extreme weather conditions simultaneously increase both crash likelihood and ultimate claim severity. To capture this complex dynamic without breaking the established marginal distribution structures, specialized Asymmetric Copulas are employed. Specifically, survival Clayton or Gumbel copulas are utilized to accurately model the joint distribution. This captures severe tail dependence, properly recognizing that the mathematical correlation between frequency and severity is highly asymmetrical and heavily concentrated within extreme stress scenarios. By capturing this joint dependence solely in the statistical tail, the model avoids overestimating the total risk of minor, daily fender benders while preserving the required capital buffer for truly catastrophic, multi-vehicle accidents.
-
-### 6.2 Inference Architecture and Resolution of the Funnel Effect
-
-Hierarchical models dealing with highly sparse data clusters frequently exhibit a pathological mathematical geometry colloquially known as the Funnel effect. As the group-level scale parameter approaches zero, gradient-based samplers struggle to properly explore the narrow neck of the funnel, leading to divergent transitions and severely biased inference. This is definitively resolved by employing a non-centered parameterization, effectively detaching the group-level effects directly from their overarching scale parameter. The raw independent noise components are sampled from a standard normal distribution, mathematically defined as:
-$$ \tilde{\alpha}_j \sim \mathcal{N}(0, 1) $$
-The actual cluster-level effect is then deterministically shifted and scaled via the equation:
-$$ \alpha_j = \mu_\alpha + \sigma_\alpha \cdot \tilde{\alpha}_j $$
-To firmly regularize these scale parameters, specified Half-Student-t priors are utilized. This specific prior permits the model to discover large inter-cluster variance when supported by data, while preventing the sampler from diverging into extreme unphysical values.
-
-To achieve necessary production-grade inference latency, exact Bernoulli-to-Binomial aggregation is applied. For identical observations possessing identically quantized predictors and offsets, the individual likelihoods are collapsed into a single Binomial count defined as:
-$$ K_j = \sum_{i=1}^{n_j} Y_{ij} \sim \operatorname{Binomial}(n_j, \theta_j) $$
-This completely reduces the computational graph size exponentially. For model inference, modern probabilistic programming frameworks deployed directly on high-performance hardware accelerators are leveraged. Finally, rigorous model validation within this architecture extends far beyond traditional ranking metrics. Targeted Posterior Predictive Checks are heavily relied upon to ensure statistical reliability. By repeatedly simulating replicated datasets directly from the posterior predictive distribution, the simulated default rates are continuously compared against empirically observed portfolio outcomes. A robust predictive check properly ensures that the hierarchical model accurately captures both the central tendency of claims and the empirical dispersion of catastrophic events across localized geographic corridors.
-
-The probabilistic programming algorithm implementing the full Markov Chain Monte Carlo specification is defined as follows:
-
-```text
-ALGORITHM: Hierarchical Bayesian Logistic Regression
-
-INPUTS:
-  Y[N]             Bernoulli outcomes at a defined product horizon
-  Q[N, Kz]         Centred, scaled, QR-orthogonalised B-spline basis
-  H_RES[N, Kh]     Cross-fitted residual neural bottleneck
-  X[N, Kx]         Essential contract and product metadata
-  geo_id[N]        Geography hierarchy
-
-PRIORS:
-  alpha                 ~ Normal(0, 1.5)
-  sigma_geo             ~ HalfStudentT(nu=3, scale=s_geo)
-  geo_raw[J]            ~ Normal(0, 1)
-  beta_z, beta_h        ~ Block-shrinkage priors
-
-TRANSFORM:
-  u_geo      = sigma_geo * geo_raw
-
-LINEAR PREDICTOR FOR OBSERVATION i:
-  eta[i] = alpha
-           + u_geo[geo_id[i]]
-           + dot(Q[i], beta_z)
-           + dot(H_RES[i], beta_h)
-           + dot(X[i], delta_metadata)
-
-LIKELIHOOD:
-  Y[i] ~ BernoulliLogit(eta[i])
+```mermaid
+flowchart TB
+    A[Driver activity<br/>vehicle, route, time and conditions] --> B[Event-time ingestion<br/>quality and consent controls]
+    B --> C1[Explicit Telematics<br/>Feature Path]
+    B --> C2[GRU sequence<br/>encoder]
+    C1 --> D[Cross-fitted<br/>residualisation]
+    C2 --> D
+    C1 --> E[Hierarchical Bayesian<br/>frequency-severity model]
+    D --> E
+    E --> F[Exposure-normalised<br/>actuarial relativities]
+    F --> G[Technical premium<br/>and safety actions]
+    E --> H[Predictive loss and<br/>claim-development model]
+    H --> I[Reserves and<br/>economic capital]
+    I --> J[Risk-transfer pricing<br/>and monitoring]
+    H --> K[IFRS 17 cash-flow<br/>measurement interface]
 ```
 
-### 6.3 Non-Linear Spline Modeling
+**Figure 1. From human driving conditions to price, reserves, capital and risk transfer.**
 
-Several critical continuous covariates consistently exhibit highly nonlinear relationships with default probability that simple linear terms cannot accurately capture. To rigorously model this inherent complexity, B-splines are systematically implemented utilizing the precise Cox-de Boor recursive formulation. Specifically, a foundational B-spline of degree $d$ defined over a continuous covariate $x$ relies entirely upon a strictly non-decreasing knot sequence $\xi_0 \leq \xi_1 \leq \ldots \leq \xi_{K+d}$. The base function is mathematically defined as:
-$$ B_{k,0}(x) = \mathbf{1}[\xi_k \leq x < \xi_{k+1}] $$
-The sophisticated recursive expansion is subsequently formulated as:
-$$ B_{k,d}(x) = \frac{x-\xi_k}{\xi_{k+d}-\xi_k}B_{k,d-1}(x) + \frac{\xi_{k+d+1}-x}{\xi_{k+d+1}-\xi_{k+1}}B_{k+1,d-1}(x) $$
-The ultimate resulting polynomial curve mathematically takes the exact form:
-$$ f(x) = \sum_{k=1}^{K}\zeta_k B_{k,d}(x) $$
-To effectively smooth these adjacent coefficients and prevent unidentifiable volatility, a stabilizing autoregressive prior is deliberately applied, defined mathematically as:
-$$ \zeta_k \sim \mathcal{N}(\rho \zeta_{k-1}, \sigma_\zeta^2) $$
-The specific positive innovation scale strictly receives a heavy-tailed Half-Student-t prior, ensuring optimal mathematical regularization while successfully avoiding unwanted forced jumps at internal knots.
+### 1.4 Objectives and scope
 
-The comprehensive portfolio simulation accurately separates parameter uncertainty from correlated outcome simulation through a definitive five-step execution protocol:
+This paper has eight objectives:
 
-1. The hierarchical model parameters and precisely calibrated marginal default probabilities are systematically drawn directly from the Bayesian posterior.
-2. A heavily dependent uniform vector is correctly drawn from the specifically selected asymmetric copula, utilizing a jointly estimated or scenario-conditioned parameter.
-3. The binary default outcome is strictly determined by evaluating whether the dependent uniform draw successfully falls below the previously calibrated marginal probability threshold.
-4. The simulation rigorously draws critical exposure at default, loss given default, recovery timing, and prepayment metrics without double-counting the previously established systematic factors.
-5. The analytical system successfully computes the expected monthly product and aggregated portfolio cash loss, sequentially passing it precisely through the predefined special purpose vehicle financial waterfall mechanism.
+1. Define exposure-consistent claim frequency and conditional-severity models.
+2. Construct transparent frequency, severity and pure-premium modulating variables.
+3. Connect hierarchical Bayes to actuarial credibility and recursive learning.
+4. Integrate explicit telematics variables and neural sequence representations without duplicate ownership.
+5. Establish calibration, uncertainty, fairness and model-governance controls.
+6. Extend the model from expected loss into claim development and reserves.
+7. Measure economic capital and price and monitor risk-transfer structures against gross and net loss distributions.
+8. Describe a production data architecture and a controlled pilot pathway.
 
-### 6.4 MCMC Convergence Diagnostics and Model Validation
+The primary statistical measure is the real-world probability measure, denoted by $\mathbb P$. The paper estimates insured outcomes and operational cash flows from experience under $\mathbb P$. Market-consistent valuation questions may require different measures and assumptions, but they do not alter the physical-measure underwriting model developed here.
 
-Before any posterior summary informs the operational portfolio analysis, inference quality must be verified through rigorous computational statistics. Specifically, the model relies on the rank-normalised Gelman-Rubin convergence statistic ($\hat{R}$) to guarantee that the multi-chain sampling process has successfully mixed. The classical variance-ratio intuition is mathematically formalized as:
-$$ \hat{R} = \sqrt{\frac{\frac{N-1}{N}W + \frac{1}{N}B}{W}} $$
-Values strictly close to one are necessary to confirm convergence. Furthermore, the Effective Sample Size (ESS) corrects for inherent autocorrelation within the Hamiltonian Monte Carlo chains, ensuring sufficient independent draws for tail estimation:
-$$ \text{ESS} = \frac{S}{1 + 2\sum_{k=1}^{\infty} \rho_k} $$
+## 2. Actuarial foundations
 
-Beyond internal sampling diagnostics, exhaustive Posterior Predictive Checks (PPCs) are implemented. If the Bayesian model is correctly specified, it must reproduce the statistical properties of the empirically observed data. The framework relies on five exhaustive PPCs:
+### 2.1 Frequency, severity and aggregate loss
 
-1. **Central Tendency:** The posterior-predictive default-rate distribution is continuously compared with observed rates across time and cohort to detect underlying calibration drift.
-2. **Tail-Risk Cascade Clustering:** Extreme cluster default rates are rigorously probed using the test statistic $T(Y) = \max_{j} \left(\frac{1}{n_j} \sum_{i \in j} Y_{ij}\right)$ to ensure the marginal model captures empirical localized stress without artificially inflating the downstream copula dependence parameters.
-3. **Continuous Predictor Nonlinearity:** The predicted probability is evaluated across observed continuous kinematic inputs to detect residual curvature that would formally necessitate a non-linear spline implementation.
-4. **Cluster Heterogeneity:** Observed between-cluster variation is strictly compared against the posterior-predictive variation to mathematically defend against excessive shrinkage and omitted structural variables.
-5. **Time-Varying Cohort Effects:** Predicted monthly rates are compared by cluster against observed out-of-time empirical rates to aggressively probe the persistence of the autoregressive priors and detect omitted seasonality.
+Non-life pricing commonly decomposes aggregate loss into a claim count and positive claim amounts. Let $N_{it}$ be the number of covered claims for driver $i$ during period $t$, let $Y_{itk}>0$ be the ultimate cost of claim $k$, and let $E_{it}$ be exposure. The driving-related ultimate loss is
 
-Finally, the predictive scoring is continuously benchmarked out-of-time across four distinct discrimination, calibration, and stability metrics. The Kolmogorov-Smirnov (KS) statistic and the Area Under the Receiver Operating Characteristic Curve (AUC-ROC) are utilized to measure ranking discrimination. Simultaneously, the Brier score is utilized to measure the squared probability error encompassing both calibration and resolution, while the Population Stability Index (PSI) monitors structural distributional drift:
-$$ \operatorname{BS} = \frac{1}{N}\sum_{i=1}^{N}\left(p_i^{\mathrm{cal}}-Y_i\right)^2 $$
-$$ \mathrm{PSI} = \sum_{b=1}^{B} (A_b-E_b) \ln\left(\frac{A_b+\varepsilon}{E_b+\varepsilon}\right) $$
-A PSI breach exceeding an internal limit formally triggers an immediate pause in automated retraining, requiring manual diagnosis of the population shift before deployment continues.
+$$
+L^{\mathrm{drive}}_{it}=\sum_{k=1}^{N_{it}}Y_{itk}.
+\tag{1}
+$$
 
-## 7. Regulatory, Accounting, and Fairness Governance
+The conditional expectation follows from the frequency-severity decomposition:
 
-The deployment of continuous telematics underwriting must be circumscribed by rigorous financial accounting standards and ethical governance frameworks. Predictive accuracy cannot supersede regulatory compliance or customer fairness.
+$$
+\mathbb E_{\mathbb P}\!\left[L^{\mathrm{drive}}_{it}\mid\mathcal D_t\right]
+=
+\mathbb E_{\mathbb P}[N_{it}\mid\mathcal D_t]\,
+\mathbb E_{\mathbb P}[Y_{itk}\mid N_{it}>0,\mathcal D_t],
+\tag{2}
+$$
 
-### 7.1 IFRS 17 Alignment and Cash-Flow Isolation
+when the conditional structure makes that product appropriate. Dependence can instead be introduced through shared random effects, copulas, common shocks or a marked point process. Modern actuarial analytics retains the decomposition because frequency and severity respond to different mechanisms and require different validation [6].
 
-The International Financial Reporting Standard 17 (IFRS 17) requires insurers to conceptually distinguish between expected cash flows, the time value of money, and the risk adjustment for non-financial risk [7]. The Bayesian framework naturally aligns with this mandate. The Bayesian probability estimation yields the expected cash flows (pure premium). The posterior Highest Density Interval (HDI) quantifies the uncertainty surrounding this estimate. This uncertainty is then formally translated into the IFRS 17 non-financial risk adjustment. By keeping the neural embeddings orthogonalized, the framework prevents the double-counting of uncertainty that arises when risk margins are implicitly blended into point estimates rather than being recognized as distinct adjustments [7]. Furthermore, the model maintains strict isolation between insurance premium cash flows and lender-owned premium finance receivables. Combining these cash streams obscures the true liquidity profile of the portfolio; thus, policy states, such as active, grace period, and lapse, are tracked independently of the underlying loan status.
+The gross portfolio loss in accounting period $t$ is broader:
 
-### 7.2 Fairness and Proxy Testing
+$$
+L_t^{G}
+=
+\sum_i\sum_{k=1}^{N_{it}}Y_{itk}
++L_t^{\mathrm{cat}}
++L_t^{\mathrm{expense}},
+\tag{3}
+$$
 
-Telematics variables carry the inherent risk of acting as proxies for protected or socioeconomically sensitive characteristics. For example, a model that indiscriminately penalizes late-night driving might disproportionately impact lower-income gig workers who are forced to operate during off-peak hours to maximize platform surge incentives. To mitigate this, fairness controls are implemented. The actuarial modulating variables ($M^{\mathrm{freq}}_{it}$ and $M^{\mathrm{sev}}_{it}$) are subjected to intersectional bias testing across demographic and socioeconomic cohorts prior to deployment. The separation of geography into hierarchical intercepts also ensures that drivers in historically underinvested urban zones are not penalized for the poor infrastructure quality (e.g., potholes causing abrupt accelerometer spikes) of their required operating corridors.
+where catastrophe and claim-expense components are modelled explicitly. Theft, flood, fire while parked and other non-driving coverages may be weakly related or unrelated to distance. Those costs remain outside a driving-behaviour relativity unless evidence supports a defined link.
 
-To successfully execute the Bayesian threshold safely inside a live operational environment, the governance framework mandates a strict three-step automated decision protocol:
+### 2.2 Credibility as disciplined learning from sparse experience
 
-1. A dynamic soft cap rigorously evaluates the fundamental economic expectation, noting that this simple mathematical comparison serves only as a strictly governed input rather than an automatic approval mechanism.
-2. A highly calibrated uncertainty gate continuously monitors the posterior probability distribution. Even if the calculated mathematical mean comfortably satisfies the threshold, an unacceptably high probability of exceeding the defined risk cap immediately triggers a heavily restricted limit, initiates a mandatory manual referral, or temporarily freezes the account entirely.
-3. A formalized portfolio shock review systematically evaluates material deviations inside the cohort-time effect. Any significant geographical anomaly immediately triggers an aggressive internal investigation to quickly isolate whether the deviation reflects a genuine localized economic shock or merely an artificial data collection anomaly.
+Classical credibility addresses a practical tension: the portfolio knows more than a new driver's short record, but the individual's experience should matter as it becomes informative. Bühlmann's linear credibility estimator has the familiar form
 
-## 8. Conclusion
+$$
+\widehat\Theta_i=Z_i\overline X_i+(1-Z_i)m,
+\qquad 0\le Z_i\le1,
+\tag{4}
+$$
 
-The integration of high-frequency telematics into usage-based motor insurance demands an evolution beyond both static GLMs and unconstrained deep learning. This paper has outlined a comprehensive mathematical architecture that marries the predictive power of neural networks with the structural rigor of actuarial science. By defining exposure-normalised actuarial modulating variables and orthogonally residualizing deep neural embeddings, the framework ensures that telematics metrics redistribute risk fairly without inducing stealth inflation. 
+where $m$ is the collective mean and $Z_i$ is the weight attached to the risk's own experience [7]. Bühlmann-Straub extensions allow unequal exposure. Contemporary credibility texts show how the same variance-components logic supports experience rating across heterogeneous volumes [8]. Hierarchical credibility can also be estimated across more than two levels, including driver, fleet, territory and vehicle class [9].
 
-Furthermore, by embedding these variables within a Hierarchical Bayesian Logistic Regression engine, classical Bühlmann credibility is effectively modernized. The Bayesian posterior elegantly handles sparse data cohorts via partial pooling while providing the critical uncertainty quantification necessary for IFRS 17 compliance and real-world policy intervention. Ultimately, this paradigm shift provides insurers with a continuous, transparent, and ethically governed mechanism for pricing motor risk in the gig economy.
+Hierarchical Bayes generalises this idea by assigning probability distributions to latent risk parameters and learning their posterior distributions from observed data. Sparse groups are partially pooled toward relevant portfolio levels; mature groups retain more of their own experience. The result includes a posterior predictive distribution rather than only a weighted point estimate. That distinction matters because price, reserve and capital decisions respond to different parts of the distribution. Bayesian workflow also makes assumptions, prior predictive behaviour and posterior uncertainty visible for review [10].
 
-## References
+### 2.3 Generalised linear models as the interpretable core
 
-[1] Institute and Faculty of Actuaries (IFoA), "Machine Learning in General Insurance Pricing," *The Actuary*, 2023.
-[2] Casualty Actuarial Society (CAS), "Telematics and Machine Learning in Auto Insurance," *Variance Journal*, 2022.
-[3] A. J. McNeil, R. Frey, and P. Embrechts, *Quantitative Risk Management: Concepts, Techniques and Tools*. Princeton, NJ, USA: Princeton University Press, 2015.
-[4] A. Gelman, J. B. Carlin, H. S. Stern, D. B. Dunson, A. Vehtari, and D. B. Rubin, *Bayesian Data Analysis*, 3rd ed. Boca Raton, FL, USA: CRC Press, 2013.
-[5] H. Bühlmann, "Experience Rating and Credibility," *ASTIN Bulletin*, vol. 4, no. 3, pp. 199–207, 1967.
-[6] Casualty Actuarial Society (CAS), "Credibility Theory and Generalized Linear Models," *Variance Journal*, 2021.
-[7] IFRS Foundation, *IFRS 17 Insurance Contracts*. London, U.K.: International Accounting Standards Board, 2017.
-[8] V. Chernozhukov et al., "Double/debiased machine learning for treatment and structural parameters," *The Econometrics Journal*, vol. 21, no. 1, pp. C1–C68, 2018.
+Generalised linear models link an exponential-family response to a linear predictor and remain a central foundation for insurance ratemaking [11]. Their value here is structural: the exposure offset, explicit link function and additive predictor provide a stable base into which nonlinear functions, hierarchical effects and controlled neural corrections can be introduced.
+
+A negative-binomial marginal distribution is useful when claim counts are more variable than a Poisson model permits [12]. A Gamma severity model is useful for positive, right-skewed claim costs, while lognormal, inverse Gaussian, Tweedie and mixture distributions remain alternatives to be selected through empirical comparison. Dependence between longitudinal frequency and severity can be material, so the production model should test shared effects or copula structures rather than assume independence by convention [13].
+
+### 2.4 Premium layers and distinct financial quantities
+
+The model keeps six amounts distinct:
+
+| Quantity | Purpose | Primary owner |
+|---|---|---|
+| Pure premium | Expected insured loss under $\mathbb P$ | Actuarial pricing |
+| Claim expense provision | Expected allocated and unallocated claim expense | Claims and actuarial |
+| Operating expense provision | Acquisition, administration, technology and distribution cost | Finance and pricing |
+| Risk-transfer cost | Expected and risk-loaded cost of reinsurance or other protection | Reinsurance and capital |
+| Capital and contingency provision | Compensation for adverse deviation and capital consumption | Capital and pricing committees |
+| Commercial adjustment | Profit objective, strategy and approved market considerations | Product governance |
+
+Accordingly, a technical and commercial premium can be expressed as
+
+$$
+P^{\mathrm{commercial}}_{it}
+=PP^{\mathrm{drive}}_{it}
++PP^{\mathrm{non-drive}}_{it}
++C^{\mathrm{claim-exp}}_{it}
++C^{\mathrm{op}}_{it}
++C^{\mathrm{risk-transfer}}_{it}
++C^{\mathrm{capital}}_{it}
++M^{\mathrm{commercial}}_{it}.
+\tag{5}
+$$
+
+This identity prevents the behavioural model from absorbing unrelated costs. It also creates an audit trail between observed loss, technical indication, accounting cash flows and the final filed or approved price.
+
+## 3. Canonical hierarchical frequency-severity model
+
+### 3.1 Exposure-consistent claim frequency
+
+Let $\lambda_{it}$ be the expected claim rate per exposure unit and let $\theta_i$ be persistent individual heterogeneity with portfolio mean one. The conditional count model is
+
+$$
+N_{it}\mid\theta_i,\lambda_{it},E_{it}
+\sim\operatorname{Poisson}(E_{it}\lambda_{it}\theta_i),
+\qquad
+\theta_i\sim\operatorname{Gamma}(a_\theta,b_\theta),
+\tag{6}
+$$
+
+using the shape-rate convention. Calibrating $a_\theta=b_\theta$ gives $\mathbb E[\theta_i]=1$. Integrating out $\theta_i$ produces a negative-binomial marginal count distribution. This is preferable to simultaneously including an unexplained driver intercept and a second driver frailty: $\theta_i$ is the single canonical owner of persistent driver-level count heterogeneity.
+
+The dynamic rate predictor is
+
+$$
+\log\lambda_{it}
+=
+\log\lambda_{0,c(i)}
++f_f(X_{it})
++\boldsymbol\beta_{hf}^{\top}\widetilde{\mathbf h}_{it}
++u^{f}_{g(i)}+u^{f}_{v(i)}+\delta^{f}_{t}.
+\tag{7}
+$$
+
+Here $\lambda_{0,c(i)}$ is the base rate for approved tariff cell $c(i)$; $X_{it}$ contains explicit rating variables; $\widetilde{\mathbf h}_{it}$ is the residual neural representation; $u^f_g$ and $u^f_v$ are geography and vehicle-class effects; and $\delta^f_t$ is a controlled calendar or state component. Exposure is outside the rate and inside the Poisson mean. A doubling of distance therefore doubles expected count when the rate is unchanged; it does not make the driver twice as risky per kilometre.
+
+### 3.2 Conditional claim severity
+
+For positive ultimate cost, let $m_{it}$ be expected severity and $\Omega_i$ persistent individual severity heterogeneity. A conjugate specification is
+
+$$
+Y_{itk}\mid\Omega_i,m_{it}
+\sim
+\operatorname{Gamma}\!\left(\kappa,\frac{\kappa}{m_{it}\Omega_i}\right),
+\qquad
+\Omega_i\sim\operatorname{InvGamma}(a_\Omega,b_\Omega),
+\tag{8}
+$$
+
+where the Gamma distribution again uses shape-rate notation. Since $\mathbb E[\Omega_i]=b_\Omega/(a_\Omega-1)$ for $a_\Omega>1$, selecting $b_\Omega=a_\Omega-1$ anchors the prior mean at one.
+
+The severity predictor is
+
+$$
+\log m_{it}
+=
+\log m_{0,c(i)}
++f_s(X_{it})
++\boldsymbol\beta_{hs}^{\top}\widetilde{\mathbf h}_{it}
++u^{s}_{g(i)}+u^{s}_{v(i)}+\delta^{s}_{t}.
+\tag{9}
+$$
+
+Severity data should be consistently defined. The production target can be paid-to-date plus an approved case estimate, an ultimate estimate, or a developed outcome, provided the target date and expense basis are explicit. Large losses may require a mixture, spliced distribution or separate catastrophe treatment. The Gamma specification is the transparent working model, not a universal claim that every motor severity follows one family.
+
+### 3.3 Posterior pure premium
+
+Given information $\mathcal D_t$, the driving pure premium is the posterior expectation
+
+$$
+PP^{\mathrm{drive}}_{it}
+=
+E_{it}\,
+\mathbb E_{\mathbb P}
+\!\left[\lambda_{it}\theta_i m_{it}\Omega_i\mid\mathcal D_t\right].
+\tag{10}
+$$
+
+If posterior dependence is material, the expectation is evaluated jointly rather than as a product of posterior means. The model can share geography, vehicle or common-shock effects across frequency and severity. A dependent longitudinal frequency-severity formulation is particularly valuable where repeated claims and claim size respond to the same unobserved operating regime [13].
+
+Non-driving pure premium is added separately:
+
+$$
+PP^{\mathrm{total}}_{it}
+=PP^{\mathrm{drive}}_{it}+PP^{\mathrm{non-drive}}_{it}.
+\tag{11}
+$$
+
+This protects the intuitive principle that zero kilometres can reduce collision exposure without making theft, fire, weather or fixed coverage obligations disappear.
+
+### 3.4 Worked exposure example
+
+Suppose Amina and Kamau share a base claim rate of 0.08 claims per 10,000 kilometres and a base conditional severity of KES 180,000. During a month, Amina drives 2,000 kilometres and receives posterior multipliers of 0.85 for frequency and 0.95 for severity. Kamau drives 3,200 kilometres and receives multipliers of 1.20 and 1.10. Ignoring frailty uncertainty for the illustration:
+
+$$
+PP_A=0.2\times0.08\times0.85\times180{,}000\times0.95
+=\text{KES }2{,}325.60,
+\tag{12}
+$$
+
+$$
+PP_K=0.32\times0.08\times1.20\times180{,}000\times1.10
+=\text{KES }6{,}082.56.
+\tag{13}
+$$
+
+The difference is not a single behavioural penalty. It decomposes into more exposure, a higher expected count rate per kilometre and a higher expected cost conditional on a claim. That decomposition is the beginning of an explanation a policyholder, actuary and regulator can inspect.
+
+## 4. Exposure-normalised actuarial modulating variables
+
+### 4.1 Raw frequency, severity and pure-premium relativities
+
+Define the posterior rate relativities
+
+$$
+M^{f}_{it}=\frac{\lambda_{it}}{\lambda_{0,c(i)}},
+\qquad
+M^{s}_{it}=\frac{m_{it}}{m_{0,c(i)}},
+\qquad
+M^{pp}_{it}=M^{f}_{it}M^{s}_{it}.
+\tag{14}
+$$
+
+The separate terms support explanation. A high $M^f$ may reflect repeated harsh-event sequences, fatigue or a risky operating window. A high $M^s$ may reflect speed regime, road type, vehicle repair cost or a pattern associated with more forceful impacts. The combined $M^{pp}$ expresses the multiplicative change in driving expected loss before portfolio calibration.
+
+### 4.2 Why residualisation is not tariff calibration
+
+Residualisation answers a representation question: how much of the neural vector can already be predicted from explicit variables? Tariff calibration answers a financial question: does the resulting relativity preserve the approved aggregate expected-loss level within the chosen calibration population? One does not imply the other.
+
+The calibration base uses expected baseline loss weights
+
+$$
+w^{0}_{it}=E_{it}\lambda_{0,c(i)}m_{0,c(i)}.
+\tag{15}
+$$
+
+Within tariff cell $c$ and calibration period $t$, define
+
+$$
+A_{c,t}
+=
+\frac{\sum_{i\in c}w^{0}_{it}M^{pp}_{it}}
+{\sum_{i\in c}w^{0}_{it}},
+\qquad
+M^{pp,*}_{it}=\frac{M^{pp}_{it}}{A_{c,t}}.
+\tag{16}
+$$
+
+It follows exactly that
+
+$$
+\frac{\sum_{i\in c}w^{0}_{it}M^{pp,*}_{it}}
+{\sum_{i\in c}w^{0}_{it}}=1.
+\tag{17}
+$$
+
+The calibrated driving pure premium is
+
+$$
+PP^{\mathrm{drive,*}}_{it}
+=w^{0}_{it}M^{pp,*}_{it}\,
+\mathbb E[\theta_i\Omega_i\mid\mathcal D_t],
+\tag{18}
+$$
+
+with a joint expectation when the frailties are dependent. If the collective frailty means within the cell are not one after posterior updating, the calibration can include them in the numerator so that the financial identity remains exact.
+
+### 4.3 Separate and joint calibration
+
+Frequency and severity can each be normalised when product governance requires separate neutral indices. Joint pure-premium calibration is the primary financial control because it preserves aggregate expected driving loss. Separate calibration is useful for reporting and diagnostic stability:
+
+$$
+M^{f,*}_{it}=\frac{M^f_{it}}{A^f_{c,t}},
+\qquad
+M^{s,*}_{it}=\frac{M^s_{it}}{A^s_{c,t}}.
+\tag{19}
+$$
+
+The chosen population, exposure period, credibility threshold and refresh cadence are contractual model-governance parameters. A small or rapidly changing cell may be normalised at a broader credible level, then constrained by approved caps and floors. Portfolio drift is monitored by comparing raw and calibrated distributions, indicated premium, observed loss and the movement of $A_{c,t}$ over time.
+
+### 4.4 From indicated relativity to customer price
+
+Figure 2 separates statistical indication from commercial price construction.
+
+```mermaid
+flowchart TB
+    A[Base tariff<br/>expected loss] --> B1[Frequency<br/>relativity]
+    A --> B2[Severity<br/>relativity]
+    B1 --> C[Joint pure-premium<br/>relativity]
+    B2 --> C
+    C --> D[Expected-loss weighted<br/>cell calibration]
+    D --> E[Calibrated driving<br/>pure premium]
+    F[Non-driving<br/>expected loss] --> G[Total pure<br/>premium]
+    E --> G
+    G --> H[Claim and<br/>operating expense]
+    H --> I[Risk-transfer and<br/>capital provision]
+    I --> J[Approved commercial<br/>adjustment]
+    J --> K[Customer<br/>premium]
+```
+
+**Figure 2. Premium construction preserves distinct actuarial and commercial layers.**
+
+Customer implementation can use a continuous factor, a bounded band, a renewal score or a bonus-malus transition. Weekly telematics scoring has been proposed as a way to combine timely behavioural evidence with credibility and a bounded bonus-malus structure [14]. The commercial mechanism should match the coverage contract and the insurer's ability to explain and administer changes. Acute safety interventions can be immediate; persistent premium adjustments should follow the approved observation window, credibility standard and notice process.
+
+## 5. Explicit features, neural representations and controlled shrinkage
+
+### 5.1 One owner for each engineered variable
+
+Usage-based motor insurance research shows that mileage, time of use, road context and driving signals can add information beyond traditional rating variables, although performance and interpretation depend on the exposure definition, sample and target [15]. Integration studies also show value in combining traditional and telematics data rather than forcing one source to replace the other [16]. The architecture therefore gives every engineered quantity one canonical owner.
+
+Raw events include GNSS position and speed, accelerometer readings, angular velocity, device health, trip start and end, road context, weather joins, policy status and claims events. They divide into two modelling paths:
+
+| Signal or feature | Canonical path | Modelling role | Operational role |
+|---|---|---|---|
+| Distance, active time and covered days | Exposure service | Offset and earned exposure | Billing and reconciliation |
+| Speed distribution by road class | Explicit Telematics Feature Path | Nonlinear frequency/severity term | Explanation and monitoring |
+| Harsh braking per 100 km | Explicit Telematics Feature Path | Frequency term | Coaching and safety review |
+| Cornering intensity and stability | Explicit Telematics Feature Path | Frequency and severity terms | Safety intervention |
+| Night-driving share | Explicit Telematics Feature Path | Frequency interaction | Work-pattern explanation |
+| Rest-gap and shift-duration measures | Explicit Telematics Feature Path | Fatigue spline and interaction | Rest recommendation |
+| Vehicle diagnostics and sensor quality | Explicit Telematics Feature Path | Eligibility and model-quality terms | Maintenance and fallback |
+| Ordered multichannel event sequence | GRU encoder | Latent temporal representation | None without downstream rule |
+| Claim, policy and recovery events | Claims-development path | Reserving and validation | Claims operations |
+
+The neural branch may observe the same validated raw event stream, but it does not receive the named engineered features as duplicate inputs. For example, the GRU may learn the rhythm of speed and acceleration over time, while the explicit path owns the defined harsh-braking rate. This distinction controls feature duplication and improves explanation.
+
+### 5.2 The GRU as a sequence representation layer
+
+Insurance-pricing benchmarks increasingly compare GLMs, boosting and neural architectures across frequency and severity, with calibration and out-of-sample deviance considered alongside predictive fit [17]. A gated recurrent unit is useful when order and persistence matter: a harsh brake after a long stable period may mean something different from repeated oscillation during an extended shift. The GRU introduced by Cho and co-authors uses reset and update gates to retain or replace information in a hidden state [18]. For telematics, its input can be a fixed-duration sequence of standardised sensor channels and quality masks.
+
+Let $\Phi_{it}\in\mathbb R^d$ be the learned representation for driver-period $(i,t)$. It is a predictive summary, not a tariff on its own. Training targets may include future claim count, claim occurrence, severity proxy, near-miss or representation-learning objectives, provided the final pricing model is validated against insured outcomes. Labels must use a clear prediction cut-off so that information created after the pricing date cannot leak into training.
+
+The encoder design register records:
+
+- event window and sampling frequency;
+- channel definitions and units;
+- missingness and device-quality treatment;
+- trip segmentation and padding;
+- outcome horizon and label construction;
+- training population and exclusions;
+- model version, seed and data snapshot;
+- calibration and out-of-time validation results.
+
+### 5.3 Cross-fitted neural representation residualisation
+
+The explicit variable vector $X_{it}$ and neural representation $\Phi_{it}$ can contain overlapping information. To reduce redundancy, partition the development sample into folds. For observation $(i,t)$ in fold $k$, estimate the conditional representation from all other folds:
+
+$$
+\widehat{\mathbf m}^{(-k)}(X_{it})
+\approx
+\mathbb E[\Phi_{it}\mid X_{it}],
+\tag{20}
+$$
+
+then define
+
+$$
+\widetilde{\mathbf h}_{it}
+=
+\Phi_{it}-\widehat{\mathbf m}^{(-k)}(X_{it}).
+\tag{21}
+$$
+
+This is **cross-fitted neural representation residualisation**. Cross-fitting is used to reduce in-sample leakage from the nuisance model. It is inspired by the sample-splitting discipline used in double/debiased machine learning [19], but the paper does not claim the full Neyman-orthogonal score construction or causal guarantees required for DML inference. The residual vector is interpreted narrowly: it is the part of the representation not predicted by the chosen explicit variables and residualisation model in held-out data.
+
+Residualisation is performed within development folds and repeated inside each outer validation split. Grouping by driver and respecting time prevents the same driver's future sequence from teaching the nuisance model how to residualise that driver's past. Point-in-time feature joins are mandatory.
+
+### 5.4 Optional whitening and what orthogonality means
+
+The neural embeddings are not assumed to be mutually orthogonal. After residualisation, an optional fold-specific whitening transform can improve numerical conditioning:
+
+$$
+\mathbf z_{it}
+=
+\left(\widehat\Sigma_h^{(-k)}+\varepsilon I\right)^{-1/2}
+\widetilde{\mathbf h}_{it}.
+\tag{22}
+$$
+
+Whitening decorrelates coordinates with respect to the estimated fold covariance; it does not remove all nonlinear dependence, establish causal independence or make the dimensions economically interpretable. The transform, eigenvalue floor $\varepsilon$ and retained rank must be learned only on training data and applied unchanged to validation and production observations.
+
+Three diagnostics govern whether whitening is useful:
+
+1. The condition number of the embedding design and posterior geometry.
+2. The stability of coefficients and predictions across folds and refits.
+3. The incremental predictive value after explicit variables, measured on untouched future periods.
+
+If whitening adds complexity without improving stability, residualised but unwhitened embeddings remain the preferred input.
+
+### 5.5 Regularised horseshoe priors for the embedding block
+
+Residualisation reduces overlap; it does not guarantee that every one of $d$ embedding coordinates has useful actuarial signal. A regularised horseshoe prior supplies aggressive global shrinkage, local escape for supported coordinates and a finite slab for weakly identified large coefficients [20]. For the frequency embedding coefficient $\beta_{hf,j}$:
+
+$$
+\beta_{hf,j}\sim\mathcal N(0,\tau_f^2\widetilde\lambda_{f,j}^2),
+\qquad
+\widetilde\lambda_{f,j}^2
+=
+\frac{c_f^2\lambda_{f,j}^2}
+{c_f^2+\tau_f^2\lambda_{f,j}^2},
+\tag{23}
+$$
+
+$$
+\lambda_{f,j}\sim\operatorname{HalfCauchy}(0,1),
+\qquad
+\tau_f\sim\operatorname{HalfNormal}(0,s_f),
+\qquad
+c_f^2\sim\operatorname{InvGamma}(a_c,b_c).
+\tag{24}
+$$
+
+An analogous block is used for severity. Separate global scales $\tau_f$ and $\tau_s$ recognise that a temporal pattern may affect occurrence and cost differently. The expected effective number of nonzero coordinates informs the prior scale rather than defaulting to a diffuse prior.
+
+This construction lowers the chance that correlated embedding coordinates compete to explain the same weak signal. It complements, rather than replaces, residualisation and posterior diagnostics. The explicit feature coefficients receive their own regularising priors, with monotonic or shape constraints where actuarial reasoning supports them.
+
+### 5.6 Hierarchical implementation and posterior computation
+
+Group effects are represented non-centrally when that improves sampling geometry:
+
+$$
+u_g^f=\sigma_g^f z_g^f,
+\qquad z_g^f\sim\mathcal N(0,1),
+\qquad \sigma_g^f\sim\operatorname{HalfNormal}(0,s_g).
+\tag{25}
+$$
+
+Inference reports rank-normalised $\widehat R$, bulk and tail effective sample sizes, Monte Carlo standard errors, divergent transitions and energy diagnostics [21]. Non-centred and centred parameterisations are compared because sparse and data-rich groups can favour different geometries [22]. Posterior predictive checks examine counts, zero proportions, tails, large-loss frequency, group dispersion and temporal persistence. A model is not accepted merely because coefficient intervals are finite.
+
+## 6. Temporal state, dependence and intervention
+
+### 6.1 Persistent risk versus acute state
+
+Pricing and safety operate on different clocks. A sudden fatigue pattern can justify an immediate warning even when it is too transient to support a renewal price change. The model therefore separates:
+
+- a persistent actuarial component, supported by a defined experience window and credibility standard;
+- a short-lived latent state that can influence near-term risk and safety action;
+- a portfolio or common-shock state affecting many drivers at once.
+
+A simple persistent calendar effect can use a stationary autoregression:
+
+$$
+\delta_t^f=\rho_f\delta_{t-1}^f+\epsilon_t^f,
+\qquad
+\epsilon_t^f\sim\mathcal N(0,\sigma_{\delta f}^2),
+\qquad |\rho_f|<1.
+\tag{26}
+$$
+
+Its stationary prior variance is $\sigma_{\delta f}^2/(1-\rho_f^2)$. State-space, hidden Markov or dynamic linear alternatives can be compared when regime switching is evident.
+
+### 6.2 Event clustering and common shocks
+
+Claims and near-misses may cluster after a weather event, platform incentive change or infrastructure disruption. Hawkes processes provide one formal language for self-exciting and mutually exciting event arrivals [23]. They are useful only where excitation improves out-of-time prediction and produces stable parameters; a common exogenous shock may be the better explanation when many drivers are affected simultaneously.
+
+Linear correlation alone is insufficient for skewed and heavy-tailed insurance variables. Dependence analysis should consider rank dependence, tail concentration, copulas and scenario co-movement, with clear recognition that marginal distributions and correlations do not determine a joint distribution outside special families [24]. The candidate dependence layers are:
+
+1. Shared hierarchical effects across frequency and severity.
+2. A common-shock process for weather, road closure, platform or economic disruptions.
+3. A copula joining selected longitudinal or aggregate components.
+4. A marked point process linking occurrence time, reporting delay and payment marks.
+
+The simplest adequately validated layer is selected. Complexity is justified by predictive and decision value, not by mathematical novelty alone.
+
+### 6.3 Decision stack
+
+Posterior estimates enter a separate Credit, Underwriting and Compliance Gate. For insurance use, this gate applies filed or approved rating constraints, coverage rules, data-quality fallbacks, consent status, minimum credibility, caps and floors, and human-review requirements. It also separates premium action from safety action:
+
+```mermaid
+flowchart TB
+    A[Explicit features and<br/>residual neural representation] --> B[Hierarchical posterior<br/>frequency, severity and uncertainty]
+    B --> C{Underwriting and<br/>Compliance Gate}
+    C -->|Persistent, credible evidence| D[Renewal or approved<br/>premium relativity]
+    C -->|Acute safety state| E[Warning, routing or<br/>rest intervention]
+    C -->|Weak data quality| F[Fallback tariff and<br/>data remediation]
+    C -->|Material uncertainty| G[Hold, cap or<br/>human review]
+```
+
+**Figure 3. The decision gate separates statistical prediction, tariff action and safety intervention.**
+
+## 7. Sequential credibility updating
+
+### 7.1 Frequency sufficient statistics
+
+The Gamma-Poisson structure supports transparent recursive learning. If the posterior at the end of period $t-1$ is
+
+$$
+\theta_i\mid\mathcal D_{t-1}
+\sim\operatorname{Gamma}(a_{\theta,i,t-1},b_{\theta,i,t-1}),
+\tag{27}
+$$
+
+and period $t$ contributes count $\Delta N_{it}$ with modelled base exposure-rate $q_{it}=E_{it}\lambda_{it}$, then
+
+$$
+a_{\theta,it}=a_{\theta,i,t-1}+\Delta N_{it},
+\qquad
+b_{\theta,it}=b_{\theta,i,t-1}+q_{it}.
+\tag{28}
+$$
+
+The posterior mean is $a_{\theta,it}/b_{\theta,it}$. A claim-free period increases the rate parameter and can lower the mean, but it never resets the accumulated experience. If a model version changes $\lambda_{it}$ materially, the update ledger retains the rate version and supports controlled restatement or grandfathering.
+
+### 7.2 Severity sufficient statistics
+
+Under the model in (8), define period claim costs $Y_{it1},\ldots,Y_{it,\Delta N_{it}}$. If
+
+$$
+\Omega_i\mid\mathcal D_{t-1}
+\sim\operatorname{InvGamma}(a_{\Omega,i,t-1},b_{\Omega,i,t-1}),
+\tag{29}
+$$
+
+then the recursive update is
+
+$$
+a_{\Omega,it}
+=a_{\Omega,i,t-1}+\kappa\Delta N_{it},
+\qquad
+b_{\Omega,it}
+=b_{\Omega,i,t-1}
++\kappa\sum_{k=1}^{\Delta N_{it}}\frac{Y_{itk}}{m_{it}}.
+\tag{30}
+$$
+
+When no claim occurs, the severity posterior is carried forward. The absence of a claim informs frequency, not conditional severity. Where claim costs are immature, the update can use a governed ultimate estimate and later reconcile development revisions so that the model does not learn from inconsistent maturity.
+
+### 7.3 A practical credibility ledger
+
+Every update stores:
+
+- driver and policy identifiers under the approved pseudonymisation scheme;
+- observation and valuation dates;
+- earned exposure and quality status;
+- claim count, maturity and ultimate-cost basis;
+- prior and posterior sufficient statistics;
+- feature, encoder and actuarial-model versions;
+- calibration population and normalisation factor;
+- resulting relativity, cap or floor and reason codes.
+
+Figure 4 shows the learning loop.
+
+```mermaid
+flowchart TB
+    subgraph A0[Experience and posterior]
+        direction LR
+        A[Prior portfolio and<br/>group distributions] --> B[Earn exposure]
+        B --> C[Observe claims and<br/>claim development]
+        C --> D[Update sufficient<br/>statistics and hierarchy]
+    end
+    subgraph B0[Decision and monitoring]
+        direction RL
+        G[Monitor outcomes,<br/>drift and fairness] --> F[Calibrate relativities<br/>and decisions]
+        F --> E[Posterior predictive<br/>loss distribution]
+    end
+    D --> E
+    G --> A
+```
+
+**Figure 4. Sequential credibility preserves prior evidence while learning from new exposure and loss.**
+
+## 8. Loss emergence and reserve modelling
+
+### 8.1 From insured event to settlement cash flow
+
+Pricing asks what future covered loss is expected from prospective exposure. Reserving asks what future cash flows remain from events that have already occurred by a valuation date. The telematics model can support both, but the data target and time index must change.
+
+For claim $k$ occurring at time $T_{ik}$, define reporting delay $R_{ik}$, payment lags $D_{ikd}$ and incremental payments $P_{ikd}$. Ultimate claim cost is
+
+$$
+Y^{\mathrm{ult}}_{ik}
+=\sum_{d\ge0}P_{ikd}
++A^{\mathrm{claim}}_{ik}
+-S_{ik}-U_{ik},
+\tag{31}
+$$
+
+where $A^{\mathrm{claim}}$ denotes claim-adjustment expense and $S$ and $U$ denote salvage and subrogation or other recoveries under the chosen sign convention. The event, report, estimate, payment, recovery and closure timestamps are retained separately.
+
+### 8.2 Central reserve equation
+
+At valuation date $v$, the central undiscounted unpaid-claim estimate is the conditional expectation of future net payments from events that occurred on or before $v$:
+
+$$
+R_v^{\mathrm{central}}
+=
+\mathbb E_{\mathbb P}\!\left[
+\sum_{i,k:T_{ik}\le v}\sum_{d:t_{ikd}>v}
+P^{\mathrm{net}}_{ikd}
+\,\middle|\,\mathcal F_v
+\right].
+\tag{32}
+$$
+
+The reserve inventory separates:
+
+- **RBNS:** reported claims with remaining payments;
+- **IBNR:** incurred claims not yet reported;
+- **IBNER:** development beyond current case estimates;
+- reopened claims and late adjustments;
+- allocated and unallocated claim expenses;
+- salvage, subrogation and other recoveries;
+- ceded recoverables and counterparty adjustment.
+
+ASOP No. 43 provides a useful professional framework for selecting methods, considering process, parameter and model uncertainty, and presenting an estimate or distribution appropriate to purpose [25]. The Kenyan statutory and accounting basis remains governed by applicable local requirements and the insurer's approved policies.
+
+### 8.3 Granular occurrence-development model
+
+The proposed granular reserve model uses the same exposure and risk architecture to estimate:
+
+1. event occurrence by coverage and cohort;
+2. reporting delay conditional on event and data source;
+3. initial case estimate and subsequent revisions;
+4. payment timing and amount;
+5. closure, reopening, salvage and subrogation;
+6. ceded allocation and recoverability.
+
+Telematics can add occurrence-time and contextual evidence for reported claims and may help estimate unreported events when legally and operationally appropriate. It does not replace claim validation. The reserve model receives frozen, governed features as known at each historical valuation date to prevent hindsight leakage.
+
+### 8.4 Portfolio benchmarks and reconciliation
+
+Granular estimates are reconciled to established aggregate benchmarks. The distribution-free chain-ladder model provides development-factor estimates and a prediction-error framework [26]. The Bornhuetter-Ferguson method blends an a priori expected loss with observed development, which is particularly useful for immature periods [27]. Stochastic reserving methods and over-dispersed Poisson formulations support uncertainty analysis and diagnostics [28]. Occurrence-and-development models provide a direct bridge between pricing and reserving when transaction timing and marks are available [29].
+
+The quarterly reserve pack therefore includes:
+
+- paid and incurred chain-ladder indications;
+- Bornhuetter-Ferguson and expected-loss-ratio indications;
+- the granular posterior central estimate;
+- movement analysis by exposure, frequency, severity, reporting and settlement;
+- back-testing of prior valuations;
+- process, parameter and model uncertainty;
+- gross, ceded and net views;
+- management overlays with owner, evidence and release criteria.
+
+### 8.5 Discounting and claim-cash-flow basis
+
+Discounting is a separate measurement choice. If future claim estimates are discounted, cash-flow timing, yield curve, liquidity characteristics, currency and sensitivity are documented. Professional guidance on discounting claim estimates stresses the basis, timing and recoverables being discounted [30]. The central model first produces nominal payment distributions. Accounting and economic views then apply their approved discount and risk-adjustment bases.
+
+Figure 5 connects occurrence to reserve and subsequent use.
+
+```mermaid
+flowchart TB
+    A[Covered occurrence] --> B[Reported or IBNR]
+    B --> C[Case estimate and<br/>development revisions]
+    C --> D[Incremental payments<br/>and claim expenses]
+    D --> E[Salvage, subrogation<br/>and ceded recovery]
+    B --> F[RBNS, IBNR and IBNER<br/>predictive distribution]
+    C --> F
+    D --> F
+    F --> G[Gross and net reserve]
+    F --> H[One-year reserve risk]
+    F --> I[IFRS 17 incurred-claim<br/>cash-flow interface]
+```
+
+**Figure 5. Claim emergence is modelled as a cash-flow process, not only an ultimate-loss scalar.**
+
+## 9. Economic capital and portfolio resilience
+
+### 9.1 Economic, regulatory, accounting and commercial margins
+
+Four concepts must remain distinct:
+
+- **Regulatory capital** is determined under the applicable supervisory framework.
+- **Economic capital** is the insurer's internal assessment of financial resources needed for its risk appetite and decision horizon.
+- **IFRS 17 risk adjustment** expresses the compensation the insurer requires for bearing non-financial risk in the measurement of insurance contracts.
+- **Commercial contingency or capital provision** is a pricing component approved through product governance.
+
+The IAIS Insurance Core Principles connect risk appetite, risk limits, regulatory capital, economic capital, reinsurance and the own risk and solvency assessment, while requiring material risks and interdependencies to be managed in an integrated framework [31]. The internal model developed here informs those processes; it does not replace the legal capital calculation.
+
+### 9.2 One-year and ultimate loss views
+
+Let $L^{1y}$ be the change in available economic resources over the next year caused by underwriting, reserve, catastrophe, market, counterparty, liquidity, operational and model outcomes under a defined management-action policy. A VaR-based internal capital measure is
+
+$$
+EC_{q}^{\mathrm{VaR}}
+=\operatorname{VaR}_{q}(L^{1y})-\mathbb E[L^{1y}].
+\tag{33}
+$$
+
+A tail-value-at-risk measure is
+
+$$
+EC_{q}^{\mathrm{TVaR}}
+=\operatorname{TVaR}_{q}(L^{1y})-\mathbb E[L^{1y}],
+\qquad
+\operatorname{TVaR}_{q}(L)=\mathbb E[L\mid L\ge\operatorname{VaR}_{q}(L)],
+\tag{34}
+$$
+
+for continuous losses, with the appropriate general definition for distributions containing atoms. VaR is widely used, while coherent-risk-measure theory makes clear why subadditivity and tail behaviour matter for aggregation [32]. Conditional value-at-risk can also be formulated and optimised through convex methods [33].
+
+The one-year view captures new-business underwriting result plus the change in prior-year reserve estimates, investment and operational effects during the year. The ultimate view follows each cohort to settlement. The former supports annual solvency and risk appetite; the latter supports pricing, reinsurance and lifetime profitability. Both are reported because short-duration gig-economy exposure can coexist with long-tailed bodily-injury settlements.
+
+### 9.3 Risk modules
+
+The internal model contains at least the following modules:
+
+1. **Premium risk:** variation in count, severity, mix, exposure and expenses for unearned and future business.
+2. **Reserve risk:** adverse development of claims already incurred.
+3. **Catastrophe and common-shock risk:** flood, civil disruption, road-system events or other accumulations affecting many insureds.
+4. **Reinsurance credit risk:** delay, dispute or default on expected recoveries.
+5. **Market and asset-liability risk:** currency, interest-rate and investment effects on assets and claim cash flows.
+6. **Liquidity risk:** timing mismatch between claim, expense and reinsurance cash flows and liquid resources.
+7. **Operational, cyber and data risk:** outages, fraud, device compromise, data corruption and control failures.
+8. **Model risk:** misspecification, drift, weak extrapolation and implementation error.
+9. **Concentration risk:** platform, geography, vehicle, repair-network or data-provider dependence.
+
+For calibration context, Solvency II's standard approach is associated with a 99.5 percent one-year VaR objective, while the chosen internal metric should reflect the insurer's own risk appetite and jurisdiction [34]. The Insurance Capital Standard demonstrates a factor-and-correlation approach for non-life premium and reserve risk aggregation at an international group level [35]. These are comparators, not automatic Kenyan parameters.
+
+### 9.4 Aggregation and dependence
+
+Four aggregation views are maintained:
+
+- variance-covariance for a transparent first approximation;
+- copula or common-shock simulation for nonlinear and tail dependence;
+- deterministic stress and reverse-stress scenarios;
+- nested simulation when underwriting, reserve, reinsurance and financial states interact materially.
+
+The model prohibits unreviewed diversification credit. Dependence assumptions are calibrated to relevant data, supplemented by structured stress where observations are sparse, and challenged under stronger tail association. A weather shock, for example, may simultaneously raise collision frequency, claim severity, repair time, reserve uncertainty and operational workload. Treating these as independent would overstate diversification.
+
+### 9.5 Capital allocation and decision use
+
+Where the risk measure is differentiable and homogeneous, Euler allocation assigns marginal contributions that add to total capital. For business unit $j$:
+
+$$
+EC_j
+=x_j\frac{\partial\rho(L)}{\partial x_j},
+\qquad
+\sum_j EC_j=\rho(L),
+\tag{35}
+$$
+
+under the regularity conditions of the selected risk measure. Coherent capital-allocation principles support allocations that avoid penalising a subportfolio more than its stand-alone risk contribution [36]. Allocation is reported by product, geography, platform, vehicle class and risk module.
+
+Risk-adjusted return can then be expressed as
+
+$$
+\operatorname{RAROC}_j
+=
+\frac{\mathbb E[\text{underwriting and investment result}_j]}
+{EC_j},
+\tag{36}
+$$
+
+with numerator and denominator definitions fixed by policy. Capital output supports pricing, concentration limits, reinsurance purchase, growth plans and contingency actions. It is not inserted into the neural model as another target.
+
+## 10. Risk-transfer pricing and monitoring
+
+### 10.1 Gross, ceded and net loss
+
+Risk transfer begins with the gross predictive distribution generated by the pricing and reserving architecture. For a per-risk excess-of-loss layer with attachment $A$ and limit $U$, the ceded amount for gross loss $L^G$ is
+
+$$
+L^{\mathrm{ceded}}
+=\min\left((L^G-A)^+,U\right),
+\tag{37}
+$$
+
+and the contractual net loss before counterparty effects is $L^N=L^G-L^{\mathrm{ceded}}$. A counterparty shortfall variable $C$ produces the economic net amount
+
+$$
+L^{N,\mathrm{econ}}=L^G-L^{\mathrm{ceded}}+C.
+\tag{38}
+$$
+
+The same simulation engine can represent quota share, per-risk and catastrophe excess of loss, aggregate stop loss, facultative protection, adverse-development cover, reinstatement premiums and annual aggregate limits.
+
+### 10.2 Technical treaty price
+
+Reinsurance pricing begins with the expected ceded loss, then adds the costs required to supply and administer the layer:
+
+$$
+P^{RI}
+=\mathbb E[L^{\mathrm{ceded}}]
++RL^{RI}+E^{RI}+B^{RI}+RP^{RI}+CM^{RI},
+\tag{39}
+$$
+
+where $RL^{RI}$ is the selected risk load, $E^{RI}$ expenses, $B^{RI}$ brokerage, $RP^{RI}$ expected reinstatement cost and $CM^{RI}$ a capital or capacity margin. Clark's framework remains a practical reference for exposure, experience and layer methods and for consistent loss and expense definitions [37]. Expected layer loss comes from the posterior gross distribution, not a point estimate. Where data are thin, a range of plausible tail parameters is more informative than a single fitted curve.
+
+### 10.3 Treaty choice as a portfolio decision
+
+| Structure | Primary protection | Key model sensitivity |
+|---|---|---|
+| Quota share | Growth, volatility and proportional capital relief | Commission, gross margin and reinsurer alignment |
+| Per-risk excess of loss | Individual severe claims | Severity tail, exposure profile and claims inflation |
+| Catastrophe excess of loss | Event accumulation | Event definition, geospatial accumulation and hours clause |
+| Aggregate stop loss | Adverse annual frequency-severity outcome | Aggregate dependence, attachment and exhaustion |
+| Adverse-development cover | Prior-year reserve deterioration | Claim maturity, commutation and coverage definition |
+
+A treaty can reduce volatility, capital and insolvency risk while also ceding expected profit. Multi-year capital analysis illustrates why reinsurance may improve the distribution and durability of shareholder returns even when the ceded premium exceeds expected ceded loss [38]. The purchase decision compares net expected result, tail capital, liquidity, counterparty exposure and strategic resilience.
+
+### 10.4 Live risk-transfer monitoring
+
+The reinsurance dashboard reports attachment probability, incurred and paid layer loss, limit erosion, exhaustion probability, event aggregation, reinstatement use, gross-to-net loss ratios, recoverable aging, disputes, reinsurer credit, collateral, concentration, exclusions, data-submission compliance and actual-versus-priced trend. Controls reconcile claim-level cessions to the treaty register and general ledger. The IAIS framework expects reinsurance strategy, credit risk and programme controls to be integrated into risk management and capital assessment [31]. A ceded amount becomes an economic benefit only to the extent that the contract responds and the counterparty pays.
+
+### 10.5 Gross-to-net capital feedback
+
+```mermaid
+flowchart TB
+    A[Gross predictive loss<br/>frequency, severity and dependence] --> B[Apply treaty terms<br/>attachments, limits and commissions]
+    B --> C1[Gross loss and reserve]
+    B --> C2[Ceded loss and recoverable]
+    B --> C3[Net retained loss]
+    C2 --> D[Counterparty, collateral<br/>and collection adjustment]
+    C3 --> E[Net reserve and<br/>one-year capital]
+    D --> E
+    E --> F[Capital allocation,<br/>RAROC and pricing]
+    F --> G[Renew retention,<br/>restructure or purchase]
+    G --> B
+```
+
+**Figure 6. Treaty terms transform the gross distribution, net capital and portfolio strategy.**
+
+## 11. Validation, fairness and governance
+
+### 11.1 Validation by model component
+
+A single AUC or accuracy score cannot validate a frequency-severity-reserve-capital system. The validation framework aligns metrics with the statistical target.
+
+**Frequency validation** includes Poisson or negative-binomial deviance, calibration by predicted-risk decile, observed-to-expected counts, zero frequency, dispersion, lift, stability by exposure band and temporal holdout performance.
+
+**Severity validation** includes Gamma or alternative-family deviance, mean calibration, quantile and tail calibration, large-loss capture, residuals by coverage and maturity, and sensitivity to inflation and case-estimate basis.
+
+**Pure-premium validation** includes out-of-sample loss-ratio calibration, ordered Lorenz or lift measures, portfolio balance after calibration, and stability of the indicated premium distribution.
+
+**Reserve validation** includes back-tests by historical valuation date, paid and incurred run-off, one-year claims-development result, prediction-interval coverage, emergence by claim state, and reconciliation to benchmark methods.
+
+**Capital validation** includes probability integral transform or scenario diagnostics for component distributions, tail sensitivity, dependence challenge, stress reproduction, use tests and comparison of forecasted versus realised annual variation.
+
+**Risk-transfer validation** includes historical treaty replay, layer-loss back-testing, attachment and exhaustion calibration, recoverable collection, and gross-to-net reconciliation.
+
+### 11.2 Posterior predictive validation
+
+Posterior predictive checks generate replicated outcomes $\widetilde y$ from the fitted model and compare them with observed data. The review includes central and tail statistics, subgroup patterns, counts per driver, claim-free durations, large-loss frequency and temporal clustering. The model is challenged under prior predictive simulation before fitting and under out-of-time prediction after fitting.
+
+For MCMC estimation, convergence diagnostics in Section 5.6 are necessary but not sufficient. Stable computation can faithfully estimate a poorly specified model. Predictive calibration, residual structure and decision impact determine fitness for use.
+
+### 11.3 Fairness for insurance outcomes
+
+Fairness review begins with the legal and product context, the protected or sensitive attributes relevant to that context, and the consequences of the pricing or intervention decision. Simply omitting a protected attribute does not prevent proxy effects. Discrimination-free insurance-pricing research distinguishes direct use from indirect reconstruction and offers model-agnostic formulations for removing proxy discrimination [39].
+
+Equalized odds was developed for classification decisions and compares error rates conditional on the true binary outcome [40]. It can be useful for a binary claims-intervention classifier, but it is not the sole or automatic fairness metric for a count rate, positive severity or continuous premium. The pricing review therefore uses observed-to-expected count and loss calibration, mean and quantile error, premium-to-risk and error-ratio comparisons, residual and proxy association, distributional change, intersectional analysis where credible, and the stability of explanations, caps and manual-review rates.
+
+Telematics fairness studies illustrate the practical trade-off between risk differentiation and social outcomes in auto insurance [41]. The insurer documents the selected fairness definition, why it fits the decision, what trade-offs it creates and how concerns are remediated. Safety interventions and pricing decisions are tested separately.
+
+### 11.4 Model governance and communication
+
+ASOP No. 56 provides a useful model-governance structure covering intended purpose, data, assumptions, model testing, output validation, controls and communication [42]. ASOP No. 41 reinforces the need to disclose data, assumptions, methods, responsibility and uncertainty in actuarial communications [43]. Applicable Kenyan standards and supervisory expectations remain controlling for local implementation.
+
+The inventory records the model owner, developer, independent validator, purpose, permitted decisions, data sources, target definitions, priors, calibration rules, limitations, validation, fallback arrangements, thresholds, escalation actions and material-change history. Approval is attached to a specific data snapshot, code version, feature register, model object and implementation configuration.
+
+### 11.5 Privacy, consent and automated decisions
+
+Kenya's Data Protection Act establishes principles and rights governing personal-data processing, including provisions relevant to automated decisions and high-risk processing [44]. The telematics service implements data minimisation, purpose limitation, encryption, role-based access, retention limits, pseudonymisation and subject-right workflows. Consent is evaluated within the actual lawful basis and proportionality of each purpose.
+
+A data-protection impact assessment maps collection, enrichment, model use, sharing, retention, intervention and deletion. Drivers receive understandable information about what is observed, how exposure and behaviour influence decisions, when human review is available and how to challenge materially adverse outcomes. A fallback tariff ensures that device failure or temporary data loss does not create an uncontrolled price.
+
+## 12. IFRS 17 measurement interface
+
+### 12.1 Different purposes, governed connections
+
+IFRS 17 governs recognition, measurement, presentation and disclosure of insurance contracts; it is not a ratemaking standard. The accounting model separates liability for remaining coverage from liability for incurred claims and measures fulfilment cash flows using current estimates, discounting where required and a risk adjustment for non-financial risk [45].
+
+The actuarial platform supplies expected claim and expense cash flows, occurrence and payment timing, uncertainty distributions, actual-versus-expected experience, reinsurance cash flows and full model lineage. Accounting policy determines grouping, eligibility for the premium allocation approach, discounting, risk-adjustment technique, acquisition-cash-flow treatment and presentation. A telematics relativity does not directly become a contractual service margin or risk adjustment.
+
+### 12.2 Liability for incurred claims and risk adjustment
+
+A conceptual measurement bridge for incurred claims is
+
+$$
+LIC_v
+=PV_v(\text{future fulfilment cash flows from incurred claims})
++RA_v^{NF},
+\tag{40}
+$$
+
+subject to IFRS 17 and the entity's accounting policies. The risk adjustment represents the compensation the entity requires for bearing non-financial risk [46]. A posterior credible or highest-density interval is evidence about uncertainty; it is not itself the risk-adjustment amount. The accounting technique may use a confidence-level, cost-of-capital or other permitted approach, with required disclosures.
+
+### 12.3 Reinsurance contracts held
+
+Reinsurance contracts held are measured separately from underlying insurance contracts. Expected recoveries, reinsurer non-performance, contract boundaries and recognition follow the reinsurance contract's rights and obligations [47]. The risk-transfer engine supplies claim-level and scenario-level ceded cash flows, while the financial statements apply the accounting measurement and presentation rules.
+
+### 12.4 Controlled accounting hand-off
+
+Every reporting run transfers a signed dataset containing valuation date, portfolio and claim cohorts, gross and ceded cash flows, currency, payment month, scenario, model version, approval status and reconciliation key. Finance reconciles opening to closing balances and actual to expected cash flow. Actuarial and finance jointly approve assumption changes. This turns a sophisticated predictive model into a reproducible accounting input without conflating the two functions.
+
+## 13. Production architecture and controlled pilot
+
+### 13.1 Event-time data architecture
+
+The production architecture uses a durable event log, stateful event-time processing, point-in-time analytical storage and versioned model services. Apache Kafka provides a distributed event-streaming backbone [48]. Apache Flink supports keyed state, event time, watermarks and checkpoint-based recovery for stateful computations [49]. Debezium can capture approved changes from operational systems into event streams [50]. Apache Iceberg provides snapshot-based analytical tables with schema and partition evolution [51]. Equivalent technologies may be selected; the required control properties are more important than the brands.
+
+```mermaid
+flowchart TB
+    A1[Telematics<br/>events] --> B[Schema registry and<br/>durable event log]
+    A2[Policy, billing and<br/>claims changes] --> B
+    A3[Road, weather and<br/>context releases] --> B
+    B --> C[Flink event-time<br/>quality and state]
+    C --> D1[Exposure<br/>ledger]
+    C --> D2[Explicit Telematics<br/>Feature Path]
+    C --> D3[Sequence<br/>windows]
+    D3 --> E[Versioned GRU<br/>inference]
+    D1 --> F[Point-in-time feature<br/>and outcome store]
+    D2 --> F
+    E --> F
+    F --> G[Hierarchical actuarial<br/>training and valuation]
+    G --> H1[Tariff calibration<br/>and decision gate]
+    G --> H2[Reserve, capital and<br/>risk-transfer engines]
+    H1 --> I[Decision and explanation<br/>audit ledger]
+    H2 --> I
+    F --> J[Snapshot lakehouse<br/>replay and validation]
+```
+
+**Figure 7. Production architecture preserves event time, point-in-time correctness and model lineage.**
+
+### 13.2 Data contracts and controls
+
+Every event contains an event identifier, source, subject key, event time, ingestion time, schema version, purpose tag, unit and quality status. Deduplication is idempotent. Watermarks and allowed lateness are defined by event type. Late corrections produce versioned restatements rather than silent mutation.
+
+The exposure ledger reconciles trip fragments, device gaps and policy coverage. Direct sensor writes into a general relational database are replaced by the durable event and quality layer. Operational stores may serve current state, while the analytical lakehouse retains immutable snapshots for replay, training and audit.
+
+### 13.3 Model release pathway
+
+The pilot advances through five gates:
+
+1. **Offline foundation:** reconstruct historical exposure and claims at each valuation date; establish GLM and credibility benchmarks.
+2. **Shadow scoring:** calculate features and posteriors without influencing price or driver action; validate latency, quality and calibration.
+3. **Safety pilot:** deploy selected low-harm interventions with human oversight and measure outcomes.
+4. **Bounded tariff pilot:** apply approved caps, floors, notice periods and fallback rules to a consenting, monitored cohort.
+5. **Portfolio integration:** connect pricing, reserving, capital and risk transfer after independent validation and committee approval.
+
+Each gate has entry criteria, success measures, stop conditions and rollback. The pilot compares a base tariff, an explicit-feature model and an explicit-plus-residual-neural model. This reveals whether the neural block adds stable value after the actuarial variables.
+
+### 13.4 Monitoring dashboard
+
+Daily monitoring covers event volume, device quality, exposure reconciliation, feature freshness, missingness, drift, latency and scoring failures. Monthly actuarial monitoring covers count and severity calibration, relativity distribution, tariff balance, outcome emergence, subgroup error and intervention rates. Quarterly risk monitoring covers reserve run-off, one-year loss change, capital consumption, concentration, treaty erosion and recoverable status.
+
+Thresholds are contractual or policy settings, not universal statistical laws. A breach routes to a named action: investigate, hold a refresh, restrict a feature, increase human review, revert to the fallback tariff, strengthen reserves or reassess risk transfer. The monitoring pack records both the signal and the decision taken.
+
+## 14. Conclusion
+
+Gig-economy motor insurance begins with a human fact: exposure, working conditions and safety state can change more quickly than an annual proposal form. The response is to build a controlled bridge between high-frequency evidence and the established quantities that insurance institutions understand.
+
+That bridge has five load-bearing features. Exposure is explicit. Frequency and conditional severity are modelled separately. Explicit telematics features and neural sequence representations have distinct ownership, with cross-fitted residualisation and regularised horseshoe priors reducing redundant contribution. Hierarchical Bayes turns sparse individual experience into credibility-aware posterior predictions. Expected-loss weighted calibration converts those predictions into exposure-normalised relativities that preserve the approved portfolio foundation.
+
+The same predictive structure becomes more valuable when it continues beyond price. Claim occurrence, reporting and payment development produce RBNS, IBNR and IBNER distributions. Gross and net views support reserves, one-year and ultimate capital, and the pricing and monitoring of risk transfer. IFRS 17 receives governed cash-flow estimates through a separate accounting interface. Safety operations receive acute state signals through a separate decision path.
+
+The architecture tells one continuous story: a driver's operating conditions become validated events; events become exposure and behavioural evidence; evidence becomes credible expected loss; expected loss becomes a calibrated technical indication; claims become settlement cash flows; uncertainty becomes reserve and capital; and selected layers become risk transfer. Each transformation has a defined owner, mathematical meaning, validation test and governance gate. That is how an innovative Insurtech product can remain responsive to daily life and faithful to actuarial discipline.
+
+<div style="page-break-before: always;"></div>
+
+# Appendix A. Mathematical specification and calibration
+
+## A.1 Joint predictor
+
+For outcome block $r\in\{f,s\}$, a compact hierarchical predictor is
+
+$$
+\eta^r_{it}
+=\alpha^r_{c(i)}+f_r(X_{it})
++\boldsymbol\beta_{hr}^{\top}\widetilde{\mathbf h}_{it}
++\mathbf z_{it}^{\top}\mathbf u^r
++\delta_t^r.
+\tag{A1}
+$$
+
+Frequency uses $\lambda_{it}=\lambda_{0,c(i)}\exp(\eta^f_{it})$ and severity uses $m_{it}=m_{0,c(i)}\exp(\eta^s_{it})$. Identifiability constraints centre group effects and time states. Shared random effects may be correlated through an estimated covariance matrix when supported by data.
+
+## A.2 Spline and interaction discipline
+
+Continuous explicit features use predeclared spline bases. Interactions are limited to actuarially plausible pairs, such as night share by shift duration or wet-road exposure by braking instability. Priors shrink departures from linearity. Each retained nonlinear term must improve future-period calibration or decision value and retain an interpretable partial-effect plot.
+
+## A.3 Calibration with posterior uncertainty
+
+For posterior draw $b$, compute raw $M^{pp,(b)}_{it}$ and draw-specific normaliser
+
+$$
+A^{(b)}_{c,t}
+=\frac{\sum_{i\in c}w^0_{it}M^{pp,(b)}_{it}}
+{\sum_{i\in c}w^0_{it}}.
+\tag{A2}
+$$
+
+Then $M^{pp,*,(b)}_{it}=M^{pp,(b)}_{it}/A^{(b)}_{c,t}$. This preserves neutrality within every posterior draw and carries calibration uncertainty into price and capital summaries. Caps and floors are applied through an approved redistribution algorithm that rebalances the uncapped population so that the target remains satisfied where feasible.
+
+## A.4 Posterior decision quantities
+
+The decision layer can consume posterior mean and median pure premium, credible intervals, probability of exceeding an approved threshold, stressed expected loss, credibility measures and reason codes derived from explicit features. Neural coordinates are not presented as customer reason codes. Their incremental effect is summarised for governance through grouped sensitivity, surrogate explanations and counterfactual stability tests.
+
+<div style="page-break-before: always;"></div>
+
+# Appendix B. Streaming state and point-in-time computation
+
+## B.1 Exposure state
+
+For each covered driver-policy pair, streaming state maintains trip start, last accepted event time, accumulated distance, active seconds, quality flags and coverage status. A segment contributes exposure only when coverage and sensor-quality rules are satisfied. Corrections produce adjustment events linked to the original segment.
+
+## B.2 Feature windows
+
+Explicit features are calculated over named windows such as trip, shift, 7-day and 30-day periods. Every record stores window start and end, event-time watermark, source version and completeness. Training joins require `feature_available_time <= decision_time`.
+
+## B.3 Sequence windows
+
+The GRU input builder standardises channels using training-period parameters, adds missingness masks and segments sequences by trip or shift. The inference event stores encoder version, input-window identity, vector hash and quality result. Residualisation and whitening transforms are versioned alongside the actuarial model.
+
+## B.4 Replay and corrections
+
+Snapshot tables retain raw, conformed, feature, decision and outcome layers. A historical replay from a selected snapshot must reproduce exposure, features and model inputs. Differences are reconciled through explicit schema or algorithm versions. This supports validation, reserve back-testing and dispute investigation.
+
+<div style="page-break-before: always;"></div>
+
+# Appendix C. Reserve, capital and risk-transfer calculations
+
+## C.1 Claim cash-flow simulation
+
+For each simulated occurrence, sample reporting delay, initial case state, payment count, payment lags, incremental amounts, closure and recovery. Conditional models can share a latent claim-complexity mark. The simulation retains nominal and discounted cash flows and identifies gross, ceded and net ownership.
+
+## C.2 One-year reserve result
+
+For prior claims, the one-year reserve result at $v+1$ is
+
+$$
+CDR_{v,v+1}
+=R_v-\left(P_{(v,v+1]}+R_{v+1}\right),
+\tag{C1}
+$$
+
+under a consistent sign and discount basis. The predictive distribution of $CDR$ is compared with realised results by origin period, coverage and claim state.
+
+## C.3 Aggregate capital simulation
+
+Each scenario produces assets, premium, expenses, gross claims, reserve movement, reinsurance cash flows, counterparty loss, operational loss and management actions. Available economic resources are evaluated at the beginning and end of the horizon. Capital metrics are calculated from the resulting loss distribution, with scenario weights and dependence parameters stored in the run manifest.
+
+## C.4 Treaty engine acceptance tests
+
+The treaty engine must reproduce hand-calculated examples for attachments, limits, aggregates, reinstatements, commissions and hours clauses. Claim-level cessions must sum to treaty-level totals. Gross minus ceded plus counterparty shortfall must equal economic net loss. Recoverable balances must reconcile to the claim and finance ledgers.
+
+<div style="page-break-before: always;"></div>
+
+# References
+
+[1] Actuarial Standards Board, “ASOP No. 12: Risk Classification (for All Practice Areas),” Dec. 2005, effective May 1, 2006. [Online]. Available: https://www.actuarialstandardsboard.org/asops/risk-classification-practice-areas/
+
+[2] Actuarial Standards Board, “Property/Casualty Ratemaking,” Actuarial Standard of Practice. [Online]. Available: https://www.actuarialstandardsboard.org/asops/propertycasualty-ratemaking/
+
+[3] Republic of Kenya, “Insurance Act, Cap. 487,” Kenya Law, rev. Sep. 15, 2023. [Online]. Available: https://new.kenyalaw.org/akn/ke/act/1985/1/eng%402023-09-15
+
+[4] Republic of Kenya, “Insurance (Motor Vehicle Third Party Risks) Act, Cap. 405,” Kenya Law, rev. Dec. 31, 2022. [Online]. Available: https://new.kenyalaw.org/akn/ke/act/1945/12/eng%402022-12-31
+
+[5] Office of the Data Protection Commissioner, “Guidance Note on Data Protection Impact Assessment,” Nairobi, Kenya, 2024. [Online]. Available: https://www.odpc.go.ke/wp-content/uploads/2024/02/ODPC-Guidance-Note-on-Data-Protection-Impact-Assessment-1.pdf
+
+[6] M. V. Wüthrich and M. Merz, *Statistical Foundations of Actuarial Learning and Its Applications*. Cham, Switzerland: Springer, 2023.
+
+[7] H. Bühlmann, “Experience rating and credibility,” *ASTIN Bulletin*, vol. 4, no. 3, pp. 199-207, 1967, doi: 10.1017/S0515036100008989.
+
+[8] H. Bühlmann and A. Gisler, *A Course in Credibility Theory and Its Applications*. Berlin, Germany: Springer, 2005.
+
+[9] H. Belhadj, V. Goulet, and T. Ouellet, “On parameter estimation in hierarchical credibility,” *ASTIN Bulletin*, vol. 39, no. 2, pp. 495-514, 2009, doi: 10.2143/AST.39.2.2044645.
+
+[10] A. Gelman, J. B. Carlin, H. S. Stern, D. B. Dunson, A. Vehtari, and D. B. Rubin, *Bayesian Data Analysis*, 3rd ed. Boca Raton, FL, USA: CRC Press, 2013.
+
+[11] J. A. Nelder and R. W. M. Wedderburn, “Generalized linear models,” *Journal of the Royal Statistical Society: Series A*, vol. 135, no. 3, pp. 370-384, 1972, doi: 10.2307/2344614.
+
+[12] J. M. Hilbe, *Negative Binomial Regression*, 2nd ed. Cambridge, U.K.: Cambridge University Press, 2011.
+
+[13] P. Shi, X. Feng, and A. Ivantsova, “A dependent frequency-severity approach to modeling longitudinal insurance claims,” *Insurance: Mathematics and Economics*, vol. 87, pp. 115-129, 2019, doi: 10.1016/j.insmatheco.2019.04.004.
+
+[14] J. S. Yanez, M. Guillén, and J. P. Nielsen, “Weekly dynamic motor insurance ratemaking with a telematics signals bonus-malus score,” *ASTIN Bulletin*, vol. 55, no. 1, pp. 1-28, 2025, doi: 10.1017/asb.2024.31.
+
+[15] J.-P. Boucher, S. Côté, and M. Guillén, “Pay-how-you-drive car insurance: From a financial service to a safety tool,” *IATSS Research*, vol. 41, no. 4, pp. 143-151, 2017.
+
+[16] H. Peiris, H. Jeong, J.-K. Kim, and H. Lee, “Integration of traditional and telematics data for efficient insurance claims prediction,” *ASTIN Bulletin*, vol. 54, pp. 263-279, 2024, doi: 10.1017/asb.2024.6.
+
+[17] F. Holvoet, K. Antonio, and R. Henckaerts, “Neural networks for insurance pricing with frequency and severity data: A benchmark study from data preprocessing to technical tariff,” arXiv:2310.12671, 2023. [Online]. Available: https://arxiv.org/abs/2310.12671
+
+[18] K. Cho, B. van Merriënboer, C. Gulcehre, D. Bahdanau, F. Bougares, H. Schwenk, and Y. Bengio, “Learning phrase representations using RNN encoder-decoder for statistical machine translation,” in *Proc. EMNLP*, Doha, Qatar, 2014, pp. 1724-1734, doi: 10.3115/v1/D14-1179.
+
+[19] V. Chernozhukov, D. Chetverikov, M. Demirer, E. Duflo, C. Hansen, W. Newey, and J. Robins, “Double/debiased machine learning for treatment and structural parameters,” *The Econometrics Journal*, vol. 21, no. 1, pp. C1-C68, 2018, doi: 10.1111/ectj.12097.
+
+[20] J. Piironen and A. Vehtari, “Sparsity information and regularization in the horseshoe and other shrinkage priors,” *Electronic Journal of Statistics*, vol. 11, no. 2, pp. 5018-5051, 2017, doi: 10.1214/17-EJS1337SI.
+
+[21] A. Vehtari, A. Gelman, D. Simpson, B. Carpenter, and P.-C. Bürkner, “Rank-normalization, folding, and localization: An improved R-hat for assessing convergence of MCMC,” *Bayesian Analysis*, vol. 16, no. 2, pp. 667-718, 2021, doi: 10.1214/20-BA1221.
+
+[22] Stan Development Team, “Reparameterization: Hierarchical models and the non-centered parameterization,” *Stan User's Guide*. [Online]. Available: https://mc-stan.org/docs/stan-users-guide/efficiency-tuning.html
+
+[23] A. G. Hawkes, “Spectra of some self-exciting and mutually exciting point processes,” *Biometrika*, vol. 58, no. 1, pp. 83-90, 1971, doi: 10.1093/biomet/58.1.83.
+
+[24] P. Embrechts, A. McNeil, and D. Straumann, “Correlation and dependence in risk management: Properties and pitfalls,” in *Risk Management: Value at Risk and Beyond*. Cambridge, U.K.: Cambridge University Press, 2002, pp. 176-223.
+
+[25] Actuarial Standards Board, “ASOP No. 43: Property/Casualty Unpaid Claim Estimates,” June 2007, updated May 2011. [Online]. Available: https://www.actuarialstandardsboard.org/asops/propertycasualty-unpaid-claim-estimates/
+
+[26] T. Mack, “Distribution-free calculation of the standard error of chain ladder reserve estimates,” *ASTIN Bulletin*, vol. 23, no. 2, pp. 213-225, 1993.
+
+[27] R. L. Bornhuetter and R. E. Ferguson, “The actuary and IBNR,” *Proceedings of the Casualty Actuarial Society*, vol. 59, pp. 181-195, 1972.
+
+[28] P. D. England and R. J. Verrall, “Stochastic claims reserving in general insurance,” *British Actuarial Journal*, vol. 8, no. 3, pp. 443-518, 2002, doi: 10.1017/S1357321700003809.
+
+[29] A. Nii-Armah Okine, “Ratemaking in a changing environment,” *ASTIN Bulletin*, vol. 53, no. 3, pp. 596-618, 2023, doi: 10.1017/asb.2023.23.
+
+[30] Actuarial Standards Board, “ASOP No. 20: Discounting of Property/Casualty Claim Estimates,” effective June 1, 2026. [Online]. Available: https://www.actuarialstandardsboard.org/asops/discounting-of-property-casualty-claim-estimates/
+
+[31] International Association of Insurance Supervisors, *Insurance Core Principles and Common Framework for the Supervision of Internationally Active Insurance Groups*. Basel, Switzerland, Dec. 2024. [Online]. Available: https://www.iais.org/uploads/2024/12/IAIS-ICPs-and-ComFrame-adopted-in-December-2024.pdf
+
+[32] P. Artzner, F. Delbaen, J.-M. Eber, and D. Heath, “Coherent measures of risk,” *Mathematical Finance*, vol. 9, no. 3, pp. 203-228, 1999, doi: 10.1111/1467-9965.00068.
+
+[33] R. T. Rockafellar and S. Uryasev, “Optimization of conditional value-at-risk,” *Journal of Risk*, vol. 2, no. 3, pp. 21-41, 2000.
+
+[34] Committee of European Insurance and Occupational Pensions Supervisors, *Calibration Paper: Solvency II*. Frankfurt, Germany, Apr. 2010. [Online]. Available: https://register.eiopa.europa.eu/CEIOPS-Archive/Documents/Advices/CEIOPS-Calibration-paper-Solvency-II.pdf
+
+[35] Bank for International Settlements, “ICS: Non-life insurance risk charges,” FSI Executive Summary, Apr. 2020. [Online]. Available: https://www.bis.org/fsi/fsisummaries/ics_nonlife_risk.htm
+
+[36] M. Denault, “Coherent allocation of risk capital,” *Journal of Risk*, vol. 4, no. 1, pp. 1-34, 2001.
+
+[37] D. R. Clark, *Basics of Reinsurance Pricing*, rev. ed. Casualty Actuarial Society, 2014. [Online]. Available: https://www.casact.org/sites/default/files/2021-03/8_Clark.pdf
+
+[38] I. Robbin and A. Malhotra, “Modeling the impact of capital management and reinsurance on long-term profitability,” *CAS Forum*, Summer 2023. [Online]. Available: https://forum.casact.org/article/83958-modeling-the-impact-of-capital-management-and-reinsurance-on-long-term-profitability
+
+[39] M. Lindholm, R. Richman, A. Tsanakas, and M. V. Wüthrich, “Discrimination-free insurance pricing,” *ASTIN Bulletin*, vol. 52, no. 1, pp. 55-89, 2022, doi: 10.1017/asb.2021.23.
+
+[40] M. Hardt, E. Price, and N. Srebro, “Equality of opportunity in supervised learning,” in *Advances in Neural Information Processing Systems 29*, 2016, pp. 3315-3323. [Online]. Available: https://papers.nips.cc/paper_files/paper/2016/hash/6a9659feb1216f14f7384ba499518b38-Abstract.html
+
+[41] Casualty Actuarial Society, *Balancing Risk Assessment and Social Fairness: An Auto Telematics Case Study*. Arlington, VA, USA, 2024. [Online]. Available: https://www.casact.org/sites/default/files/2024-08/Balancing_Risk_Assessment_and_Social_Fairness_an_Auto_Telematics_Case_Study.pdf
+
+[42] Actuarial Standards Board, “ASOP No. 56: Modeling,” Dec. 2019. [Online]. Available: https://www.actuarialstandardsboard.org/asops/modeling/
+
+[43] Actuarial Standards Board, “ASOP No. 41: Actuarial Communications,” Dec. 2010, effective May 1, 2011. [Online]. Available: https://www.actuarialstandardsboard.org/asops/actuarial-communications/
+
+[44] Republic of Kenya, “Data Protection Act, No. 24 of 2019,” Kenya Law. [Online]. Available: https://new.kenyalaw.org/akn/ke/act/2019/24/eng%402019-11-25
+
+[45] IFRS Foundation, *IFRS 17 Insurance Contracts*. London, U.K., 2022. [Online]. Available: https://www.ifrs.org/content/dam/ifrs/publications/pdf-standards/english/2022/issued/part-a/ifrs-17-insurance-contracts.pdf?bypass=on
+
+[46] IFRS Foundation, “IFRS 17 Insurance Contracts: Key terms.” [Online]. Available: https://www.ifrs.org/supporting-implementation/supporting-materials-by-ifrs-standards/ifrs-17/key-terms/
+
+[47] IFRS Foundation, *IFRS 17 Pocket Guide on Reinsurance Contracts Held*. London, U.K., 2018. [Online]. Available: https://www.ifrs.org/content/dam/ifrs/supporting-implementation/ifrs-17/ifrs-17-pocket-guide-on-reinsurance-contracts-held.pdf
+
+[48] Apache Software Foundation, “Apache Kafka documentation.” [Online]. Available: https://kafka.apache.org/documentation/
+
+[49] Apache Software Foundation, “Apache Flink: Stateful stream processing and event time.” [Online]. Available: https://nightlies.apache.org/flink/flink-docs-stable/docs/
+
+[50] Debezium Community, “Debezium documentation.” [Online]. Available: https://debezium.io/documentation/reference/stable/
+
+[51] Apache Software Foundation, “Apache Iceberg documentation.” [Online]. Available: https://iceberg.apache.org/docs/latest/

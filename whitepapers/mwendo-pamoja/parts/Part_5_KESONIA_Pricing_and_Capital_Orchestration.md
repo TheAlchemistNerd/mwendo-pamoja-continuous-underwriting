@@ -40,7 +40,17 @@ Where:
 >
 > **$K_{\mathrm{cap}}$:** Prudential capital requirement under the banking partner's applicable approach.
 >
-> **$m_A,m_B$:** SPV note margins. **$EL$:** expected loss. **$CoC$:** cost of capital. **$OpEx$:** allocated operating cost. The bank may use only approved regulatory PDs for capital; the platform's underwriting PD does not automatically lower capital.
+> **$m_A$:** Class A SPV note margin.
+>
+> **$m_B$:** Class B SPV note margin.
+>
+> **$EL$:** Expected loss for the stated purpose and horizon.
+>
+> **$CoC$:** Cost of capital.
+>
+> **$OpEx$:** Allocated operating cost.
+>
+> The bank may use only approved regulatory PDs for capital; the platform's underwriting PD does not automatically lower capital.
 
 Mwendo Pamoja does not need to discredit every scorecard to make its case. Static and bureau-based models remain useful when they are well calibrated and governed. The platform's contribution is narrower and more valuable: it gives the lender a higher-frequency view of an income-generating vehicle, its operator, and the linked cash-flow obligations. That evidence can improve the expected-loss component of pricing and can show when an intervention is more rational than a punitive price increase.
 
@@ -222,11 +232,83 @@ FROM CompoundedRates;
 The calculation service emits the factor and annualised rate with lineage and validation status. The product ledger then applies the contract's treatment of premium, floor, cap, rounding, and day count to produce an authorised accrual event; D365 receives the resulting accounting entry. A contractual premium may accrue on a simple, compounded, or other specified basis, so it is not blindly added to an already annualised number. The customer premium is $K_{\mathrm{RBCP}}$, not an unqualified generic "K."
 
 ## 2. SPV Financial Modeling and Capital Orchestration (Basel IV, IFRS 9, IFRS 17)
-### 2.1. Orchestrating Capital Under KESONIA Volatility
+### 2.1. From Borrower Posterior to the SPV Cash-Flow Distribution
 
 The SPV is a ring-fenced financing vehicle proposed to purchase eligible KES receivables. Its total capitalisation is USD 9 million equivalent, not USD 9 million of senior debt. Customer pricing, note pricing, and the waterfall remain distinct.
 
-#### 2.1.1. Net Interest Margin (NIM) Compression Risk vs. Equity Absorption
+The SPV does not purchase a PD. It purchases an eligible receivable whose contractual cash flow can be accelerated, delayed, cured, modified, prepaid, defaulted, refunded, recovered, or written off. The bridge from underwriting to project finance therefore preserves the whole path from the driver-product-risk episode to monthly cash.
+
+For each posterior and economic scenario draw, the engine:
+
+1. starts with the product-specific fixed-horizon HLR probability and, where approved, a reconciled marginal survival path;
+2. projects scheduled balance, undrawn commitment, amortisation, prepayment, and stressed revolving drawdown to obtain EAD by month;
+3. simulates or scenario-sets default, cure, modification, and closure transitions;
+4. projects ordinary collections, recovery amount, recovery expense, and recovery lag;
+5. models IPF cancellation and an eligible net refund separately from ordinary recovery and from insurer-owned premium cash;
+6. aggregates principal, interest, fee, recovery, refund, and cost cash flows by product cohort; and
+7. passes the cohort cash through eligibility, OC, CRA, fees, debt service, triggers, and the contractual waterfall.
+
+For draw \(s\), monthly net asset cash is
+
+$$
+\begin{aligned}
+NCF_m^{(s)} ={}& \mathrm{Collections}_m^{(s)}
+                 + \mathrm{Recoveries}_m^{(s)} \\
+               &+ \mathrm{IPFRefunds}_m^{(s)}
+                 - \mathrm{Purchases}_m^{(s)} \\
+               &- \mathrm{Servicing}_m^{(s)}
+                 - \mathrm{WorkoutCosts}_m^{(s)}.
+\end{aligned}
+$$
+
+The waterfall converts \(NCF_m^{(s)}\) into note interest, principal, reserve cure, sweeps, and residual distributions. Loss is measured at several destinations: borrower-level expected loss for pricing, probability-weighted discounted cash shortfall for IFRS 9, one-year loss for capital planning, ultimate loss for full cohort economics, and tranche loss after structural protection. These quantities share source cash flows but retain separate purpose, horizon, measure, discounting, and owner.
+
+**Figure 2A: From Borrower Posterior to SPV Cash-Flow Distribution**
+
+```{.mermaid layout=fullpage}
+flowchart TB
+    subgraph U["1. Underwriting and exposure path"]
+        direction LR
+        A[Calibrated HLR PD<br/>and posterior uncertainty] --> B[Timing reconciliation<br/>fixed-horizon PD and survival challenger]
+        B --> C[Monthly EAD and utilisation<br/>by product and cohort]
+    end
+
+    subgraph CFS["2. Borrower states and asset cash flows"]
+        direction LR
+        D[Default, cure, modification<br/>and prepayment states] --> E[Collections, recoveries,<br/>IPF refunds, servicing and workout costs]
+        E --> F[Monthly net asset cash<br/>and product-cohort distributions]
+    end
+
+    subgraph S["3. Structural protection and investor outcomes"]
+        direction LR
+        G[Eligibility tests,<br/>OC and CRA requirements] --> H[Contractual SPV waterfall<br/>fees, interest, principal and sweeps]
+        H --> I[Class A, B and C<br/>cash, loss and residual distributions]
+    end
+
+    U --> CFS --> S
+
+    classDef stage fill:#F3F0FF,stroke:#7A6FF0,stroke-width:1.5px,color:#1F2937;
+    class A,B,C,D,E,F,G,H,I stage;
+```
+
+Portfolio dependence is applied after observed common factors and hierarchical effects have been represented. The simulation distinguishes parameter uncertainty, idiosyncratic outcome risk, systematic scenario risk, residual dependence, and model-form uncertainty. A common fuel or platform shock is not independently loaded into PD, LGD, recovery delay, and the copula without a documented mapping.
+
+The lender pack reports both **one-year loss**, which supports annual capital and liquidity decisions, and **ultimate loss**, which follows each purchased cohort through final recovery. For tranche \(k\) with attachment \(A_k\) and exhaustion \(E_k\), scenario loss allocation is
+
+$$
+L_k^{(s)}
+=
+\min\left\{
+\max\left(L_{\mathrm{pool}}^{(s)}-A_k,0\right),
+E_k-A_k
+\right\}.
+$$
+
+Reverse stress solves for combinations of default timing, drawdown, recovery delay, refund haircut, collection interruption, basis shock, and concentration that first exhaust Class C, then impair Class B, breach the CRA or OC tests, and finally expose Class A principal. The result is a decision surface for eligibility, reserve, advance rate, concentration, and intervention funding rather than a single severe-case percentage.
+
+### 2.2. Orchestrating Capital Under KESONIA Volatility
+
+#### 2.2.1. Net Interest Margin (NIM) Compression Risk vs. Equity Absorption
 The canonical asset side is KES customer pricing, while Class A is compounded KESONIA plus \(m_A\). Class B has a negotiated KES return. Differences in reset frequency, floors, product mix, collections, defaults, fees, and cash drag still create NIM risk:
 
 1. **Upward-rate shock:** Model contractual asset and liability resets, affordability, support costs, defaults, and Class C availability. Senior protection is calculated, not presumed.
@@ -234,7 +316,7 @@ The canonical asset side is KES customer pricing, while Class A is compounded KE
 
 **The treasury response:** Scenario analysis, pricing governance, product mix, cash buffers, note terms, and, where economical, actual hedging manage basis risk. A model forecast or customer repricing rule is not an endogenous hedge.
 
-#### 2.1.2. Dynamic Cash Reserve Accounts (CRA)
+#### 2.2.2. Dynamic Cash Reserve Accounts (CRA)
 
 **Figure 2: Dynamic SPV Capital Defense**
 
@@ -264,7 +346,7 @@ A Clayton copula can be one candidate for lower-tail dependence, such as simulta
 
 
 
-#### 2.1.3. Project Finance Structure & Capital Stack
+#### 2.2.3. Project Finance Structure & Capital Stack
 
 The primary case is a **USD 9,000,000 equivalent SPV funded and serviced in KES**, subject to true-sale, security, account-control, servicing, tax, and insolvency analysis. A 75% total-capital advance-rate convention implies USD 12 million equivalent of eligible receivables at closing, while OC is measured separately against Class A plus Class B.
 
@@ -285,7 +367,7 @@ Class A's 1.25x minimum OC and three-month CRA are proposed contractual protecti
 
 *Separately from the SPV waterfall, the planning case includes a **USD 1,000,000 equivalent HoldCo facility**, creating a USD 10 million consolidated funding narrative.*
 
-#### 2.1.3.1. Weighted funding hurdle
+#### 2.2.3.1. Weighted funding hurdle
 
 For the SPV cash-flow model, the useful quantity is a formula-driven weighted cash cost by class, kept distinct from a corporate WACC:
 
@@ -309,7 +391,7 @@ Y_{\mathrm{asset},t}^{\min}
 H_t+EL_t+OpEx_t+Fees_t+CashDrag_t+Buffer_t.
 $$
 
-#### 2.1.4. Macroeconomic Stress Testing and Asset Resilience
+#### 2.2.4. Macroeconomic Stress Testing and Asset Resilience
 
 The minimum OC covenant is 1.25x. The initial illustrative ratio of 1.4815x follows mechanically from USD 12 million equivalent of eligible receivables divided by USD 8.1 million equivalent of Class A plus Class B, not from Bayesian underwriting. Later ratios must be produced by the monthly cohort and waterfall model. The table retains scenario targets pending that calculation:
 
@@ -323,23 +405,23 @@ The minimum OC covenant is 1.25x. The initial illustrative ratio of 1.4815x foll
 
 The scenario percentages are model inputs, not portfolio forecasts. Early amortisation begins only when the executed covenant formula is breached. The cohort model must calculate collections, defaults, recoveries, reserve movements, and debt balances before assigning the later-period OC ratio or investor loss.
 
-### 2.2. Regulatory Capital Synergies (Basel IV and IFRS 17)
+### 2.3. Regulatory Capital Synergies (Basel IV and IFRS 17)
 
 The platform can provide governed data, models, and reports to support partner analysis. It does not sell guaranteed regulatory-capital optimisation.
 
-#### 2.2.1. Basel IV Advanced IRB and Output Floors
+#### 2.3.1. Basel IV Advanced IRB and Output Floors
 The bank classifies exposures and determines the applicable standardised or authorised IRB approach. The platform's product label does not settle prudential classification.
 
 Mwendo Pamoja can provide the bank with versioned posterior PDs, uncertainty, loss estimates, data lineage, calibration results, and monitoring reports. Explanation tools such as SHAP can assist investigation, but they do not prove stability, absence of bias, or regulatory acceptability. The partner bank's independent validation function determines whether any model can be used in a prudential process. SR 11-7 is cited as comparative model-risk guidance rather than Kenyan law.
 
 Intervention evidence can inform internal stress and model validation. It does not automatically justify a lower prescribed correlation or capital requirement.
 
-#### 2.2.2. IFRS 17 and Onerous Contract Testing
+#### 2.3.2. IFRS 17 and Onerous Contract Testing
 For a licensed insurer issuing the underlying commercial motor policies, IFRS 17 requires groups of insurance contracts to be assessed and accounted for under the applicable measurement model, including recognition of losses for onerous groups where the standard's conditions are met.
 
 The insurer's actuarial process may use validated telematics and exposure evidence, but credit PD and a latent fatigue representation do not directly predict an onerous group. The insurer owns grouping, fulfilment cash flows, risk adjustment, PAA eligibility, loss-component assessment, approval, and journal instruction. D365 records the approved result.
 
-(see **Figure 1** and **Figure 2** in Sections 1.2 and 2.1.2 respectively).
+(see **Figure 1** and **Figure 2** in Sections 1.2 and 2.2.2 respectively).
 
 ## 3. Enterprise Accounting Mechanics: IFRS 9 EIR and Contract Modifications
 

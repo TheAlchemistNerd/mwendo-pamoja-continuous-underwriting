@@ -8,6 +8,8 @@ date: "24 August 2026"
 
 This document specifies how source events become reproducible neural representations and Explicit Liquidity Features. It ends at the versioned input contract consumed by the hierarchical logistic regression in Part 2b. It does not define final credit rules, financial-accounting authority, or regulatory obligations.
 
+The observation-unit key, five connected ledgers, clock semantics, P-spline artifact metadata, and online scoring contract are governed jointly with `CREDIT_RISK_MODEL_AND_LOSS_ARCHITECTURE_SPECIFICATION.md`.
+
 The architecture follows seven principles:
 
 1. **Availability-time correctness:** A historical score uses only information actually available at that decision time.

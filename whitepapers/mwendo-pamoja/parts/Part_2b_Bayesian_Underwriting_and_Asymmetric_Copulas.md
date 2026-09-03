@@ -20,6 +20,22 @@ The Hierarchical Bayesian Logistic Regression translates those inputs into a pos
 
 The human use of that uncertainty is central. A thin-file driver should not be described as unsafe merely because the model knows less. The posterior and its data-quality context move to a separate Credit Policy and Compliance Gate, which can select a smaller limit, request another lawful signal, use an explicit-only fallback, refer the case, or decline where the product rule requires it.
 
+### 1.1.1. Observation unit, risk episode, and horizon
+
+The model does not score an abstract driver in isolation. Its atomic record is a driver-product-risk episode at a decision time, denoted \((i,p,e,t)\). The episode identifies the contract or facility, product, observation date, decision purpose, performance horizon, exposure state, intervention history, and label-maturity date. A seven-day operating microloan, a revolving line, and an IPF receivable can therefore share a driver while retaining different horizons, EAD dynamics, cure rules, recovery paths, and default definitions.
+
+For a fixed horizon \(H_p\), the champion HLR outcome is
+
+$$
+Y_{i,p,e,t}^{(H_p)}
+=
+\mathbf 1\!\left\{\tau_{i,p,e}-t\le H_p\right\},
+$$
+
+where \(\tau_{i,p,e}\) is the first event time satisfying the approved product default definition. Only labels mature by the training cutoff are treated as observed binary outcomes. Open or right-censored episodes feed the timing challenger described later; they are not recoded as successful repayments. Repeated decisions from one driver are kept in the same validation unit so that a later record cannot leak the driver's outcome into an earlier fold.
+
+This definition makes two outputs complementary rather than competitive. The HLR estimates calibrated default probability at a decision-relevant horizon. A survival challenger estimates the path and timing of default. Both use the same product definitions and event ledgers, and their overlapping horizon probabilities must reconcile within approved tolerances.
+
 ## 1.2. The Partial Pooling Framework and Model Taxonomy
 
 The choice of partial pooling, hierarchical Bayesian modeling, over alternative approaches requires precise justification, since it is a non-trivial modeling decision with substantial implications for both predictive performance and regulatory acceptability.
@@ -85,7 +101,7 @@ The blocks have different jobs:
 
 - \(\alpha^{(p)}\) is the product intercept.
 - \(a_{g[i]}^{(p)}\), \(b_{\ell[i]}^{(p)}\), and \(c_{t[i]}^{(p)}\) are centered, partially pooled geography, platform, and cohort-time effects.
-- \(\mathbf q_i=Q(\mathbf z_i)\) is a centered and QR-orthogonalised B-spline basis of the Explicit Liquidity Features.
+- \(\mathbf q_i=Q(\mathbf z_i)\) is the centred, penalty-compatible P-spline design of the Explicit Liquidity Features.
 - \(\widetilde{\mathbf h}_i\) is the neural representation after out-of-fold residualisation against explicit liquidity and metadata.
 - \(\boldsymbol\psi_i\) contains a small pre-registered interaction set under strong heredity.
 - \(\mathbf m_i\) contains approved metadata and data-quality terms that are neither neural nor liquidity metrics.
@@ -125,7 +141,7 @@ Calibration is part of the model, not a cosmetic report. The decision service re
 
 This specification deliberately avoids cluster-specific coefficient vectors over the full neural embedding. With limited defaults, that construction would multiply a high-dimensional identifiability problem across clusters. Partial pooling is concentrated in interpretable intercepts and a small number of pre-registered slopes where the data supports them.
 
-## 1.4. Nonlinear Functional Forms: B-Splines as Smooth Alternatives to Binning
+## 1.4. Governed P-Splines for Nonlinear Liquidity Effects
 
 Several key continuous covariates exhibit strongly nonlinear relationships with default probability that linear terms cannot capture:
 
@@ -142,44 +158,43 @@ $$
 
 where $F_i(y_i^-)$ is the probability strictly below the observed outcome. Under correct specification these residuals should be approximately standard normal, subject to estimation and dependence [4]. Residual structure, calibration curves, partial-residual plots, and out-of-time performance can motivate a spline. Binning is used for visual diagnostics with uncertainty and adequate counts, not as the sole test.
 
-A B-spline of degree $d$ over a continuous covariate $x$ is defined by a non-decreasing knot sequence $\xi_0\le\xi_1\le\ldots\le\xi_{K+d}$ and $K$ basis functions with the Cox-de Boor recursive definition [5]:
+The governed main effect is a P-spline: a moderately rich B-spline basis plus an explicit difference penalty [21]. For feature \(x\),
 
-$$B_{k,0}(x) = \mathbf{1}[\xi_k \leq x < \xi_{k+1}]$$
 $$
-B_{k,d}(x)
+f(x)=\sum_{k=1}^{K}B_{k,d}(x)\zeta_k,
+$$
+
+with second-order penalty
+
+$$
+\Delta^2\zeta_k
 =
-\frac{x-\xi_k}{\xi_{k+d}-\xi_k}B_{k,d-1}(x)
-+
-\frac{\xi_{k+d+1}-x}{\xi_{k+d+1}-\xi_{k+1}}B_{k+1,d-1}(x),
+\zeta_k-2\zeta_{k-1}+\zeta_{k-2},
+\qquad
+\Delta^2\boldsymbol\zeta
+\sim
+\mathcal N(\mathbf 0,\tau_f^2\mathbf I).
 $$
 
-with a fraction defined as zero when its denominator is zero.
+The basis controls representation; the penalty controls roughness. This reduces sensitivity to a single small knot set and gives the model a sparse Gaussian coefficient block that works naturally with the hierarchical inference described in Section 2. Knot number, degree, boundary knots, penalty order, centring constraint, smoothing-scale prior, validated support, clipping rule, and missingness treatment are fixed from development data and stored with the signed artifact.
 
-The resulting $f(x)=\sum_{k=1}^{K}\zeta_kB_{k,d}(x)$ is a piecewise polynomial of degree $d$. At a simple interior knot it has continuity through derivative order $d-1$; repeated knots reduce continuity. In contrast, a binned single-variable effect is piecewise constant unless further structure is added. B-splines avoid forced jumps at ordinary internal knots, but knot placement, boundary handling, shrinkage, and extrapolation still affect the fitted curve.
+The realised smooth is centred over the development observations so its average level does not compete with the intercept. Numerical conditioning may use a QR or eigen reparameterisation, but the transform must preserve the penalty's null space. Orthogonalising the basis without transforming the penalty would change the prior and is therefore not permitted. The reported effect is back-transformed to the original feature scale with posterior uncertainty.
 
-Adjacent B-spline bases overlap, so independent diffuse coefficients can create an unnecessarily rough and weakly identified curve. A first-order random-walk or AR(1) prior can regularise adjacent coefficients. This is a smoothing choice, not an out-of-distribution defence by itself.
-
-One candidate specification uses an **autoregressive order 1 prior** [6]:
-
-$$\zeta_k \sim \mathcal{N}(\rho \zeta_{k-1}, \sigma_\zeta^2), \quad k = 2, \ldots, K$$
-
-An AR(1) prior smooths adjacent coefficients when the coefficient index has an appropriate ordering. It is not a universal out-of-distribution kill-switch, and B-splines outside their boundary knots require an explicit extrapolation rule. Production therefore clips to validated support, adds an out-of-range indicator, widens uncertainty, and sends the action to the policy gate.
-
-The innovation variance $\sigma_\zeta^2$ controls the degree of local variation: as $\sigma_\zeta\to0$, adjacent coefficients are pulled toward the AR(1) path; larger values permit more variation. The posterior estimates $\sigma_\zeta$ jointly with the coefficients under an analyst-chosen prior. The data do not choose smoothing free of judgement, so prior predictive checks, sensitivity analysis, boundary behaviour, and out-of-time comparison remain necessary.
-
-The positive innovation scale \(\sigma_\zeta\) can receive a Half-Student-\(t\) prior [16]. This choice permits more prior mass on large scales than a half-normal while still regularising. It does not make extreme observations penalty-free, and sensitivity to the scale and degrees of freedom must be reported.
-
-For weakly identified group scales, a non-centred parameterisation often improves HMC geometry, but centred and non-centred alternatives should be tested. To separate the spline level from intercepts, centre the realised smooth over the training observations,
+Product-varying deviations are allowed only where the data support them:
 
 $$
-\sum_{i=1}^{N}f(x_i)=\sum_{i=1}^{N}\sum_{k=1}^{K}\zeta_kB_{k,d}(x_i)=0,
+f_p(x)=f_0(x)+g_p(x),
+\qquad
+\Delta^2\boldsymbol\zeta_{g,p}
+\sim
+\mathcal N(\mathbf 0,\tau_{g}^{2}\mathbf I),
 $$
 
-or use an equivalent centred basis. This assigns the average spline level to the intercept while retaining nonlinear shape; it does not eliminate all posterior dependence.
+with partial pooling that pulls sparse product deviations toward the shared shape. Monotonicity is imposed only where a product owner and validation evidence justify it. Boundary observations are flagged and handled by a documented clipping or conservative extrapolation rule; smoothness is not treated as protection against an unobserved regime.
 
-Centering, constraints, orthogonalisation, and non-centred parameterisation can reduce posterior dependence and improve sampling geometry. Diagnostics determine whether they succeeded; the design does not eliminate correlation by assertion.
+B-spline with RW1 and B-spline with AR(1) coefficient priors are another research challengers in discussed in Appendix B. The main body uses the P-spline because its difference penalty makes the smoothing objective explicit and computationally sparse, while the appendix preserves the alternative assumptions for sensitivity and validation.
 
-PSIS-LOO can estimate observation-level expected log predictive density without literally refitting $N$ times, provided its Pareto diagnostics are acceptable [7]. Because records repeat by driver, platform, geography, and time, grouped and out-of-time validation remains essential; naive row-level LOO can overstate transportability. A spline is retained when diagnostics, calibration, decision value, and held-out performance support it. WAIC can be secondary evidence, not an independent confirmation when both criteria use the same posterior and data.
+PSIS-LOO can estimate observation-level expected log predictive density when its Pareto diagnostics are acceptable [7]. It does not by itself test transport to a new platform, geography, or vintage. Model selection therefore uses time-forward folds, driver-grouped folds, explicit held-out clusters, and, where the decision question demands it, refits or approximations that remove an entire group. A spline is retained only when shape stability, calibration, decision value, and held-out performance support it.
 
 ## 1.5. Time-Varying Coefficients: AR(1) Autoregressive Priors
 
@@ -218,7 +233,40 @@ If the time series per cluster is long enough to identify separate persistence, 
 
 
 # 2. Scaling to Large Policyholder Portfolios: MCMC Architecture
-## 2.1. The Bernoulli-to-Binomial Aggregation for Computational Scaling
+## 2.1. Conditional Conjugacy for the Complete HLR
+
+Pólya-Gamma augmentation introduces latent variables that express the logistic likelihood in a conditionally Gaussian form, enabling efficient blocked updates for the complete hierarchical logistic model [22]. Stack the global coefficients, P-spline coefficients, residual neural coefficients, selected interactions, and Gaussian hierarchy effects into \(\boldsymbol\vartheta\), with design row \(\mathbf x_i^{\mathsf T}\) so that \(\eta_i=\mathbf x_i^{\mathsf T}\boldsymbol\vartheta\). Introduce
+
+$$
+\omega_i\mid\eta_i\sim\operatorname{PG}(1,\eta_i).
+$$
+
+Conditional on \(\boldsymbol\omega\), the logistic likelihood is Gaussian in the linear predictor:
+
+$$
+p(\mathbf y\mid\boldsymbol\vartheta,\boldsymbol\omega)
+\propto
+\exp\left\{
+-\frac12
+(\mathbf X\boldsymbol\vartheta-\mathbf z)^{\mathsf T}
+\boldsymbol\Omega
+(\mathbf X\boldsymbol\vartheta-\mathbf z)
+\right\},
+$$
+
+where \(\boldsymbol\Omega=\operatorname{diag}(\omega_1,\ldots,\omega_N)\) and \(z_i=(y_i-1/2)/\omega_i\). With Gaussian priors or Gaussian priors conditional on scale parameters, the coefficient update is multivariate Normal. The P-spline block remains sparse because its prior precision contains the difference-penalty matrix. Geography, platform, cohort, selected time effects, and any well-identified driver effects retain partial pooling.
+
+The conjugacy is conditional, not wholly closed form. Pólya-Gamma variables, hierarchy variances, spline smoothing scales, regularised-horseshoe local and global scales, LKJ correlation structures, calibration parameters, and any time-persistence parameters still need their own updates. A candidate blocked Gibbs cycle is therefore:
+
+1. update the Pólya-Gamma latent variables;
+2. jointly or sparsely update Gaussian coefficient and hierarchy blocks;
+3. update variance, covariance, and smoothing parameters;
+4. update regularised-horseshoe scales; and
+5. calculate calibration, posterior predictive, and convergence diagnostics.
+
+This sampler is benchmarked against the approved NUTS reference on representative strata. The comparison covers posterior moments, interval and tail behaviour, group shrinkage, calibration, effective sample size per second, memory, and actual decisions. Pólya-Gamma sampling remains offline. The live underwriting request uses only an approved posterior scoring artifact; it never launches Gibbs sampling or MCMC.
+
+## 2.2. The Bernoulli-to-Binomial Aggregation for Computational Scaling
 
 As the Insurtech scales to portfolios of hundreds of thousands of active drivers, the computational cost of full MCMC over individual Bernoulli likelihoods becomes prohibitive. Each leapfrog step in Hamiltonian Monte Carlo requires evaluating the gradient of the log-posterior with respect to all model parameters. For a Bernoulli likelihood with $N$ observations, this gradient has $O(N)$ computational complexity. At $N = 200{,}000$ drivers with daily updates, the gradient cost renders NUTS infeasible at the required update cadence.
 
@@ -230,7 +278,7 @@ For exact equality, \(K_j\) is sufficient for the common probability. Quantising
 
 Evaluating splines at group averages does not recover within-group heterogeneity. Exact aggregation is reserved for identical design rows and a common probability. Quantised cells are explicitly labelled an approximation, benchmarked against individual likelihoods, and never described as sufficient. Individual scoring retains the original covariates.
 
-## 2.2. LKJ Cholesky Decompositions and the Funnel Geometry
+## 2.3. LKJ Cholesky Decompositions and the Funnel Geometry
 
 Hierarchical models can exhibit Neal's funnel when a weakly identified group scale approaches zero and group effects concentrate near the global mean. This geometry can produce divergent transitions or inefficient exploration under HMC. Divergences warn that numerical exploration is unreliable; whether estimates are materially biased depends on where the sampler failed to explore.
 
@@ -294,12 +342,49 @@ POST-FIT:
   uncertainty, data quality and reasons to the policy and compliance gate.
 ```
 
-## 2.3. Production Inference: BlackJAX on GPU/TPU
+## 2.4. Production Inference and Approved Posterior Artifacts
 
-BlackJAX is a candidate JAX-native inference implementation that can use compiled accelerators. The example of 200,000 observations and 4,000 groups is a benchmark scenario to be reproduced with the production likelihood. No fixed 50-fold speed-up is assumed; compilation, memory transfer, chain count, precision, and approximation error are included in the benchmark.
+BlackJAX is one candidate JAX-native implementation for the NUTS reference and can use compiled accelerators. Pólya-Gamma blocked Gibbs, Stan or another validated HMC implementation, Laplace approximation, and structured variational inference remain candidates. The example of 200,000 observations and 4,000 groups is a benchmark scenario to be reproduced with the production likelihood. No fixed speed-up is assumed; compilation, sparse linear algebra, memory transfer, chain count, precision, effective sample size, and approximation error are included in the benchmark.
 
 - **Inference candidates:** Full-data NUTS, Laplace approximation, variational inference, sequential Monte Carlo, or other methods are benchmarked on the actual posterior. Subsampled HMC with control variates is not described as unbiased or deployed until its estimator and diagnostics establish that result for this implementation. High dimension increases cost, while divergence is primarily a posterior-geometry and integration issue rather than “gradient variance” in ordinary full-data NUTS.
 - **Incremental updating:** A previous posterior can initialise a later fit, but material new data, drift, or model change may invalidate the old mass matrix and step size. Adaptation is not skipped by default. The approved cadence balances information gain, inference quality, model-change governance, and operational need; underwriting scores can update from new features without retraining the whole HLR each day.
+
+The signed scoring artifact contains the model and feature schemas, posterior draws or an approved analytic approximation, P-spline basis and penalty metadata, residualisation and whitening transforms, hierarchy mappings for known and new groups, calibration parameters, support ranges, uncertainty rules, reason-code mappings, code and environment digests, and fallback instructions. New-group scoring integrates or draws from the approved population hierarchy rather than inventing a zero-risk local effect.
+
+## 2.5. Hierarchical Piecewise-Exponential Timing Challenger
+
+The HLR answers whether default occurs within a chosen horizon. A timing challenger asks when the event is expected to occur and uses right-censored episodes without labelling them as survivors. The governed challenger is a hierarchical piecewise-exponential proportional-hazards model, rather than an unqualified claim that a fully unspecified Cox model has been fitted [23], [24]. Split episode \(i\) into intervals \(j\) with at-risk exposure \(E_{ij}\), event indicator \(d_{ij}\), baseline log-hazard \(\alpha_j\), and time-valid covariates \(\mathbf x_{ij}\):
+
+$$
+d_{ij}
+\sim
+\operatorname{Poisson}\!\left(E_{ij}\lambda_{ij}\right),
+\qquad
+\log\lambda_{ij}
+=
+\alpha_j+\mathbf x_{ij}^{\mathsf T}\boldsymbol\beta
++u_{g[i]}+v_{p[i]}.
+$$
+
+The Poisson representation is a likelihood device for a piecewise-constant hazard. The risk-set builder records entry, exit, censoring, competing closure or prepayment, contract modification, intervention state, and the covariates available at each interval boundary. Product-specific baseline hazards and pooled platform or geography effects allow different clocks without creating a separate model for every sparse cohort.
+
+For cumulative hazard \(\Lambda_i(t)\),
+
+$$
+S_i(t)=\exp[-\Lambda_i(t)],
+\qquad
+PD_i(0,t)=1-S_i(t),
+$$
+
+and the marginal default probability in month \(m\) is
+
+$$
+q_{i,m}=S_i(t_{m-1})-S_i(t_m).
+$$
+
+These marginal probabilities feed collection and ECL schedules without multiplying a cumulative PD in every month. At any horizon shared with the HLR, \(1-S_i(H_p)\) is compared with the calibrated fixed-horizon PD. Differences are diagnosed through baseline hazard, censoring, episode construction, calibration, or population drift; the two outputs are not averaged into a synthetic probability.
+
+A Gamma frailty is retained as an optional survival extension where repeated matured episodes identify persistent unobserved heterogeneity. Its conditional conjugacy belongs to the hazard challenger, not the foundation of the HLR. A driver-specific effect is included only when repeat experience and identification support it; product, platform, geography, cohort, and time pooling remain the primary hierarchy. Appendix C also retains a joint longitudinal-survival challenger for a repeatedly measured latent liquidity trajectory whose measurement error and endogenous evolution justify joint modelling [25].
 
 
 # 3. MCMC Convergence Diagnostics and Model Validation
@@ -353,6 +438,8 @@ $$
 $$
 
 The score measures squared probability error and reflects both calibration and resolution [9]. Partial pooling and shrinkage can help sparse groups, but superiority over a classical or explicit-only baseline is an out-of-time empirical result, not a mathematical consequence of being Bayesian.
+
+Validation follows the deployment question. A random row holdout tests neither a new driver nor a new platform when the same entities appear on both sides. The approval suite therefore includes time-forward vintages, driver-grouped splits, platform- and geography-held-out tests, and product-horizon reconciliation between the HLR and timing challenger. Observation-level PSIS-LOO is useful for local influence when diagnostics permit it, but a claim about transport to an unseen group requires grouped log-likelihood construction, an explicit group-deletion approximation, or a refit that withholds the group. Posterior predictive checks report total defaults, transition timing, survival curves, cure, EAD, recovery timing, and loss by material hierarchy.
 
 **Population Stability Index (PSI), production monitoring:** PSI compares the model's current score distribution $A_b$ with a reference distribution $E_b$ across $B$ bins:
 
@@ -435,6 +522,32 @@ for a configurable exceedance probability \(\epsilon_{\text{kill}}\). The value 
 
 3. **Portfolio shock review:** A material rise in the cohort-time effect can trigger investigation and portfolio controls. A two-standard-deviation rule is illustrative. A geography-wide rollback requires evidence, fairness review, authority, and a defined cure because the signal can also reflect a data incident or an unmodelled benign shift.
 
+## 4.3. From Default Probability to Cash Loss
+
+The model's economic destination is not a PD alone. For each posterior and scenario draw, the loss engine separates six objects:
+
+1. the fixed-horizon or marginal default probability;
+2. EAD, including scheduled amortisation and stressed revolving drawdown;
+3. cure and modification paths;
+4. gross recovery and recovery timing;
+5. IPF-specific eligible cancellation-refund cash, deductions, and delay; and
+6. collection, servicing, legal, and workout costs.
+
+For simulation draw \(s\), a product cash loss can be written as
+
+$$
+\mathcal L_{i,p}^{(s)}
+=
+D_{i,p}^{(s)}EAD_{i,p}^{(s)}
+-R_{i,p}^{(s)}
+-U_{i,p}^{(s)}
++C_{i,p}^{(s)},
+$$
+
+where \(D\) is the simulated default event, \(R\) is net ordinary recovery, \(U\) is an eligible IPF refund or other separately identified credit support, and \(C\) contains defined collection and recovery costs. Signs, currency, valuation date, horizon, and discounting are explicit. Cure is represented through state transitions and subsequent cash flows rather than as a second recovery credited on top of the same collection.
+
+The EAD, cure, recovery, and refund components can be separate calibrated submodels or governed scenario functions. They do not automatically inherit the HLR's covariates or neural block. A shared systematic factor may affect several components, but it is introduced once in the simulation so that a fuel shock is not separately counted in PD, LGD, recovery delay, and a copula parameter without an identified causal or scenario mapping. Part 5 aggregates these draws by cohort and month, then applies reserves, fees, debt service, subordination, and the exact waterfall.
+
 
 The HLR's pricing handoff ends with calibrated real-world PD, uncertainty, expected-loss inputs, and a documented decision horizon. Part 5, Section 1.2.1 carries those outputs into customer and investor pricing, keeps the physical measure distinct from any market-consistent valuation measure, and reconciles expected loss with the other components of \(K_{\mathrm{RBCP}}\). This leaves Part 2b focused on underwriting inference, dependence, validation, and decision boundaries.
 
@@ -442,6 +555,8 @@ The HLR's pricing handoff ends with calibrated real-world PD, uncertainty, expec
 ## 5.1. The limits of linear correlation and Gaussian copulas
 
 The hierarchical Bayesian engine estimates marginal posterior PD distributions for each product, $\theta_{ijt}^{(\text{micro})}$, $\theta_{ijt}^{(\text{revol})}$, and $\theta_{ijt}^{(\text{IPF})}$. Their accuracy is an empirical result. A partner holding all three exposures also needs a model of dependence to estimate joint default and portfolio loss; marginal probabilities alone are insufficient.
+
+Dependence is introduced in a governed order. First, observed macro and operational factors enter the feature and scenario design. Second, platform, geography, product, cohort, and time effects absorb partially pooled common structure. Third, within-driver multi-product linkage is represented explicitly. Only the remaining joint behaviour is offered to a residual copula or another dependence challenger. This order prevents a tail parameter from becoming a container for omitted factors, duplicate borrower effects, and true transmission mechanisms at once.
 
 The portfolio variance under Gaussian dependency assumptions:
 
@@ -536,23 +651,25 @@ graph TD
 
     %% Subgraph: Hierarchical Bayesian Inference
     subgraph HBM [Hierarchical Bayesian Underwriting]
-        TabularVars --> BinomialAgg[Binomial Aggregation]
-        BinomialAgg --> B_Splines[B-Spline Mapping]
-        B_Splines -->|"AR(1) Priors"| AR1["Half-Student T Variance Scale"]
+        TabularVars --> P_Splines[Governed P-Spline Mapping]
+        P_Splines --> Penalty[Difference-Penalty and Smoothing Scale]
 
         VectorSpace --> Residual[Cross-Fitted Residualization]
-        Residual --> MCMC[Hierarchical Bayesian Inference]
-        AR1 --> MCMC
+        Residual --> MCMC[Offline HLR Inference<br/>NUTS Reference or PG Blocked Gibbs]
+        Penalty --> MCMC
         Priors["LKJ Cholesky Hyperpriors"] --> MCMC
 
-        MCMC -->|Non-Centered Param| MarginalPD[Marginal PD Posteriors]
+        MCMC -->|Partial Pooling| MarginalPD[Fixed-Horizon PD Posteriors]
         MarginalPD --> Cal[Product Calibration]
         Cal --> Gate[Credit Policy and Compliance Gate]
+        MCMC --> Artifact[Signed Posterior Scoring Artifact]
+        Artifact --> Gate
     end
 
     %% Subgraph: Copula and Joint Risk Pricing
     subgraph COP [Joint Tail Risk Pricing]
-        Cal --> Clayton[Candidate Dependence Models]
+        Cal --> Loss[PD + EAD + Cure + LGD + Recovery Timing]
+        Loss --> Clayton[Residual Dependence Challengers]
         MacroShock["Macroeconomic Shock Factor theta"] --> Clayton
         Clayton -->|Lower Tail Dependence| UL[Unexpected Loss Quantification]
     end
@@ -706,6 +823,16 @@ Explainability, model-risk management, and fairness testing create a body of evi
 
 [20] D. Duffie and K. J. Singleton, “Modeling term structures of defaultable bonds,” *The Review of Financial Studies*, vol. 12, no. 4, pp. 687-720, 1999, doi: 10.1093/rfs/12.4.687.
 
+[21] P. H. C. Eilers and B. D. Marx, “Flexible smoothing with B-splines and penalties,” *Statistical Science*, vol. 11, no. 2, pp. 89-121, 1996, doi: 10.1214/ss/1038425655.
+
+[22] N. G. Polson, J. G. Scott, and J. Windle, “Bayesian inference for logistic models using Pólya-Gamma latent variables,” *Journal of the American Statistical Association*, vol. 108, no. 504, pp. 1339-1349, 2013, doi: 10.1080/01621459.2013.829001.
+
+[23] D. R. Cox, “Regression models and life-tables,” *Journal of the Royal Statistical Society: Series B*, vol. 34, no. 2, pp. 187-220, 1972, doi: 10.1111/j.2517-6161.1972.tb00899.x.
+
+[24] N. Laird and D. Olivier, “Covariance analysis of censored survival data using log-linear analysis techniques,” *Journal of the American Statistical Association*, vol. 76, no. 374, pp. 231-240, 1981, doi: 10.1080/01621459.1981.10477634.
+
+[25] M. S. Wulfsohn and A. A. Tsiatis, “A joint model for survival and longitudinal data measured with error,” *Biometrics*, vol. 53, no. 1, pp. 330-339, 1997, doi: 10.2307/2533118.
+
 ```{=latex}
 \clearpage
 ```
@@ -747,3 +874,69 @@ The HLR is preferred only when it produces stable, calibrated, decision-relevant
 3. **Non-linear and hierarchical structure:** B-splines and cohort-time effects can represent real-world relationships without forcing them into a traded-asset diffusion, subject to the redundancy and calibration controls above.
 
 The conclusion is one of scope, not mathematical taste. Use the HLR for calibrated physical-measure underwriting and portfolio decisions when it outperforms challengers. Use market-consistent methods only where valuation inputs and purpose justify them. Assemble \(K_{\mathrm{RBCP}}\) transparently from risk and non-risk components. The model supports the institution's pricing and governance process; it does not, by itself, establish regulatory compliance, computational efficiency, or fairness.
+
+```{=latex}
+\clearpage
+```
+
+# Appendix B: Preserved Spline and Time-Prior Alternatives
+
+The main specification uses governed P-splines, while B-spline, RW1, and AR(1) formulations remain explicit challengers. Their inclusion allows the validation team to test whether a difference penalty, a local random walk, or mean-reverting coefficient path better represents a particular effect without changing the champion by editorial fiat.
+
+For a non-decreasing knot sequence \(\xi_0\le\cdots\le\xi_{K+d}\), the B-spline basis retains the Cox-de Boor recursion [5]:
+
+$$
+B_{k,0}(x)=\mathbf 1[\xi_k\le x<\xi_{k+1}],
+$$
+
+$$
+B_{k,d}(x)
+=
+\frac{x-\xi_k}{\xi_{k+d}-\xi_k}B_{k,d-1}(x)
++
+\frac{\xi_{k+d+1}-x}{\xi_{k+d+1}-\xi_{k+1}}B_{k+1,d-1}(x),
+$$
+
+with a zero contribution when a denominator is zero. The smooth is \(f(x)=\sum_k\zeta_kB_{k,d}(x)\). One local alternative uses an RW1 prior,
+
+$$
+\zeta_k\sim\mathcal N(\zeta_{k-1},\sigma_\zeta^2),
+$$
+
+while the mean-reverting coefficient alternative uses
+
+$$
+\zeta_k\sim\mathcal N(\rho\zeta_{k-1},\sigma_\zeta^2),
+\qquad |\rho|<1.
+$$
+
+These priors regularise adjacent basis coefficients but do not create an out-of-range safety rule. The comparison reports prior predictive shapes, effective degrees of freedom, boundary behaviour, posterior geometry, calibration, time-forward performance, and explanation stability. If a coefficient index lacks a defensible interpretation for mean reversion, the AR(1) challenger is not selected merely because it samples conveniently.
+
+Selected macro or cohort effects may separately follow an AR(1) process around a long-run mean or an RW1 drift process. That is a time-process decision, distinct from the smoothing prior placed on a liquidity feature. The implementation records these two uses of AR1/RW1 under different parameter names so their economic meanings cannot be conflated.
+
+```{=latex}
+\clearpage
+```
+
+# Appendix C: Joint Longitudinal-Survival Research Challenger
+
+Some liquidity variables are repeatedly observed with noise, change endogenously as credit actions occur, and may be poorly represented by carrying the last observed value into a hazard model. For a narrowly defined research challenger, let a latent liquidity trajectory be
+
+$$
+m_i(t)=\mathbf b(t)^{\mathsf T}\boldsymbol\alpha
++\mathbf z_i(t)^{\mathsf T}\mathbf u_i,
+$$
+
+with observations \(w_{ij}=m_i(t_{ij})+\epsilon_{ij}\). Link the trajectory to the timing model through
+
+$$
+\lambda_i(t)
+=
+\lambda_0(t)
+\exp\left\{
+\mathbf x_i(t)^{\mathsf T}\boldsymbol\beta
++\nu m_i(t)
+\right\}.
+$$
+
+The shared parameter \(\nu\) tests whether the latent trajectory contributes to event timing after the approved covariates [25]. This extension is considered only when measurement error, observation frequency, treatment timing, and informative missingness justify the additional joint likelihood. It must not recreate CFA, DLR, or Earnings Velocity as an ungoverned latent duplicate, and it does not replace the fixed-horizon HLR. Approval requires better time-forward calibration, survival prediction, and decision utility than a simpler time-updated hazard model.

@@ -1,0 +1,67 @@
+{
+  "as_of": "2026-09-02",
+  "retrieved_at_utc": "2026-09-02T11:02:07.139839+00:00",
+  "collector": "publications\\submissions\\kba-lifecycle-credit\\scripts\\collect_public_baseline.py",
+  "files": [
+    {
+      "path": "cbk_kesonia.csv",
+      "rows": 249,
+      "sha256": "8783296c0a2251b81287fe73108fa7e17c8a869633bf4b1b2a60947fc6e7a429"
+    },
+    {
+      "path": "cbk_kesonia_compounded_index.csv",
+      "rows": 250,
+      "sha256": "3627d9f291e831920fab45d476c10f602c39de755d4d91b00fe647c82bd905c9"
+    },
+    {
+      "path": "cbk_weighted_average_rates.csv",
+      "rows": 423,
+      "sha256": "c91739a0962a2a9cd81a501cd417faac86b5fc1843f0e1d14d3f60636ecf1132"
+    },
+    {
+      "path": "kba_msme_npl_by_gender.csv",
+      "rows": 4,
+      "sha256": "124c09ac13ed62542afaa734d7632bca742a7cca34603acf4d81b926e8b10569"
+    },
+    {
+      "path": "kba_msme_npl_by_institution_type.csv",
+      "rows": 8,
+      "sha256": "6359fd6e4745537153779835fca4687959976ff7d20ef1673f4fc5d36202b954"
+    },
+    {
+      "path": "kba_msme_npl_by_sector.csv",
+      "rows": 10,
+      "sha256": "8543fd6beba872cf45a6e7c93fd898221bfdb471d1420f53211d8c5cd4aaceca"
+    },
+    {
+      "path": "kba_msme_npl_by_product_type.csv",
+      "rows": 13,
+      "sha256": "ffeffaa66ce2e316e99baf0035d221f82bfaee8e18aa0a6588e3932ba94c8b45"
+    },
+    {
+      "path": "kba_msme_npl_by_client_type.csv",
+      "rows": 2,
+      "sha256": "98d3e5c9b9557a15be3cf74cf1538a0975923765e945fb0a3feec785c1547068"
+    },
+    {
+      "path": "kba_msme_npl_by_collateral_status.csv",
+      "rows": 2,
+      "sha256": "5ec01c990bdc79cb4f5fa5fe5b82aa05ed8406761345f7a60554f5dc1a4bd541"
+    },
+    {
+      "path": "kba_msme_npl_by_loan_status.csv",
+      "rows": 8,
+      "sha256": "daa0916fafbf4d059af02e865a09afd2e03a9915f8eff7d1ce3c8a72353f31f5"
+    },
+    {
+      "path": "kba_msme_npl_monthly_trend.csv",
+      "rows": 12,
+      "sha256": "ca3d59e42a82ee8e74fa065b2bfd33a18530d8b1f167ba3af8ab1430e8c59a60"
+    },
+    {
+      "path": "kba_msme_summary.json",
+      "rows": 1,
+      "sha256": "7f567168daca50d605e0f567560585890bd18d33841467fe0f4244f0cd02fe85"
+    }
+  ]
+}

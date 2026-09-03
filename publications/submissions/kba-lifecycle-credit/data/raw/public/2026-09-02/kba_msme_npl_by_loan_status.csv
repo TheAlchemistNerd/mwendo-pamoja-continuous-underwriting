@@ -1,0 +1,9 @@
+Category,Value,No. of loans,NPL loans,NPL share,as_of_label,source_url
+Terms Extended,100.0%,5,5,100.0%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance
+Not Updated,99.7%,154,148,96.1%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance
+Write-Off,99.6%,"350,389","335,902",95.9%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance
+Called Up,99.0%,"1,455","1,010",69.4%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance
+Collection,98.6%,"101,858","89,632",88.0%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance
+Dormant,86.8%,"36,614","30,025",82.0%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance
+Legal,86.2%,644,576,89.4%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance
+Client Deceased,59.3%,864,474,54.9%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance

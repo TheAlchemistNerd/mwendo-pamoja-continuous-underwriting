@@ -8,6 +8,8 @@ date: "24 August 2026"
 
 This document defines the customer products, counterparties, cash events, product states, common shock channels, and SPV interface for Mwendo Pamoja. It is the authoritative product specification for Parts 2a through 6. Commercial contracts, definitive finance documents, applicable law, and approved accounting policies prevail where they differ.
 
+`CREDIT_RISK_MODEL_AND_LOSS_ARCHITECTURE_SPECIFICATION.md` governs the shared driver-product-risk episode, three credit clocks, dependence order, and the conversion of product states into timing and cash-loss components. This product specification remains authoritative for the contractual meaning of those states.
+
 The product pool contains three asset types:
 
 1. Insurance Premium Financing, or IPF.

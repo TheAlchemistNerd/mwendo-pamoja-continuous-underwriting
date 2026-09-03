@@ -1,0 +1,5 @@
+Category,Value,No. of loans,NPL loans,NPL share,as_of_label,source_url
+Female-Owned,26.4%,"4,439,371","388,521",8.8%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance
+Male-Owned,25.5%,"6,001,395","428,187",7.1%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance
+Jointly-Owned,22.8%,"36,167","4,317",11.9%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance
+Unknown,19.9%,"131,873","14,193",10.8%,Jun 2026,https://msmedata.kba.co.ke/kba/loan-performance

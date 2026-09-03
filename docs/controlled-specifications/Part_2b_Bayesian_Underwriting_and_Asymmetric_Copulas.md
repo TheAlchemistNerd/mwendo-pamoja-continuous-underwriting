@@ -8,6 +8,8 @@ date: "24 August 2026"
 
 This document specifies the Hierarchical Bayesian Logistic Regression, or HLR/HBLR, that converts the Part 2a model-input contract into calibrated real-world default probabilities and uncertainty. It also defines decision analysis, portfolio dependence, stress simulation, explanations, fairness, validation, and governance.
 
+The cross-part observation, P-spline, Pólya-Gamma, survival, EAD, cure, recovery, production-artifact, ECL, and SPV-loss contracts are governed by `CREDIT_RISK_MODEL_AND_LOSS_ARCHITECTURE_SPECIFICATION.md`. This chapter explains the underwriting and dependence controls; the common specification prevents timing and loss definitions from drifting across the wider programme.
+
 The core underwriting output is \(PD_{\mathbb P}\), a probability under the real-world measure for a defined product and horizon. It is not automatically:
 
 - a risk-neutral probability \(PD_{\mathbb Q}\);
@@ -62,15 +64,15 @@ Continuous explicit variables are centred and scaled using development-only robu
 
 High correlation alone does not require deletion when features have distinct policy meaning, but any retained pair must have documented incremental value and stable attribution.
 
-## Step 2: Spline Basis and Orthonormalisation
+## Step 2: Governed P-Spline Basis and Penalty
 
-Approved nonlinear explicit effects use restricted or natural cubic splines with knots chosen on development data. Let \(\mathbf B_Z\) denote the centred main-effect and spline design. A thin QR decomposition is fitted on the development fold:
+Approved nonlinear explicit effects use a moderately rich B-spline basis with a documented difference penalty, producing a governed P-spline. Let \(\mathbf B_Z\) denote the centred main-effect and spline design and \(\mathbf K_Z\) the penalty precision. The basis degree, knots, penalty order, smoothing-scale prior, support, boundary rule, and back-transformation are fixed from development data and versioned.
 
 $$
 \mathbf B_Z=\mathbf Q_Z\mathbf R_Z.
 $$
 
-The HLR uses \(\mathbf q_i\), the corresponding row of \(\mathbf Q_Z\), to reduce numerical collinearity among spline columns. Coefficients can be back-transformed through \(\mathbf R_Z^{-1}\) for interpretation on the original basis. Rank-deficient columns are removed under a logged tolerance.
+The HLR may use \(\mathbf q_i\), the corresponding transformed row, to reduce numerical collinearity among spline columns. The penalty must be transformed with the basis so that the null space and smoothing prior are preserved. Coefficients are back-transformed for interpretation on the original feature scale. Rank-deficient columns are removed under a logged tolerance. B-spline RW1 and AR1 coefficient priors remain registered challengers.
 
 ## Step 3: Cross-Fitted Neural Residualisation
 
@@ -241,6 +243,10 @@ VIF is interpreted carefully because spline columns and hierarchical effects are
 NUTS or HMC is used offline for the reference posterior. The development report records chains, warm-up, draws, seeds, adaptation, target acceptance, divergences, tree depth, rank-normalised \(\widehat R\), bulk and tail ESS, energy diagnostics, and posterior predictive checks.
 
 Computational convergence does not prove business validity. Poor geometry can signal redundant parameters, weak identification, or scale problems and should trigger simplification.
+
+Pólya-Gamma augmentation is benchmarked as an offline inference strategy for the complete HLR. Conditional on its latent variables and scale parameters, Gaussian coefficient, P-spline, and hierarchy blocks receive sparse Gaussian updates while partial pooling remains intact. The model is conditionally conjugate rather than fully closed form; hierarchy variances, smoothing scales, horseshoe scales, LKJ correlations, calibration, and time persistence retain separate updates. Deployment requires agreement with the NUTS reference under the controlled specification.
+
+The hierarchical piecewise-exponential proportional-hazards model is a timing challenger. It consumes right-censored risk intervals and returns survival and marginal default paths that reconcile to the calibrated HLR at shared horizons. Gamma frailty and joint longitudinal-survival structures remain advanced challengers rather than replacements for the fixed-horizon champion.
 
 ## Scalable Approximation
 
