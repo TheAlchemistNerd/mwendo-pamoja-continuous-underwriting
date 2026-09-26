@@ -1,0 +1,1443 @@
+{
+  "date": "2026-09-26",
+  "source_hash_checks": [
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\BRIAN_HEY_PRIZE_2026_SUBMISSION_PLAN.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\DETAILED_IMPLEMENTATION_PLAN.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\guide.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\IMPLEMENTATION_CORRECTION_LEDGER.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\LINKEDIN_POST.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\Mathematical_Derivations.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\outline.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\paper.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\research-note.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\Semantic_Comparison_Notes.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\validate.py",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-1.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-1.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-2.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-2.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-3.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-3.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-4.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-4.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-5.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-5.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-6.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-6.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-7.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\assets\\figure-7.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\scripts\\build_paper.ps1",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\scripts\\postprocess_docx.py",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\scripts\\puppeteer-config.json",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\2026-brian-hey-guidelines.docx",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\Bayesian_Credibility_Telematics_Brian_Hey_2026.docx",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\Bayesian_Credibility_Telematics_Brian_Hey_2026.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\Bayesian_Credibility_Telematics_Brian_Hey_2026.pdf",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\Bayesian_Credibility_Telematics_Brian_Hey_2026_Python_Code.zip",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\README.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\submission_requirements.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\experiment\\run_synthetic_comparison.py",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\experiment\\figures\\model_comparison.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\experiment\\figures\\representation_diagnostics.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\experiment\\results\\capital_and_risk_transfer.csv",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\experiment\\results\\model_comparison.csv",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\experiment\\results\\representation_and_balance.csv",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\experiment\\results\\reserve_comparison.csv",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\experiment\\results\\run_manifest.json",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\experiment\\results\\synthetic_sample_250_rows.csv",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-1.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-1.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-2.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-2.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-3.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-3.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-4.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-4.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-5.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-5.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-6.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-6.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-7.mmd",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\figures\\architecture-7.png",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\scripts\\build_submission.ps1",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\scripts\\postprocess_submission_docx.py",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\scripts\\puppeteer-config.json",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\scripts\\table_geometry.py",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\validation\\final_hashes.json",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\validation\\validate_submission.py",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\cbk_kesonia_k_framework.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\FRTB_SCOPE_AND_DEVELOPMENT_NOTE_2026-09-25.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\KESONIA_COMPOUNDING_TERM_STRUCTURE_AND_FUNDING_CURVE_NOTE.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\RegTech_Gap_Analysis_Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\RegTech_KESONIA_Enhancement_Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\STP_AND_ALM_FTP_SOFTWARE_REVIEW_2026-09-25.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\TREASURY_CURVES_AND_BUSINESS_ANALYSIS_DETAILED_REVIEW_2026-09-25.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.html",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.html",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.html",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.html",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.html",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.html",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.html",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.html",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\build_reading_pack.py",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\checked_examples.json",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\delivery_verification.json",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\reading_manifest.json",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\review.css",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\verify_examples.py",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\pdfs\\Bayesian_Credibility_and_Exposure_Normalised_Telematics_Relativities_CC_BY_NC_SA_4_0_2026-09-08.pdf",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\source_01_original.txt",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\source_02_original.txt",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\02_WORKING_FORMULATIONS_AND_EXAMPLES.md",
+      "unchanged": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\pricing_treasury_cross_project_review_2026-09-23\\review.css",
+      "unchanged": true
+    }
+  ],
+  "installed_snapshot_checks": [
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\BRIAN_HEY_PRIZE_2026_SUBMISSION_PLAN.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\DETAILED_IMPLEMENTATION_PLAN.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\guide.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\IMPLEMENTATION_CORRECTION_LEDGER.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\LINKEDIN_POST.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\Mathematical_Derivations.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\outline.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\paper.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\research-note.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\Semantic_Comparison_Notes.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\validate.py",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-1.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-1.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-2.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-2.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-3.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-3.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-4.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-4.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-5.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-5.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-6.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-6.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-7.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\assets\\figure-7.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\scripts\\build_paper.ps1",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\scripts\\postprocess_docx.py",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\scripts\\puppeteer-config.json",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\2026-brian-hey-guidelines.docx",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\Bayesian_Credibility_Telematics_Brian_Hey_2026.docx",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\Bayesian_Credibility_Telematics_Brian_Hey_2026.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\Bayesian_Credibility_Telematics_Brian_Hey_2026.pdf",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\Bayesian_Credibility_Telematics_Brian_Hey_2026_Python_Code.zip",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\README.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\submission_requirements.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\experiment\\run_synthetic_comparison.py",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\experiment\\figures\\model_comparison.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\experiment\\figures\\representation_diagnostics.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\experiment\\results\\capital_and_risk_transfer.csv",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\experiment\\results\\model_comparison.csv",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\experiment\\results\\representation_and_balance.csv",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\experiment\\results\\reserve_comparison.csv",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\experiment\\results\\run_manifest.json",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\experiment\\results\\synthetic_sample_250_rows.csv",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-1.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-1.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-2.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-2.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-3.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-3.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-4.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-4.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-5.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-5.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-6.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-6.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-7.mmd",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\figures\\architecture-7.png",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\scripts\\build_submission.ps1",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\scripts\\postprocess_submission_docx.py",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\scripts\\puppeteer-config.json",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\scripts\\table_geometry.py",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\validation\\final_hashes.json",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\validation\\validate_submission.py",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\cbk_kesonia_k_framework.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\FRTB_SCOPE_AND_DEVELOPMENT_NOTE_2026-09-25.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\KESONIA_COMPOUNDING_TERM_STRUCTURE_AND_FUNDING_CURVE_NOTE.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\RegTech_Gap_Analysis_Report.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\RegTech_KESONIA_Enhancement_Report.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\STP_AND_ALM_FTP_SOFTWARE_REVIEW_2026-09-25.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\TREASURY_CURVES_AND_BUSINESS_ANALYSIS_DETAILED_REVIEW_2026-09-25.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.html",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.html",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.html",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.html",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.html",
+      "matches_prepared_snapshot": false
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.html",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.html",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.html",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\build_reading_pack.py",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\checked_examples.json",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\delivery_verification.json",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\reading_manifest.json",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\review.css",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\verify_examples.py",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\pdfs\\Bayesian_Credibility_and_Exposure_Normalised_Telematics_Relativities_CC_BY_NC_SA_4_0_2026-09-08.pdf",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\pricing_treasury_cross_project_review_2026-09-23\\source_01_original.txt",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\pricing_treasury_cross_project_review_2026-09-23\\source_02_original.txt",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\pricing_treasury_cross_project_review_2026-09-23\\02_WORKING_FORMULATIONS_AND_EXAMPLES.md",
+      "matches_prepared_snapshot": true
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\pricing_treasury_cross_project_review_2026-09-23\\review.css",
+      "matches_prepared_snapshot": true
+    }
+  ],
+  "regenerated_html_paths": [
+    "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.html",
+    "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.html",
+    "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.html",
+    "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.html",
+    "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.html",
+    "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.html",
+    "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.html",
+    "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.html"
+  ],
+  "underwrite_restoration_checks": [
+    {
+      "path": ".gitignore",
+      "unchanged": true
+    },
+    {
+      "path": "In the spirit of underwriting to collect.md",
+      "unchanged": true
+    },
+    {
+      "path": "SERIES_CHARTER.md",
+      "unchanged": true
+    },
+    {
+      "path": "SERIES_IMPLEMENTATION_PLAN.md",
+      "unchanged": true
+    },
+    {
+      "path": "SOURCE_MANIFEST.md",
+      "unchanged": true
+    },
+    {
+      "path": "UNDERWRITE_FOR_COLLECTION_SIDE_BY_SIDE_SEMANTIC_ANALYSIS.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/00_anchors/IN_THE_SPIRIT_OF_UNDERWRITING_TO_COLLECT_ROUGH_RESEARCH.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/00_anchors/UNDERWRITE_FOR_COLLECTION.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/00_anchors/UNDERWRITE_FOR_COLLECTION_SIDE_BY_SIDE_SEMANTIC_ANALYSIS.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/01_KBA_EDITORIAL_ENQUIRY.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/02_ONE_PAGE_CONCEPT_NOTE.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/03_FIVE_PAGE_RESEARCH_PROPOSAL.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/04_CANONICAL_RESEARCH_SPECIFICATION.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/05_SOURCE_EXTRACTION_LEDGER.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/06_DATA_REQUIREMENTS_AND_DICTIONARY.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/07_SOURCE_BASELINE.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/08_KBA_ECONOMIC_BULLETIN_ARTICLE_DRAFT.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/09_PUBLIC_DATA_BASELINE_NOTE.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/10_VALIDATION_REPORT.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/11_KBA_CORRESPONDENCE_LOG.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/source_registry.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/cbk_kesonia.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/cbk_kesonia_compounded_index.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/cbk_weighted_average_rates.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/kba_msme_npl_by_client_type.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/kba_msme_npl_by_collateral_status.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/kba_msme_npl_by_gender.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/kba_msme_npl_by_institution_type.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/kba_msme_npl_by_loan_status.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/kba_msme_npl_by_product_type.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/kba_msme_npl_by_sector.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/kba_msme_npl_monthly_trend.csv",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/kba_msme_summary.json",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/data/raw/public/2026-09-02/run_manifest.json",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/scripts/build_submission_pdfs.py",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/01_kba_research_package/scripts/collect_public_baseline.py",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/02_credit_risk_research/Bayesian_logistic_regression_modelling.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/02_credit_risk_research/DETAILED_IMPLEMENTATION_PLAN_CREDIT_RISK_ENHANCEMENTS.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/02_credit_risk_research/hierachical bayesian logistic regression.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/02_credit_risk_research/hierarchical bayesian modelling for continuous underwriting of credit risk for digital lenders.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/02_credit_risk_research/How do we integrate low frequency data like macroeconomic conditions.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/02_credit_risk_research/Insurtech_Launch_and_Execution_Playbook.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/02_credit_risk_research/KBA_RESEARCH_PUBLICATION_READINESS_AND_IMPLEMENTATION_PLAN.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/02_credit_risk_research/low_level_bayesian_hardware_optimization.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/02_credit_risk_research/PUBLICATION_PORTFOLIO_AND_IP_STRATEGY.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/02_credit_risk_research/transformer-ffn-SiLU-b-spline-funnel-ar-rw-nig-niw.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/02_credit_risk_research/UNDERWRITE_FOR_COLLECTION_PUBLICATION_PLAN.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/03_kesonia_enterprise_and_funding/Asset Liability and Mature Funds Transfer Pricing.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/03_kesonia_enterprise_and_funding/cbk_kesonia_k_framework.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/03_kesonia_enterprise_and_funding/Deploying a dual Delta Lake Architecture - Data Engineering Primitives.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/03_kesonia_enterprise_and_funding/Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/03_kesonia_enterprise_and_funding/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/03_kesonia_enterprise_and_funding/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/03_kesonia_enterprise_and_funding/Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/03_kesonia_enterprise_and_funding/RegTech_Gap_Analysis_Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/03_kesonia_enterprise_and_funding/RegTech_KESONIA_Enhancement_Report.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/03_kesonia_enterprise_and_funding/risk neutral measure, KESONIA compounding, WACF.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/04_structural_comparators/mwendo-pamoja-parts/Part_1_Product_Architecture_and_Cascades.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/04_structural_comparators/mwendo-pamoja-parts/Part_2a_Deep_Temporal_Representation_and_Feature_Engineering.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/04_structural_comparators/mwendo-pamoja-parts/Part_2b_Bayesian_Underwriting_and_Asymmetric_Copulas.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/04_structural_comparators/mwendo-pamoja-parts/Part_3_Regulatory_Orchestration_and_Interventions.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/04_structural_comparators/mwendo-pamoja-parts/Part_4_Enterprise_ERP_and_Telemetry.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/04_structural_comparators/mwendo-pamoja-parts/Part_5_KESONIA_Pricing_and_Capital_Orchestration.md",
+      "unchanged": true
+    },
+    {
+      "path": "source_library/04_structural_comparators/mwendo-pamoja-parts/Part_6_Implementation_Roadmap_and_Execution.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/assets/figures/part1_matched_population_views.png",
+      "unchanged": true
+    },
+    {
+      "path": "series/briefs/Part_1_BRIEF.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/briefs/Part_2a_BRIEF.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/briefs/Part_2b_BRIEF.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/briefs/Part_3_BRIEF.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/briefs/Part_4_BRIEF.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/briefs/Part_5_BRIEF.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/briefs/Part_6_BRIEF.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/build/corporate.yaml",
+      "unchanged": true
+    },
+    {
+      "path": "series/build/mermaid.lua",
+      "unchanged": true
+    },
+    {
+      "path": "series/build/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/build/whitepaper-header.tex",
+      "unchanged": true
+    },
+    {
+      "path": "series/dist/Underwrite_for_Collection_MSME_Lifecycle_Draft_Parts_1_2a_and_2b_2026-09-06.pdf",
+      "unchanged": true
+    },
+    {
+      "path": "series/dist/Underwrite_for_Collection_MSME_Lifecycle_Draft_Parts_1_and_2a_2026-09-06.pdf",
+      "unchanged": true
+    },
+    {
+      "path": "series/dist/Underwrite_for_Collection_MSME_Lifecycle_White_Paper_2026-09-15.pdf",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/CANONICAL_DEFINITIONS_AND_NOTATION.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/CLAIM_LEDGER.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/DECISION_REGISTER.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/EXPERIMENTAL_AND_CAUSAL_DESIGN_STANDARD.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/WORD_COUNT_AND_QUALITY_GATES.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/revision_snapshots/2026-09-06_pre_part1_figure4_vertical_resize/Part_1_MSME_Credit_Lifecycle_and_Collection_Cascades.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/revision_snapshots/2026-09-06_pre_part5_incremental_expansion/Part_5_KESONIA_Pricing_Expected_Credit_Loss_Capital_and_Funding.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/revision_snapshots/2026-09-06_pre_part5_source_enrichment/Part_5_KESONIA_Pricing_Expected_Credit_Loss_Capital_and_Funding.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/revision_snapshots/2026-09-15_pre_cash_provenance_extension/Part_1_MSME_Credit_Lifecycle_and_Collection_Cascades.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/revision_snapshots/2026-09-15_pre_cash_provenance_extension/Part_2a_Temporal_Evidence_and_Feature_Engineering.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/revision_snapshots/2026-09-15_pre_cash_provenance_extension/Part_2b_Hierarchical_Bayesian_Underwriting_Causal_Identification_and_Lifecycle_Dependence.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/revision_snapshots/2026-09-15_pre_cash_provenance_extension/Part_3_Regulatory_Orchestration_Fair_Intervention_and_Collection_Governance.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/revision_snapshots/2026-09-15_pre_cash_provenance_extension/Part_4_Bank_Controlled_Research_Sandboxes_and_Enterprise_Credit_Architecture.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/revision_snapshots/2026-09-15_pre_cash_provenance_extension/Part_5_KESONIA_Pricing_Expected_Credit_Loss_Capital_and_Funding.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/governance/revision_snapshots/2026-09-15_pre_cash_provenance_extension/SHA256SUMS.txt",
+      "unchanged": true
+    },
+    {
+      "path": "series/parts/Part_1_MSME_Credit_Lifecycle_and_Collection_Cascades.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/parts/Part_2a_Temporal_Evidence_and_Feature_Engineering.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/parts/Part_2b_Hierarchical_Bayesian_Underwriting_Causal_Identification_and_Lifecycle_Dependence.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/parts/Part_3_Regulatory_Orchestration_Fair_Intervention_and_Collection_Governance.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/parts/Part_4_Bank_Controlled_Research_Sandboxes_and_Enterprise_Credit_Architecture.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/parts/Part_5_KESONIA_Pricing_Expected_Credit_Loss_Capital_and_Funding.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/parts/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/publications/linkedin/BEFORE_THE_RATIO_ENTITY_RESOLVED_CASHFLOW_UNDERWRITING.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/publications/linkedin/dist/Before_the_Ratio_Entity_Resolved_Cash_Flow_Underwriting.docx",
+      "unchanged": true
+    },
+    {
+      "path": "series/references/MASTER_SOURCE_INDEX.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/references/SOURCE_AND_CITATION_POLICY.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/ECONOMETRIC_AND_ACTUARIAL_METHODS_IN_THE_CREDIT_LIFECYCLE.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/ECONOMIC_CASH_PROVENANCE_AND_ENTITY_RESOLUTION_IMPLEMENTATION_PLAN.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/PART_5_PEER_REVIEWED_AND_AUTHORITATIVE_SOURCE_LEDGER.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/PART_5_TREASURY_SEMANTIC_GAP_ANALYSIS.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/RECOMMENDED_PUBLICATION_ROUTE.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_1/PART_1_DETAILED_OUTLINE.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_1/PART_1_SOURCE_AND_CLAIM_LEDGER.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_1/PART_1_VALIDATION_REPORT.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_2a/PART_2A_DETAILED_OUTLINE.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_2a/PART_2A_SOURCE_AND_CLAIM_LEDGER.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_2a/PART_2A_VALIDATION_REPORT.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_2b/PART_2B_DETAILED_OUTLINE.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_2b/PART_2B_SOURCE_AND_CLAIM_LEDGER.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_2b/PART_2B_VALIDATION_REPORT.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_3/PART_3_DETAILED_OUTLINE.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_3/PART_3_SOURCE_AND_CLAIM_LEDGER.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_3/PART_3_VALIDATION_REPORT.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_4/PART_4_DETAILED_OUTLINE.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_4/PART_4_SOURCE_AND_CLAIM_LEDGER.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_4/PART_4_VALIDATION_REPORT.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_5/PART_5_DETAILED_OUTLINE.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_5/PART_5_SOURCE_AND_CLAIM_LEDGER.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/research/Part_5/PART_5_VALIDATION_REPORT.md",
+      "unchanged": true
+    },
+    {
+      "path": "series/scripts/generate_part1_population_charts.py",
+      "unchanged": true
+    }
+  ],
+  "underwrite_additions": [
+    "series/research/ADDITIONAL_PRICING_REVIEW_AND_CONTENT_PLAN_2026-09-25.md",
+    "series/research/COLLECTABILITY_FEEDBACK_AND_CONTINUOUS_REVERIFICATION_2026-09-25.md",
+    "series/research/feedback_sources/underwrite_collection_reader_feedback_2026-09-25.jpg"
+  ],
+  "checks": [
+    {
+      "name": "Bayesian canonical structure",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "matched_expected": true,
+      "stdout": "PASS: paper.md\n  body words: 10,133\n  references: 51\n  equations: 43\n  Mermaid figures: 7\n",
+      "stderr": ""
+    },
+    {
+      "name": "Submission baseline (known pre-migration hash mismatch)",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "matched_expected": true,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\validation\\validate_submission.py\", line 134, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\validation\\validate_submission.py\", line 109, in main\n    require(canonical_hash == CANONICAL_HASH, f\"canonical paper hash changed: {canonical_hash}\")\n  File \"C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\validation\\validate_submission.py\", line 23, in require\n    raise AssertionError(message)\nAssertionError: canonical paper hash changed: EF155755DA4B1907C34C8A127D4C394CD84A551BDBDB7A014B3C2191947A16A4\n"
+    },
+    {
+      "name": "KESONIA illustrative arithmetic",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "matched_expected": true,
+      "stdout": "{\n  \"status\": \"All assertions passed; illustrative arithmetic only\",\n  \"historical_benchmark\": {\n    \"factor\": \"0.00077768219178082191780821917808219\",\n    \"index_factor\": \"0.0007776821424487214850541661783\",\n    \"benchmark_interest\": \"777.68219178082191780821917808219\",\n    \"index_interest\": \"777.68214244872148505416617830000\",\n    \"difference_KES\": \"-0.00004933210043275405299978219\",\n    \"hypothetical_spread_interest\": \"246.57534246575342465753424657534\",\n    \"hypothetical_total_interest\": \"1024.2575342465753424657534246575\"\n  },\n  \"curve\": {\n    \"discount_factors\": [\n      \"0.97087378640776699029126213592233\",\n      \"0.93351070036640294989381315783332\",\n      \"0.88899635867091488393263541192535\"\n    ],\n    \"forward_1_to_2\": \"0.0400242718446601941747572815534\",\n    \"forward_2_to_3\": \"0.0500725804569534878293542439730\",\n    \"par_coupon_3y\": \"0.039738097835849623212162850675709\"\n  },\n  \"deposit_ladder\": {\n    \"initial_yield\": \"0.03975\",\n    \"month_one_yield\": \"0.041500000000000000000000000000000\",\n    \"annualised_nii_change_by_beta\": {\n      \"0.25\": \"-3250000.0000000000000000000000000\",\n      \"0.75\": \"-13250000.000000000000000000000000\"\n    }\n  },\n  \"pricing_KES_thousands\": {\n    \"margin_decimal\": \"0.05\",\n    \"interest\": \"140.00\",\n    \"income_with_fees\": \"145.00\",\n    \"return_before_capital_hurdle\": \"10.00\",\n    \"economic_surplus_after_hurdle\": \"0.00\"\n  },\n  \"bank_KES_millions\": {\n    \"initial_nii\": \"60.500\",\n    \"nii_change_by_beta\": {\n      \"0.25\": \"-0.5000\",\n      \"0.75\": \"-9.5000\"\n    },\n    \"eve_change_by_deposit_duration\": {\n      \"2\": \"-13.0000\",\n      \"0.5\": \"-40.0000\"\n    },\n    \"cash_after_stress\": \"-35\",\n    \"additional_funding_to_zero\": \"35\"\n  },\n  \"cva_currency_units\": {\n    \"base\": \"72150.000000\",\n    \"stress\": \"960000.00000\",\n    \"change\": \"887850.000000\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "KESONIA local rendering",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "matched_expected": true,
+      "stdout": "Rendered 8 local review documents\n",
+      "stderr": ""
+    }
+  ],
+  "python_files_parsed": [
+    "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\experiment\\run_synthetic_comparison.py",
+    "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\scripts\\postprocess_submission_docx.py",
+    "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\scripts\\table_geometry.py",
+    "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\validation\\validate_submission.py",
+    "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\validate.py",
+    "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\scripts\\postprocess_docx.py",
+    "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\build_reading_pack.py",
+    "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\verify_examples.py"
+  ],
+  "migration_checks_passed": true,
+  "known_open_validation_issue": "Submission canonical-paper hash differs from its pinned baseline, identically before and after extraction.",
+  "scope": "File preservation, structural checks, illustrative arithmetic and local HTML rendering; no empirical validation or full PDF rebuild."
+}

@@ -1,0 +1,621 @@
+{
+  "Passed": true,
+  "Date": "2026-09-26",
+  "Moves": [
+    {
+      "Archive": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\repository_migration_2026-09-26\\retired\\whitepapers\\telematics-relativities",
+      "Destination": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities",
+      "NewRelative": "whitepapers/telematics-relativities",
+      "Relative": "whitepapers/telematics-relativities",
+      "Source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities",
+      "Repository": "bayesian-telematics-relativities"
+    },
+    {
+      "Archive": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\repository_migration_2026-09-26\\retired\\publications\\submissions\\brian-hey-2026",
+      "Destination": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026",
+      "NewRelative": "publications/submissions/brian-hey-2026",
+      "Relative": "publications/submissions/brian-hey-2026",
+      "Source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026",
+      "Repository": "bayesian-telematics-relativities"
+    },
+    {
+      "Archive": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\repository_migration_2026-09-26\\retired\\docs\\research\\kesonia",
+      "Destination": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia",
+      "NewRelative": "docs/research/kesonia",
+      "Relative": "docs/research/kesonia",
+      "Source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia",
+      "Repository": "regtech-kesonia-treasury"
+    },
+    {
+      "Archive": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\repository_migration_2026-09-26\\retired\\output\\kesonia_treasury_deep_review_2026-09-25",
+      "Destination": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25",
+      "NewRelative": "output/kesonia_treasury_deep_review_2026-09-25",
+      "Relative": "output/kesonia_treasury_deep_review_2026-09-25",
+      "Source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25",
+      "Repository": "regtech-kesonia-treasury"
+    },
+    {
+      "Archive": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\_archive\\repository_migration_2026-09-26\\retired\\behavioural credit scoring - underwrite to collect rct",
+      "Destination": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\",
+      "NewRelative": "",
+      "Relative": "behavioural credit scoring - underwrite to collect rct",
+      "Source": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct",
+      "Repository": "behavioural credit scoring - underwrite to collect rct"
+    }
+  ],
+  "NavigationPointers": [
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\BRIAN_HEY_PRIZE_2026_SUBMISSION_PLAN.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\BRIAN_HEY_PRIZE_2026_SUBMISSION_PLAN.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\DETAILED_IMPLEMENTATION_PLAN.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\DETAILED_IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\guide.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\guide.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\IMPLEMENTATION_CORRECTION_LEDGER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\IMPLEMENTATION_CORRECTION_LEDGER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\LINKEDIN_POST.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\LINKEDIN_POST.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\Mathematical_Derivations.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\Mathematical_Derivations.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\outline.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\outline.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\paper.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\paper.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\research-note.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\research-note.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\whitepapers\\telematics-relativities\\Semantic_Comparison_Notes.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\telematics-relativities\\Semantic_Comparison_Notes.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\Bayesian_Credibility_Telematics_Brian_Hey_2026.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\Bayesian_Credibility_Telematics_Brian_Hey_2026.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\README.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\README.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\bayesian-telematics-relativities\\publications\\submissions\\brian-hey-2026\\submission_requirements.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\publications\\submissions\\brian-hey-2026\\submission_requirements.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\cbk_kesonia_k_framework.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\cbk_kesonia_k_framework.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\FRTB_SCOPE_AND_DEVELOPMENT_NOTE_2026-09-25.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\FRTB_SCOPE_AND_DEVELOPMENT_NOTE_2026-09-25.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\KESONIA_COMPOUNDING_TERM_STRUCTURE_AND_FUNDING_CURVE_NOTE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\KESONIA_COMPOUNDING_TERM_STRUCTURE_AND_FUNDING_CURVE_NOTE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part1_KESONIA_Reform_and_Enterprise_Architecture.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part3_AI_Pricing_Engine_and_IFRS9_Integration.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\RegTech_Gap_Analysis_Report.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\RegTech_Gap_Analysis_Report.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\RegTech_KESONIA_Enhancement_Report.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\RegTech_KESONIA_Enhancement_Report.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\STP_AND_ALM_FTP_SOFTWARE_REVIEW_2026-09-25.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\STP_AND_ALM_FTP_SOFTWARE_REVIEW_2026-09-25.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\TREASURY_CURVES_AND_BUSINESS_ANALYSIS_DETAILED_REVIEW_2026-09-25.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\TREASURY_CURVES_AND_BUSINESS_ANALYSIS_DETAILED_REVIEW_2026-09-25.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\docs\\research\\kesonia\\TREASURY_REMAINING_WORK_REGISTER_2026-09-25.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.html",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.html"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\00_READ_ME.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.html",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.html"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\01_DETAILED_MATERIAL_REVIEW.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.html",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.html"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\02_CALCULATION_AND_CASEBOOK.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.html",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.html"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\03_REVISION_BLUEPRINT_AND_INSERTS.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.html",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.html"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\04_READING_MAP_AND_REFERENCES.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.html",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.html"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\05_STP_AND_ALM_FTP_SOFTWARE_REVIEW.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.html",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.html"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\06_WHAT_REMAINS_TO_BE_DEVELOPED.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.html",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.html"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\output\\kesonia_treasury_deep_review_2026-09-25\\07_FRTB_SCOPE_AND_DEVELOPMENT_NOTE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\In the spirit of underwriting to collect.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\In the spirit of underwriting to collect.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\README.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\README.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\SERIES_CHARTER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\SERIES_CHARTER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\SERIES_IMPLEMENTATION_PLAN.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\SERIES_IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\SOURCE_MANIFEST.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\SOURCE_MANIFEST.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\UNDERWRITE_FOR_COLLECTION_SIDE_BY_SIDE_SEMANTIC_ANALYSIS.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\UNDERWRITE_FOR_COLLECTION_SIDE_BY_SIDE_SEMANTIC_ANALYSIS.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_1_BRIEF.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_1_BRIEF.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_2a_BRIEF.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_2a_BRIEF.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_2b_BRIEF.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_2b_BRIEF.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_3_BRIEF.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_3_BRIEF.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_4_BRIEF.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_4_BRIEF.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_5_BRIEF.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_5_BRIEF.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_6_BRIEF.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\briefs\\Part_6_BRIEF.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\build\\README.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\build\\README.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\governance\\CANONICAL_DEFINITIONS_AND_NOTATION.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\governance\\CANONICAL_DEFINITIONS_AND_NOTATION.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\governance\\CLAIM_LEDGER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\governance\\CLAIM_LEDGER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\governance\\DECISION_REGISTER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\governance\\DECISION_REGISTER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\governance\\EXPERIMENTAL_AND_CAUSAL_DESIGN_STANDARD.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\governance\\EXPERIMENTAL_AND_CAUSAL_DESIGN_STANDARD.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\governance\\WORD_COUNT_AND_QUALITY_GATES.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\governance\\WORD_COUNT_AND_QUALITY_GATES.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_1_MSME_Credit_Lifecycle_and_Collection_Cascades.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_1_MSME_Credit_Lifecycle_and_Collection_Cascades.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_2a_Temporal_Evidence_and_Feature_Engineering.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_2a_Temporal_Evidence_and_Feature_Engineering.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_2b_Hierarchical_Bayesian_Underwriting_Causal_Identification_and_Lifecycle_Dependence.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_2b_Hierarchical_Bayesian_Underwriting_Causal_Identification_and_Lifecycle_Dependence.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_3_Regulatory_Orchestration_Fair_Intervention_and_Collection_Governance.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_3_Regulatory_Orchestration_Fair_Intervention_and_Collection_Governance.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_4_Bank_Controlled_Research_Sandboxes_and_Enterprise_Credit_Architecture.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_4_Bank_Controlled_Research_Sandboxes_and_Enterprise_Credit_Architecture.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_5_KESONIA_Pricing_Expected_Credit_Loss_Capital_and_Funding.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\Part_5_KESONIA_Pricing_Expected_Credit_Loss_Capital_and_Funding.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\README.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\parts\\README.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\publications\\linkedin\\BEFORE_THE_RATIO_ENTITY_RESOLVED_CASHFLOW_UNDERWRITING.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\publications\\linkedin\\BEFORE_THE_RATIO_ENTITY_RESOLVED_CASHFLOW_UNDERWRITING.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\references\\MASTER_SOURCE_INDEX.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\references\\MASTER_SOURCE_INDEX.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\references\\SOURCE_AND_CITATION_POLICY.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\references\\SOURCE_AND_CITATION_POLICY.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\ADDITIONAL_PRICING_REVIEW_AND_CONTENT_PLAN_2026-09-25.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\ADDITIONAL_PRICING_REVIEW_AND_CONTENT_PLAN_2026-09-25.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\COLLECTABILITY_FEEDBACK_AND_CONTINUOUS_REVERIFICATION_2026-09-25.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\COLLECTABILITY_FEEDBACK_AND_CONTINUOUS_REVERIFICATION_2026-09-25.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\ECONOMETRIC_AND_ACTUARIAL_METHODS_IN_THE_CREDIT_LIFECYCLE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\ECONOMETRIC_AND_ACTUARIAL_METHODS_IN_THE_CREDIT_LIFECYCLE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\ECONOMIC_CASH_PROVENANCE_AND_ENTITY_RESOLUTION_IMPLEMENTATION_PLAN.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\ECONOMIC_CASH_PROVENANCE_AND_ENTITY_RESOLUTION_IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\PART_5_PEER_REVIEWED_AND_AUTHORITATIVE_SOURCE_LEDGER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\PART_5_PEER_REVIEWED_AND_AUTHORITATIVE_SOURCE_LEDGER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\PART_5_TREASURY_SEMANTIC_GAP_ANALYSIS.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\PART_5_TREASURY_SEMANTIC_GAP_ANALYSIS.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\README.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\README.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\RECOMMENDED_PUBLICATION_ROUTE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\RECOMMENDED_PUBLICATION_ROUTE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_1\\PART_1_DETAILED_OUTLINE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_1\\PART_1_DETAILED_OUTLINE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_1\\PART_1_SOURCE_AND_CLAIM_LEDGER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_1\\PART_1_SOURCE_AND_CLAIM_LEDGER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_1\\PART_1_VALIDATION_REPORT.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_1\\PART_1_VALIDATION_REPORT.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2a\\PART_2A_DETAILED_OUTLINE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2a\\PART_2A_DETAILED_OUTLINE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2a\\PART_2A_SOURCE_AND_CLAIM_LEDGER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2a\\PART_2A_SOURCE_AND_CLAIM_LEDGER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2a\\PART_2A_VALIDATION_REPORT.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2a\\PART_2A_VALIDATION_REPORT.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2b\\PART_2B_DETAILED_OUTLINE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2b\\PART_2B_DETAILED_OUTLINE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2b\\PART_2B_SOURCE_AND_CLAIM_LEDGER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2b\\PART_2B_SOURCE_AND_CLAIM_LEDGER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2b\\PART_2B_VALIDATION_REPORT.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_2b\\PART_2B_VALIDATION_REPORT.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_3\\PART_3_DETAILED_OUTLINE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_3\\PART_3_DETAILED_OUTLINE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_3\\PART_3_SOURCE_AND_CLAIM_LEDGER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_3\\PART_3_SOURCE_AND_CLAIM_LEDGER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_3\\PART_3_VALIDATION_REPORT.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_3\\PART_3_VALIDATION_REPORT.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_4\\PART_4_DETAILED_OUTLINE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_4\\PART_4_DETAILED_OUTLINE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_4\\PART_4_SOURCE_AND_CLAIM_LEDGER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_4\\PART_4_SOURCE_AND_CLAIM_LEDGER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_4\\PART_4_VALIDATION_REPORT.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_4\\PART_4_VALIDATION_REPORT.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_5\\PART_5_DETAILED_OUTLINE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_5\\PART_5_DETAILED_OUTLINE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_5\\PART_5_SOURCE_AND_CLAIM_LEDGER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_5\\PART_5_SOURCE_AND_CLAIM_LEDGER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_5\\PART_5_VALIDATION_REPORT.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\series\\research\\Part_5\\PART_5_VALIDATION_REPORT.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\00_anchors\\IN_THE_SPIRIT_OF_UNDERWRITING_TO_COLLECT_ROUGH_RESEARCH.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\00_anchors\\IN_THE_SPIRIT_OF_UNDERWRITING_TO_COLLECT_ROUGH_RESEARCH.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\00_anchors\\UNDERWRITE_FOR_COLLECTION_SIDE_BY_SIDE_SEMANTIC_ANALYSIS.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\00_anchors\\UNDERWRITE_FOR_COLLECTION_SIDE_BY_SIDE_SEMANTIC_ANALYSIS.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\00_anchors\\UNDERWRITE_FOR_COLLECTION.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\00_anchors\\UNDERWRITE_FOR_COLLECTION.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\01_KBA_EDITORIAL_ENQUIRY.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\01_KBA_EDITORIAL_ENQUIRY.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\02_ONE_PAGE_CONCEPT_NOTE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\02_ONE_PAGE_CONCEPT_NOTE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\03_FIVE_PAGE_RESEARCH_PROPOSAL.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\03_FIVE_PAGE_RESEARCH_PROPOSAL.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\04_CANONICAL_RESEARCH_SPECIFICATION.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\04_CANONICAL_RESEARCH_SPECIFICATION.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\05_SOURCE_EXTRACTION_LEDGER.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\05_SOURCE_EXTRACTION_LEDGER.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\06_DATA_REQUIREMENTS_AND_DICTIONARY.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\06_DATA_REQUIREMENTS_AND_DICTIONARY.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\07_SOURCE_BASELINE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\07_SOURCE_BASELINE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\08_KBA_ECONOMIC_BULLETIN_ARTICLE_DRAFT.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\08_KBA_ECONOMIC_BULLETIN_ARTICLE_DRAFT.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\09_PUBLIC_DATA_BASELINE_NOTE.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\09_PUBLIC_DATA_BASELINE_NOTE.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\10_VALIDATION_REPORT.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\10_VALIDATION_REPORT.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\11_KBA_CORRESPONDENCE_LOG.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\11_KBA_CORRESPONDENCE_LOG.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\README.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\README.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\data\\README.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\01_kba_research_package\\data\\README.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\Bayesian_logistic_regression_modelling.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\Bayesian_logistic_regression_modelling.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\DETAILED_IMPLEMENTATION_PLAN_CREDIT_RISK_ENHANCEMENTS.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\DETAILED_IMPLEMENTATION_PLAN_CREDIT_RISK_ENHANCEMENTS.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\hierachical bayesian logistic regression.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\hierachical bayesian logistic regression.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\hierarchical bayesian modelling for continuous underwriting of credit risk for digital lenders.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\hierarchical bayesian modelling for continuous underwriting of credit risk for digital lenders.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\How do we integrate low frequency data like macroeconomic conditions.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\How do we integrate low frequency data like macroeconomic conditions.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\Insurtech_Launch_and_Execution_Playbook.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\Insurtech_Launch_and_Execution_Playbook.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\KBA_RESEARCH_PUBLICATION_READINESS_AND_IMPLEMENTATION_PLAN.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\KBA_RESEARCH_PUBLICATION_READINESS_AND_IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\low_level_bayesian_hardware_optimization.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\low_level_bayesian_hardware_optimization.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\PUBLICATION_PORTFOLIO_AND_IP_STRATEGY.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\PUBLICATION_PORTFOLIO_AND_IP_STRATEGY.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\transformer-ffn-SiLU-b-spline-funnel-ar-rw-nig-niw.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\transformer-ffn-SiLU-b-spline-funnel-ar-rw-nig-niw.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\UNDERWRITE_FOR_COLLECTION_PUBLICATION_PLAN.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\02_credit_risk_research\\UNDERWRITE_FOR_COLLECTION_PUBLICATION_PLAN.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Asset Liability and Mature Funds Transfer Pricing.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Asset Liability and Mature Funds Transfer Pricing.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\cbk_kesonia_k_framework.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\cbk_kesonia_k_framework.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Deploying a dual Delta Lake Architecture - Data Engineering Primitives.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Deploying a dual Delta Lake Architecture - Data Engineering Primitives.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Part1_KESONIA_Reform_and_Enterprise_Architecture.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Part3_AI_Pricing_Engine_and_IFRS9_Integration.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\RegTech_Gap_Analysis_Report.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\RegTech_Gap_Analysis_Report.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\RegTech_KESONIA_Enhancement_Report.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\RegTech_KESONIA_Enhancement_Report.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\risk neutral measure, KESONIA compounding, WACF.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\03_kesonia_enterprise_and_funding\\risk neutral measure, KESONIA compounding, WACF.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_1_Product_Architecture_and_Cascades.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_1_Product_Architecture_and_Cascades.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_2a_Deep_Temporal_Representation_and_Feature_Engineering.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_2a_Deep_Temporal_Representation_and_Feature_Engineering.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_2b_Bayesian_Underwriting_and_Asymmetric_Copulas.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_2b_Bayesian_Underwriting_and_Asymmetric_Copulas.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_3_Regulatory_Orchestration_and_Interventions.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_3_Regulatory_Orchestration_and_Interventions.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_4_Enterprise_ERP_and_Telemetry.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_4_Enterprise_ERP_and_Telemetry.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_5_KESONIA_Pricing_and_Capital_Orchestration.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_5_KESONIA_Pricing_and_Capital_Orchestration.md"
+    },
+    {
+      "NewPath": "C:\\Users\\Nevo\\Downloads\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_6_Implementation_Roadmap_and_Execution.md",
+      "OldPath": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\behavioural credit scoring - underwrite to collect rct\\source_library\\04_structural_comparators\\mwendo-pamoja-parts\\Part_6_Implementation_Roadmap_and_Execution.md"
+    }
+  ],
+  "ArchivedFilesHashVerified": 237
+}
