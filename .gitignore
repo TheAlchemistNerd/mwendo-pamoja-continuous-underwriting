@@ -3,6 +3,9 @@
 /scratchpad/
 /revision_backups/
 
+# Retired integration location: navigation pointers only; authoritative sources are in the sibling repository
+/behavioural credit scoring - underwrite to collect rct/
+
 # Dependency directories and package-manager caches
 /node_modules/
 **/node_modules/
@@ -26,6 +29,7 @@ Thumbs.db
 **/build-output/
 **/output/
 **/outputs/
+/whitepapers/telematics-relativities/build/
 *_files/
 *.knit.md
 *.utf8.md
@@ -53,6 +57,10 @@ Thumbs.db
 # Retain only deliberately curated publication artifacts
 !whitepapers/mwendo-pamoja/dist/Mwendo_Pamoja_Continuous_Underwriting_White_Paper_Final.pdf
 !presentations/**/release/*.pptx
+!publications/pdfs/Mwendo_Pamoja_Continuous_Underwriting_White_Paper_CC_BY_NC_SA_4_0_2026-09-08.pdf
+!publications/pdfs/Bayesian_Credibility_and_Exposure_Normalised_Telematics_Relativities_CC_BY_NC_SA_4_0_2026-09-08.pdf
+!publications/pdfs/Underwrite_for_Collection_MSME_Lifecycle_White_Paper_2026-09-15.pdf
+!publications/linkedin/UNDERWRITE_FOR_COLLECTION.pdf
 
 # Generated raster/vector previews are ignored by default
 *.png

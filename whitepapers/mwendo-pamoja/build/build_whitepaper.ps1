@@ -82,6 +82,8 @@ function Remove-YamlFrontMatter {
 $builder = [System.Text.StringBuilder]::new()
 [void]$builder.AppendLine('\WhitePaperCover')
 [void]$builder.AppendLine()
+[void]$builder.AppendLine('\WhitePaperLicensePage')
+[void]$builder.AppendLine()
 [void]$builder.AppendLine('\pagenumbering{roman}')
 [void]$builder.AppendLine('\gdef\CurrentPart{Contents}')
 [void]$builder.AppendLine('\tableofcontents')

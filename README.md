@@ -6,7 +6,13 @@ Mwendo Pamoja is an insurtech and embedded-finance research and implementation p
 
 The repository is organized around canonical publications, controlled implementation specifications, supporting research, and auditable financial artefacts. Numerical projections remain illustrative until replaced by validated portfolio data, executed agreements, and approved accounting, legal, actuarial, and model-governance decisions.
 
-[Read the final comprehensive white paper](whitepapers/mwendo-pamoja/dist/Mwendo_Pamoja_Continuous_Underwriting_White_Paper_Final.pdf)
+[Read the published white-paper edition dated 8 September 2026](publications/pdfs/Mwendo_Pamoja_Continuous_Underwriting_White_Paper_CC_BY_NC_SA_4_0_2026-09-08.pdf)
+
+[Published PDF index](publications/pdfs/README.md) · [Repository boundaries](docs/governance/REPOSITORY_BOUNDARIES_AND_SPLIT_PLAN_2026-09-25.md) · [Completed repository migration](docs/governance/REPOSITORY_MIGRATION_2026-09-26.md)
+
+Independent projects now live side by side in Downloads: Underwrite for Collection, Bayesian telematics relativities and RegTech–KESONIA Treasury. Their former locations in this repository contain navigation pointers; the original trees are archived locally. Guest repositories, including `financial material` and `business and technical website blog`, remain outside this task's write boundary. See the completed migration record for authoritative locations, validation and remaining work.
+
+The [28 September resolution record](docs/governance/PENDING_CHANGES_RESOLUTION_2026-09-28.md) records the retained research reviews, verified source retirement, publication links and licence-page checks. The [RegTech project comparison](docs/governance/REGTECH_PROJECT_COMPARISON_2026-09-28.md) identifies an older overlapping Documents repository whose unique history and publication assets still need reconciliation.
 
 ## Core architectural question
 
@@ -38,11 +44,11 @@ The neural branch and Explicit Liquidity Feature Path have separate feature owne
 | Path | Purpose |
 |---|---|
 | `whitepapers/mwendo-pamoja/` | Canonical seven-part white paper, glossary, publication build configuration, and final PDF. |
-| `whitepapers/telematics-relativities/` | Standalone actuarial research on Bayesian credibility and exposure-normalised telematics relativities. |
+| `whitepapers/telematics-relativities/` | Navigation pointers to the independent Bayesian telematics relativities repository. |
 | `docs/transaction/` | Strategic partnership memorandum, HoldCo technical pitch, SPV term sheet, and retained source material. |
 | `docs/controlled-specifications/` | Implementation, legal-boundary, accounting, data, model-governance, SPV, and programme-control specifications. |
 | `docs/governance/` | Editorial standards, revision ledgers, canonical baseline, source index, inconsistency reports, and remediation plans. |
-| `docs/research/` | KESONIA, RegTech, data-architecture, Bayesian, neural, and implementation research notes. |
+| `docs/research/` | Data-architecture, Bayesian, neural, and implementation research notes; KESONIA pointers lead to its independent repository. |
 | `docs/implementation/` | Launch and execution material that supports programme delivery. |
 | `financial_models/spv/` | Illustrative SPV workbook, model guide, generator source, and validation records. |
 | `presentations/lender-dfi/` | Lender and DFI presentation source. Release decks are added only after visual approval. |
@@ -120,3 +126,15 @@ The current repository should be treated as private-first because its Git histor
 
 Neville Maloba<br>
 [nevillemaloba@gmail.com](mailto:nevillemaloba@gmail.com)
+
+## Credit research review and source retirement — 22 September 2026
+
+The [coverage audit](docs/research/coverage-retirement-audit-2026-09-22/00_START_HERE.md) maps the supplied practitioner posts and the continuous-underwriting rough document to current papers, identifies corrections, and records the reversible root cleanup. The [research addendum](docs/research/coverage-retirement-audit-2026-09-22/03_RESEARCH_PROTOCOL_ADDENDUM.md) formalises vintage analysis, evidence freshness and operational study protocols. [Open manuscript corrections](docs/research/coverage-retirement-audit-2026-09-22/04_ACTIVE_WORK_AND_ERRATA.md) remain explicit.
+
+The [DCP positioning note](docs/research/industry-engagement/MWENDO_PAMOJA_DCP_POSITIONING_AND_PEER_REFERENCE_NOTE.md) is active. Twelve historical root files are preserved under `_archive/2026-09-22-source-retirement/`; see the [move manifest](docs/research/coverage-retirement-audit-2026-09-22/05_CLEANUP_MANIFEST.md). The *So picking the hierachical bayesian logistic regression with my econometric.docx* source remains at root intentionally because the current research package references it.
+
+<!-- ADDITIONAL_MATERIAL_2026_09_23 -->
+
+### Latest material review — 23 September 2026
+
+[Read the additional coverage notes and protocols](docs/research/coverage-retirement-audit-2026-09-22/06_ADDITIONAL_MATERIAL_REVIEW_2026-09-23.md) for recovery readiness, trade exposure, decision execution, provision matrices, purpose verification and model complexity. This extends the existing research programme; written coverage and untested hypotheses are distinguished.

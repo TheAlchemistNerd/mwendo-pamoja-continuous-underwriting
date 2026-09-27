@@ -1,0 +1,106 @@
+[
+  {
+    "source": "am focusing on the pure.docx",
+    "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\am focusing on the pure.docx",
+    "sha256": "5cfd9e06acde4a2563a31d279642a09f34ce605dfade931b0a2efb0b7869de78",
+    "bytes": 14062,
+    "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "am focusing on the pure.md",
+    "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\am focusing on the pure.md",
+    "sha256": "457654d60453ac1283cce482e5a538067d36b274ae441e695809d6792c3417bc",
+    "bytes": 8462,
+    "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "Another unrelated question.md",
+    "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\Another unrelated question.md",
+    "sha256": "fc33a9b1a21ab7ae84991c8feade76450613f1c4ebe666f738082783255f88a4",
+    "bytes": 8198,
+    "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "Bayesian logistic regression modelling.docx",
+    "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\Bayesian logistic regression modelling.docx",
+    "sha256": "a5c54c4c853586e8fe6f0546a6657fcec25fb70ba687d0a6f7db6f00cd5d8190",
+    "bytes": 44591,
+    "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "hierarchical bayesian modelling for continuous underwriting of credit risk for digital lenders.docx",
+    "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\hierarchical bayesian modelling for continuous underwriting of credit risk for digital lenders.docx",
+    "sha256": "482e21bb1ad727dd2add48b3aaedecac7890dd7121d95467e7dc20fc452b0364",
+    "bytes": 837309,
+    "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "hierarchical negative binomial gamma for usage based insurance motor premium pricing.docx",
+    "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\hierarchical negative binomial gamma for usage based insurance motor premium pricing.docx",
+    "sha256": "7b7af52d7271e67c0514ae7127530e3f4c912041f7e1093738efef6187f52261",
+    "bytes": 19011,
+    "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "hierarchical negative binomial gamma for usage based insurance motor premium pricing.md",
+    "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\hierarchical negative binomial gamma for usage based insurance motor premium pricing.md",
+    "sha256": "25a6be116eb93ee07e76f8d64a18ce6bb34004908c6c0ad6032ddf1ab2effd36",
+    "bytes": 23638,
+    "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "implementation_plan.md",
+    "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\implementation_plan.md",
+    "sha256": "b58f48874ec470a522526e9028f680192c2631138be67c13da1ea2a068cb9592",
+    "bytes": 8826,
+    "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "Mathematical_Derivations.md",
+    "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\Mathematical_Derivations.md",
+    "sha256": "a99260657b944b12c086320302a52fbf83682dd67b717fb02ba2fd583419a669",
+    "bytes": 8173,
+    "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "commit_msg.txt",
+    "destination": "_archive\\2026-09-22-source-retirement\\diagnostic-snapshots\\commit_msg.txt",
+    "sha256": "ee34f60510e3d74d594c87cf9a1352938cd58d636afea06f9061b9e11e623b9d",
+    "bytes": 7257,
+    "reason": "Historical diagnostic snapshot; removed from the active root and preserved unchanged.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "git_diff.txt",
+    "destination": "_archive\\2026-09-22-source-retirement\\diagnostic-snapshots\\git_diff.txt",
+    "sha256": "adb3138ac13b62ee8222dffdea192eef7641f6513c311d7dc6befe7ea50bce2e",
+    "bytes": 228884,
+    "reason": "Historical diagnostic snapshot; removed from the active root and preserved unchanged.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "git_untracked.txt",
+    "destination": "_archive\\2026-09-22-source-retirement\\diagnostic-snapshots\\git_untracked.txt",
+    "sha256": "dfe7dd2da816d01d5cd191b991080c0c40aeeb52d799ad6217822065a26f54c0",
+    "bytes": 6230,
+    "reason": "Historical diagnostic snapshot; removed from the active root and preserved unchanged.",
+    "status": "moved-and-hash-verified"
+  },
+  {
+    "source": "MWENDO_PAMOJA_DCP_POSITIONING_AND_PEER_REFERENCE_NOTE.md",
+    "destination": "docs\\research\\industry-engagement\\MWENDO_PAMOJA_DCP_POSITIONING_AND_PEER_REFERENCE_NOTE.md",
+    "sha256": "53fffc8dceaf09dc7b9b88019c4edd8337d6e73ed33f8b4496e4ab2e51ec05d0",
+    "bytes": 7202,
+    "reason": "Active positioning note relocated to its subject folder; content retained unchanged.",
+    "status": "moved-and-hash-verified"
+  }
+]

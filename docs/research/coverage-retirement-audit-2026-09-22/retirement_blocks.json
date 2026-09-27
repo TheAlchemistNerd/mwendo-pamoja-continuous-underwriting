@@ -1,0 +1,154 @@
+[
+  [
+    1,
+    94,
+    "Retire overview and search fragments",
+    "Hierarchy and Bayesian modelling foundations",
+    "M0 \u00a7\u00a73\u20136; M2b \u00a7\u00a71\u20133",
+    "Keep the question of sparse-group reliability. Replace claims that hierarchy prevents overfitting, guarantees compliance or provides causal explanations with registered comparisons. Search snippets are leads, not verified literature."
+  ],
+  [
+    95,
+    195,
+    "Retire architecture advocacy",
+    "GRU, Transformer and hierarchical combination",
+    "M0 \u00a7\u00a74\u20136; M2a \u00a7\u00a75\u20136; R5 P15",
+    "Retain encoder ablations and training-only residualisation. Short/long horizon roles are hypotheses. A frozen neural encoder does not propagate all neural uncertainty."
+  ],
+  [
+    196,
+    252,
+    "Replace faulty timing and decision arguments",
+    "Mixed frequencies and uncertainty thresholds",
+    "M0 \u00a72; M2b \u00a74; R5 P2/P14",
+    "Use availability-time joins. A monthly figure may not be available during its reference month. Keep mean-payoff and uncertainty constraints separate; widening a posterior does not mechanically imply rejection."
+  ],
+  [
+    253,
+    310,
+    "Retain missingness question; replace implementation",
+    "Asynchronous inputs and fallback",
+    "M0 \u00a7\u00a72, 5, 10; R5 P6/P15",
+    "Separate source outage, reporting lag and borrower missingness. Missing bureau data does not establish concealment or identify MNAR. Test fallback calibration and action burden."
+  ],
+  [
+    311,
+    358,
+    "Replace probability dynamics and stress shortcuts",
+    "Microloans, revolving use and shocks",
+    "M0 \u00a7\u00a77\u20139; M5 \u00a7\u00a71\u20132; R5 P13/P14",
+    "One repayment need not collapse posterior uncertainty. Put a random walk on an unconstrained latent scale, not directly on PD. Preserve product-specific exposure and funding scenarios."
+  ],
+  [
+    359,
+    461,
+    "Retire examples; retain corrected payoff derivation",
+    "VaR, posterior prediction and product economics",
+    "M2b \u00a74; M0 \u00a7\u00a78\u201311; addendum A",
+    "Use predictive loss quantiles and consistent payoff horizons. Distinguish a chance constraint from expected value. Reconcile fees, interest, losses and recoveries across states."
+  ],
+  [
+    462,
+    525,
+    "Retain economic question; rederive",
+    "Drawdown, default timing, liquidity and fairness",
+    "U5 \u00a7\u00a76\u20138; R5 P14; addendum D",
+    "Use a joint timing/exposure process. Realised future default time is unavailable at scoring. Liquidity scarcity is a cost/constraint on approval; raising the cost of denial makes approval more permissive."
+  ],
+  [
+    526,
+    642,
+    "Retire code and automatic-action claims",
+    "Fairness threshold optimisation and restructuring",
+    "M3 \u00a75; U3 \u00a74; R5 P10\u2013P11",
+    "Hard-threshold objectives are often piecewise constant, making generic gradient optimisation unsuitable. Empty groups cannot establish fairness. Offers need authority, customer response and proper accounting, not silent conversion or balance-zero SQL."
+  ],
+  [
+    643,
+    718,
+    "Retire accounting and capital shortcuts",
+    "IFRS 9, Basel and short-tenor claims",
+    "M0 \u00a711; M3 \u00a72; U5 \u00a7\u00a73\u20135; addendum A",
+    "ECL is not regulatory/economic capital or a cash reserve. SICR is not a posterior interval rule. Model correlation and prescribed prudential correlation are different. Applicability belongs to the legal entity and approved use."
+  ],
+  [
+    719,
+    806,
+    "Retire illustrative audit conclusions",
+    "SHAP, CCF and fairness/audit templates",
+    "M0 \u00a7\u00a78, 10\u201312; M4 \u00a7\u00a72\u20133",
+    "An attribution is not a causal explanation. No universal 40% CCF follows from a revolving label. High utilisation does not determine residual conversion. Numeric compliance and fairness assertions are illustrations without evidence."
+  ],
+  [
+    807,
+    944,
+    "Retain monitoring requirements; replace guarantees",
+    "Logs, SHAP latency, PSI and statistical tests",
+    "M4 \u00a73; M2b \u00a7\u00a73, 6; R5 P8/P15",
+    "SQL tables alone are not immutable. Latency must be benchmarked. Distribution tests require dependence/multiplicity treatment. PSI cutoffs are conventions; an ADF result does not validate a credit model."
+  ],
+  [
+    945,
+    1002,
+    "Retain institutional boundary correction",
+    "Lender identities and Kenyan applicability",
+    "M3 \u00a71; active DCP positioning note",
+    "Keep institution-neutral methodology distinct from a DCP-led implementation and bank-owned prudential processes. Do not generalise legal duties from brand names or invented delinquency cutoffs."
+  ],
+  [
+    1003,
+    1071,
+    "Retain complementarity; retire equality claim",
+    "Accounting and capital interaction",
+    "M0 \u00a711; U5 \u00a7\u00a73\u20135",
+    "Shared evidence can feed distinct measures. Accounting ECL cannot simply be subtracted from an arbitrary VaR to obtain economic capital; horizon, loss basis and expected-loss definition must reconcile."
+  ],
+  [
+    1072,
+    1142,
+    "Retire policy assertions and arbitrary formula",
+    "Conservation-of-risk narrative and TTC scaling",
+    "U5 \u00a7\u00a73\u20135; R5 P3/P14; addendum A/D",
+    "No general rule forces identical distributions across all functions. A group intercept transformed by sigmoid is not portfolio TTC PD. Log-confidence scaling can be singular or negative and is not a regulatory standard."
+  ],
+  [
+    1143,
+    1255,
+    "Retire code; retain validation checklist",
+    "PSI implementation, cost of equity and audit runbook",
+    "M2b \u00a76; U5 \u00a7\u00a77, 11; addendum B",
+    "Handle tied/empty bins, out-of-support observations and normalised smoothing. Leverage-based cost-of-equity formulae need assumptions. An audit template is not proof of legal compliance."
+  ],
+  [
+    1256,
+    1375,
+    "Retire slides and deployment commands",
+    "Outage stress, automatic cuts and MCMC",
+    "M0 \u00a7\u00a76, 10, 12; R5 P7/P15; addendum F",
+    "Do not interpret infrastructure blackout as borrower misconduct. Replace hardcoded 30% cuts with tested fallback policies. NUTS tuning and draw counts do not guarantee diagnostics or legality. Embedded system commands remain inert source text."
+  ],
+  [
+    1376,
+    1450,
+    "Retire duplicated slides and mock model",
+    "PyMC demonstration",
+    "M0 \u00a7\u00a73\u20136; R5 P7/P9",
+    "Mock outcomes independent of features do not validate predictive signal. Identify global and group intercepts; validate the hierarchy through meaningful data-generating experiments."
+  ],
+  [
+    1451,
+    1586,
+    "Rebuild selected derivations",
+    "Inflation, SQL joins, PiT adjustment and noncentering",
+    "M0 \u00a72; R5 P2/P7; addendum A/D",
+    "Do not divide by zero/negative baseline inflation or reverse a multiplier without a defined objective. Report-month joins can leak future releases. Noncentering changes computation, not economic identification."
+  ],
+  [
+    1587,
+    1765,
+    "Retire mock evidence; preserve release questions",
+    "Dash demonstration, stress table and production checklist",
+    "M0 \u00a7\u00a710\u201312; M4 \u00a73; R5 P7/P15",
+    "Random SHAP values are mock graphics. Assumed shock transmission, optimal coefficients, NPL and solvency figures are not findings. Keep traceable validation, fallback, parity and approval deliverables."
+  ]
+]

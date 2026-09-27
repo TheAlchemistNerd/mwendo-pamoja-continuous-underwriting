@@ -1,3 +1,5 @@
+> **Historical draft — superseded as technical authority, 22 September 2026.** Retained for provenance. This text contains claims corrected by the [current paper/specification](../../controlled-specifications/CREDIT_RISK_MODEL_AND_LOSS_ARCHITECTURE_SPECIFICATION.md). Read the [source-retirement ledger](../coverage-retirement-audit-2026-09-22/02_SOURCE_RETIREMENT_LEDGER.md) before reusing its equations, code, fairness or compliance claims. The original text below is preserved.
+
 hierarchical bayesian modelling for continuous underwriting of credit
 risk for digital lenders
 

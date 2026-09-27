@@ -1,0 +1,56 @@
+[
+  {
+    "path": "whitepapers\\telematics-relativities\\Mathematical_Derivations.md",
+    "backup": "_archive\\2026-09-22-source-retirement\\before-review-notices\\whitepapers\\telematics-relativities\\Mathematical_Derivations.md",
+    "before_sha256": "a99260657b944b12c086320302a52fbf83682dd67b717fb02ba2fd583419a669",
+    "after_sha256": "44d6832e0bd8ccb3fb6b242c789b6afe8144e64b1ff20e9bf1c31fce9103f1ee"
+  },
+  {
+    "path": "docs\\research\\modelling-notes\\hierarchical bayesian modelling for continuous underwriting of credit risk for digital lenders.md",
+    "backup": "_archive\\2026-09-22-source-retirement\\before-review-notices\\docs\\research\\modelling-notes\\hierarchical bayesian modelling for continuous underwriting of credit risk for digital lenders.md",
+    "before_sha256": "701f11f8076a06039dc70d3380e2f3955bce42d29344391bcb10aa1d1fd45e4f",
+    "after_sha256": "acb2781867db2ab692065ddf92420d94fdd78f4658e5050f9f7ffb64da389d02"
+  },
+  {
+    "path": "output\\credit_lifecycle_research_plan_2026-09-21\\00_README.md",
+    "backup": "_archive\\2026-09-22-source-retirement\\before-review-notices\\output\\credit_lifecycle_research_plan_2026-09-21\\00_README.md",
+    "before_sha256": "f274d3d26dca7424e1b4c665b6809216ee73f6449b4a1169e6424851f3fc1504",
+    "after_sha256": "0feeef6f17c90baa42208152b3fc1dc19ce2c0f003dc4d89a076985131893331"
+  },
+  {
+    "path": "output\\credit_lifecycle_research_plan_2026-09-21\\01_MAIN_PAPER_DETAILED_OUTLINE.md",
+    "backup": "_archive\\2026-09-22-source-retirement\\before-review-notices\\output\\credit_lifecycle_research_plan_2026-09-21\\01_MAIN_PAPER_DETAILED_OUTLINE.md",
+    "before_sha256": "d9d81efa17d1ea5750b102d0eaf86e8fb6506a0b13e1b87fe9e44621b814c4d8",
+    "after_sha256": "7cc1a0ce3bdf3383d2ad299889fadd5ea880efcc7f3d65802f512bac3423552d"
+  },
+  {
+    "path": "output\\credit_lifecycle_research_plan_2026-09-21\\02_FREDDIE_MAC_PAPER_AND_PROTOCOL.md",
+    "backup": "_archive\\2026-09-22-source-retirement\\before-review-notices\\output\\credit_lifecycle_research_plan_2026-09-21\\02_FREDDIE_MAC_PAPER_AND_PROTOCOL.md",
+    "before_sha256": "4b34b61327be945673cada6b848c97fa8872c4b9242904c49d04e2d945204571",
+    "after_sha256": "61f15cd824211b3c08e5e60a6abae6ebe46db56132258da7c7c5805135c55e60"
+  },
+  {
+    "path": "output\\credit_lifecycle_research_plan_2026-09-21\\03_FANNIE_MAE_PAPER_AND_PROTOCOL.md",
+    "backup": "_archive\\2026-09-22-source-retirement\\before-review-notices\\output\\credit_lifecycle_research_plan_2026-09-21\\03_FANNIE_MAE_PAPER_AND_PROTOCOL.md",
+    "before_sha256": "3ee69f454eb403143274d256a382628c5133aa85bf98a7d86324d8758baf722d",
+    "after_sha256": "14103e7a3c711b5ea5298c5d951cca0a524469a9821d374b7eddbc8d0ce672da"
+  },
+  {
+    "path": "output\\credit_lifecycle_research_plan_2026-09-21\\05_SHARED_RESEARCH_PROTOCOLS.md",
+    "backup": "_archive\\2026-09-22-source-retirement\\before-review-notices\\output\\credit_lifecycle_research_plan_2026-09-21\\05_SHARED_RESEARCH_PROTOCOLS.md",
+    "before_sha256": "3412b96b4529df0c419f7431d8f9d269d243146ff37ac0208bb873d4f0706dc1",
+    "after_sha256": "6c8b0c858a8ffceaf1e21dba5b8f5771b60214aec0065190c5a0d957283bb3fe"
+  },
+  {
+    "path": "output\\credit_lifecycle_research_plan_2026-09-21\\build_reader.py",
+    "backup": "_archive\\2026-09-22-source-retirement\\before-review-notices\\output\\credit_lifecycle_research_plan_2026-09-21\\build_reader.py",
+    "before_sha256": "051bfbe9ef807fd210f486412e7e3bccff38622339b2d95ee90263e5b495b128",
+    "after_sha256": "8b237d4cc8da22245289a3190a3e0744a044ffcff12c0eb9fcb0ea1dcdd9612d"
+  },
+  {
+    "path": "README.md",
+    "backup": "_archive\\2026-09-22-source-retirement\\before-review-notices\\README.md",
+    "before_sha256": "6e895ed61e9bec6abfe325762253a7aee2b995e04e263e0873c43eb84f8ad2af",
+    "after_sha256": "b2c5ec25ec51f7d002b27032ff690c97a1d7d0705a3852bc81645232aa81b18f"
+  }
+]

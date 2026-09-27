@@ -1,0 +1,59 @@
+{
+  "checked_at": "2026-09-28T01:08:30.5638402+03:00",
+  "scope": "Pending licence-page publication-layer change; isolated cover/licence/contents/body smoke test",
+  "status": "passed_scoped_validation",
+  "build_script": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\mwendo-pamoja\\build\\build_whitepaper.ps1",
+  "header": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\whitepapers\\mwendo-pamoja\\build\\whitepaper-header.tex",
+  "source_hashes": {
+    "whitepaper_header_tex": "51E21F562658E5A96C8CA89FD96B11432E3E8370B0F06610F0E7F0336CE9BB48",
+    "build_whitepaper_ps1": "763E7F2DDE07F3614FECD2181F5482256D72EBFCAA207809E0FC9A383B1FD162"
+  },
+  "powershell_parse_error_count": 0,
+  "integration_review": "Actual script inserts WhitePaperLicensePage directly after cover and before roman numbering; macro defined in actual header; seven source parts and glossary remain unchanged.",
+  "compilation": {
+    "page_count": 5,
+    "automatic_package_installation": "disabled on successful run",
+    "pdf": "C:\\Users\\Nevo\\Downloads\\insuretech & embedded finance\\scratchpad\\pending_resolution_2026-09-28\\licence_smoke.pdf",
+    "artifact_marker": "run successfully once before authoring",
+    "initial_sandbox_attempt": "Stopped after MiKTeX log access denial; exact compilation rerun with scoped escalation succeeded.",
+    "engine": "Pandoc with XeLaTeX",
+    "pdf_sha256": "D0B25C6FF3701D5FB1D97A7A0FDC76907719A052DCF7AB5B63A13B06BE4C1796",
+    "page_order": [
+      "Cover",
+      "Publication and reuse licence",
+      "Contents (roman i)",
+      "Verification part divider (arabic 1)",
+      "Verification body (arabic 2)"
+    ],
+    "exit_code": 0
+  },
+  "visual_review": {
+    "scale_to_pixels": 1500,
+    "result": "No clipped text, overlap, missing glyphs or licence spillover. Licence fits on one page; cover and roman-numbered contents transitions render correctly.",
+    "renderer": "pdftoppm",
+    "inspected_pages": [
+      1,
+      2,
+      3
+    ]
+  },
+  "metadata": {
+    "author": "Nevil Maloba",
+    "licence_in_keywords": "CC BY-NC-SA 4.0"
+  },
+  "changed_source_files": [],
+  "limitations": [
+    "No full-manuscript build performed. Validation establishes publication-layer integration and rendering only.",
+    "Original published PDFs and manuscript were not overwritten."
+  ],
+  "generated_files": [
+    "licence_smoke.md",
+    "licence_smoke.pdf",
+    "licence_smoke_build.log",
+    "licence-smoke-1.png",
+    "licence-smoke-2.png",
+    "licence-smoke-3.png"
+  ],
+  "guest_repository_changes": false,
+  "git_writes": false
+}

@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-28",
+  "core_manuscripts": [
+    {
+      "original": "C:\\Users\\Nevo\\Documents\\Regulatory Tech for Banks and neobanks\\Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "extracted": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part1_KESONIA_Reform_and_Enterprise_Architecture.md",
+      "original_sha256": "1a918d2e74993209c958198106af31b4b1a5fc4079c275009bd52140f5536ac4",
+      "extracted_sha256": "1a918d2e74993209c958198106af31b4b1a5fc4079c275009bd52140f5536ac4",
+      "identical": true
+    },
+    {
+      "original": "C:\\Users\\Nevo\\Documents\\Regulatory Tech for Banks and neobanks\\Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "extracted": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md",
+      "original_sha256": "b1af86504e332333e08fba8cfc75ce2ac37c99197390a7f743ef0aeb2298a32d",
+      "extracted_sha256": "b1af86504e332333e08fba8cfc75ce2ac37c99197390a7f743ef0aeb2298a32d",
+      "identical": true
+    },
+    {
+      "original": "C:\\Users\\Nevo\\Documents\\Regulatory Tech for Banks and neobanks\\Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "extracted": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part3_AI_Pricing_Engine_and_IFRS9_Integration.md",
+      "original_sha256": "efa7a219e681475efbf7c7eabe47cc77b12372362d0efb82491bcd38fab0d999",
+      "extracted_sha256": "efa7a219e681475efbf7c7eabe47cc77b12372362d0efb82491bcd38fab0d999",
+      "identical": true
+    },
+    {
+      "original": "C:\\Users\\Nevo\\Documents\\Regulatory Tech for Banks and neobanks\\Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "extracted": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury\\docs\\research\\kesonia\\Part4_RegTech_Sweep_Platform_Deep_Dives_and_Roadmap.md",
+      "original_sha256": "e2eb8de37e650549d0642970af73335a1ed21a80b82947c29bd9f8fbf6bdab36",
+      "extracted_sha256": "e2eb8de37e650549d0642970af73335a1ed21a80b82947c29bd9f8fbf6bdab36",
+      "identical": true
+    }
+  ],
+  "repository_states": [
+    {
+      "path": "C:\\Users\\Nevo\\Documents\\Regulatory Tech for Banks and neobanks",
+      "head": "0ca6438b59630db233aede132298e3663d8b1bfd",
+      "branch": "main",
+      "status": "M Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md\n M Part3_AI_Pricing_Engine_and_IFRS9_Integration.md\n D convert_to_unicode.py\n D images/mermaid_282cd0a2.png\n D images/mermaid_42399967.png\n D images/mermaid_42d33aa3.png\n D images/mermaid_4d033abd.png\n D images/mermaid_59ca095f.png\n D images/mermaid_5f436a83.png\n D images/mermaid_9611097b.png\n D images/mermaid_e945e12b.png\n D images/mermaid_ea78c729.png\n D images/mermaid_fa984c6c.png\n M linkedin/Part2_Daily_Compounding_Engine_Mathematics_and_SQL.md\n M linkedin/Part3_AI_Pricing_Engine_and_IFRS9_Integration.md\n M mermaid.lua\n D update_references.py\n?? images/Figure_10_Seven_phase_KESONIA_ERP_implementation_r.png\n?? images/Figure_1_Data_flow_from_CBK_KESONIA_publication_th.png\n?? images/Figure_2_Five_layer_enterprise_architecture_for_au.png\n?? images/Figure_3_Daily_KESONIA_accrual_pipeline_from_CBK_p.png\n?? images/Figure_4_Six_layer_SQL_architecture_for_the_KESONI.png\n?? images/Figure_5_AI_pricing_engine_governance_lifecycle_Th.png\n?? images/Figure_5_Entity_Relationship_Diagram_of_the_Core_T.png\n?? images/Figure_6_Integration_of_IFRS_9_EIR_accounting_Fund.png\n?? images/Figure_7_Complete_Automated_ERP_RegTech_Sweep_pipe.png\n?? images/Figure_8_SAP_S_4HANA_FPSL_contract_lifecycle_and_U.png\n?? images/Figure_9_Microsoft_Dynamics_365_Finance_and_Azure_.png\n?? linkedin/temp_mermaid.mmd\n?? linkedin_posts.md",
+      "remote_urls": ""
+    },
+    {
+      "path": "C:\\Users\\Nevo\\Downloads\\regtech-kesonia-treasury",
+      "head": "dc4ef186b49b000724d998f3887805731badd039",
+      "branch": "codex/repository-separation",
+      "status": "",
+      "remote_urls": ""
+    }
+  ],
+  "method": "Read-only content, SHA-256 and Git inspection; no repository changes"
+}

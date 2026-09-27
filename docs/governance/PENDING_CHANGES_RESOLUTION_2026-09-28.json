@@ -1,0 +1,236 @@
+{
+  "date": "2026-09-28",
+  "initial_modified": [
+    ".gitignore",
+    "README.md",
+    "docs/research/modelling-notes/hierarchical bayesian modelling for continuous underwriting of credit risk for digital lenders.md",
+    "whitepapers/mwendo-pamoja/build/build_whitepaper.ps1",
+    "whitepapers/mwendo-pamoja/build/whitepaper-header.tex"
+  ],
+  "initial_untracked": [
+    "docs/research/coverage-retirement-audit-2026-09-22/00_START_HERE.md",
+    "docs/research/coverage-retirement-audit-2026-09-22/01_POST_COVERAGE_MATRIX.md",
+    "docs/research/coverage-retirement-audit-2026-09-22/02_SOURCE_RETIREMENT_LEDGER.md",
+    "docs/research/coverage-retirement-audit-2026-09-22/03_RESEARCH_PROTOCOL_ADDENDUM.md",
+    "docs/research/coverage-retirement-audit-2026-09-22/04_ACTIVE_WORK_AND_ERRATA.md",
+    "docs/research/coverage-retirement-audit-2026-09-22/05_CLEANUP_MANIFEST.md",
+    "docs/research/coverage-retirement-audit-2026-09-22/06_ADDITIONAL_MATERIAL_REVIEW_2026-09-23.md",
+    "docs/research/coverage-retirement-audit-2026-09-22/additional_material_manifest.json",
+    "docs/research/coverage-retirement-audit-2026-09-22/additional_material_validation.json",
+    "docs/research/coverage-retirement-audit-2026-09-22/cleanup_manifest.json",
+    "docs/research/coverage-retirement-audit-2026-09-22/retirement_blocks.json",
+    "docs/research/coverage-retirement-audit-2026-09-22/review_edit_manifest.json",
+    "docs/research/coverage-retirement-audit-2026-09-22/source_locations_after_retirement.json",
+    "docs/research/coverage-retirement-audit-2026-09-22/validation_report.json",
+    "docs/research/industry-engagement/MWENDO_PAMOJA_DCP_POSITIONING_AND_PEER_REFERENCE_NOTE.md",
+    "publications/linkedin/ADDITIONAL_PRICING_REVIEW_AND_CONTENT_PLAN_2026-09-25.md",
+    "publications/linkedin/BEFORE_THE_RATIO_ENTITY_RESOLVED_CASHFLOW_UNDERWRITING.md",
+    "publications/pdfs/README.md",
+    "revised_with_sources/--",
+    "whitepapers/mwendo-pamoja/ADDITIONAL_PRICING_REVIEW_AND_CONTENT_PLAN_2026-09-25.md",
+    "whitepapers/mwendo-pamoja/ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md"
+  ],
+  "local_markdown_links_checked": 82,
+  "missing_local_links": [],
+  "verified_root_archives": [
+    {
+      "source": "am focusing on the pure.docx",
+      "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\am focusing on the pure.docx",
+      "sha256": "5cfd9e06acde4a2563a31d279642a09f34ce605dfade931b0a2efb0b7869de78",
+      "bytes": 14062,
+      "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+      "status": "moved-and-hash-verified"
+    },
+    {
+      "source": "am focusing on the pure.md",
+      "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\am focusing on the pure.md",
+      "sha256": "457654d60453ac1283cce482e5a538067d36b274ae441e695809d6792c3417bc",
+      "bytes": 8462,
+      "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+      "status": "moved-and-hash-verified"
+    },
+    {
+      "source": "Another unrelated question.md",
+      "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\Another unrelated question.md",
+      "sha256": "fc33a9b1a21ab7ae84991c8feade76450613f1c4ebe666f738082783255f88a4",
+      "bytes": 8198,
+      "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+      "status": "moved-and-hash-verified"
+    },
+    {
+      "source": "Bayesian logistic regression modelling.docx",
+      "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\Bayesian logistic regression modelling.docx",
+      "sha256": "a5c54c4c853586e8fe6f0546a6657fcec25fb70ba687d0a6f7db6f00cd5d8190",
+      "bytes": 44591,
+      "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+      "status": "moved-and-hash-verified"
+    },
+    {
+      "source": "hierarchical bayesian modelling for continuous underwriting of credit risk for digital lenders.docx",
+      "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\hierarchical bayesian modelling for continuous underwriting of credit risk for digital lenders.docx",
+      "sha256": "482e21bb1ad727dd2add48b3aaedecac7890dd7121d95467e7dc20fc452b0364",
+      "bytes": 837309,
+      "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+      "status": "moved-and-hash-verified"
+    },
+    {
+      "source": "hierarchical negative binomial gamma for usage based insurance motor premium pricing.docx",
+      "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\hierarchical negative binomial gamma for usage based insurance motor premium pricing.docx",
+      "sha256": "7b7af52d7271e67c0514ae7127530e3f4c912041f7e1093738efef6187f52261",
+      "bytes": 19011,
+      "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+      "status": "moved-and-hash-verified"
+    },
+    {
+      "source": "hierarchical negative binomial gamma for usage based insurance motor premium pricing.md",
+      "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\hierarchical negative binomial gamma for usage based insurance motor premium pricing.md",
+      "sha256": "25a6be116eb93ee07e76f8d64a18ce6bb34004908c6c0ad6032ddf1ab2effd36",
+      "bytes": 23638,
+      "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+      "status": "moved-and-hash-verified"
+    },
+    {
+      "source": "implementation_plan.md",
+      "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\implementation_plan.md",
+      "sha256": "b58f48874ec470a522526e9028f680192c2631138be67c13da1ea2a068cb9592",
+      "bytes": 8826,
+      "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+      "status": "moved-and-hash-verified"
+    },
+    {
+      "source": "Mathematical_Derivations.md",
+      "destination": "_archive\\2026-09-22-source-retirement\\root-notes\\Mathematical_Derivations.md",
+      "sha256": "a99260657b944b12c086320302a52fbf83682dd67b717fb02ba2fd583419a669",
+      "bytes": 8173,
+      "reason": "Superseded exploratory source; retained for provenance. Replacement and corrections are recorded in the audit.",
+      "status": "moved-and-hash-verified"
+    },
+    {
+      "source": "commit_msg.txt",
+      "destination": "_archive\\2026-09-22-source-retirement\\diagnostic-snapshots\\commit_msg.txt",
+      "sha256": "ee34f60510e3d74d594c87cf9a1352938cd58d636afea06f9061b9e11e623b9d",
+      "bytes": 7257,
+      "reason": "Historical diagnostic snapshot; removed from the active root and preserved unchanged.",
+      "status": "moved-and-hash-verified"
+    },
+    {
+      "source": "git_diff.txt",
+      "destination": "_archive\\2026-09-22-source-retirement\\diagnostic-snapshots\\git_diff.txt",
+      "sha256": "adb3138ac13b62ee8222dffdea192eef7641f6513c311d7dc6befe7ea50bce2e",
+      "bytes": 228884,
+      "reason": "Historical diagnostic snapshot; removed from the active root and preserved unchanged.",
+      "status": "moved-and-hash-verified"
+    },
+    {
+      "source": "git_untracked.txt",
+      "destination": "_archive\\2026-09-22-source-retirement\\diagnostic-snapshots\\git_untracked.txt",
+      "sha256": "dfe7dd2da816d01d5cd191b991080c0c40aeeb52d799ad6217822065a26f54c0",
+      "bytes": 6230,
+      "reason": "Historical diagnostic snapshot; removed from the active root and preserved unchanged.",
+      "status": "moved-and-hash-verified"
+    }
+  ],
+  "review_backups": [
+    {
+      "path": "docs/research/coverage-retirement-audit-2026-09-22/00_START_HERE.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/docs/research/coverage-retirement-audit-2026-09-22/00_START_HERE.md",
+      "sha256": "c293c0050928c7e29dd5caa2af26edb4df3bea30983dfd90cddd16f0e99d6fa7"
+    },
+    {
+      "path": "docs/research/coverage-retirement-audit-2026-09-22/01_POST_COVERAGE_MATRIX.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/docs/research/coverage-retirement-audit-2026-09-22/01_POST_COVERAGE_MATRIX.md",
+      "sha256": "5c3a4c0891aabaf88d71efe8d2f6ce373cdeb8830d48af105cc68158ac6fc40d"
+    },
+    {
+      "path": "docs/research/coverage-retirement-audit-2026-09-22/02_SOURCE_RETIREMENT_LEDGER.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/docs/research/coverage-retirement-audit-2026-09-22/02_SOURCE_RETIREMENT_LEDGER.md",
+      "sha256": "0cff6e1304aba34674bb84fa0fd94069caca645ff81481f3b0a5992063ead96a"
+    },
+    {
+      "path": "docs/research/coverage-retirement-audit-2026-09-22/03_RESEARCH_PROTOCOL_ADDENDUM.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/docs/research/coverage-retirement-audit-2026-09-22/03_RESEARCH_PROTOCOL_ADDENDUM.md",
+      "sha256": "401ecf6959ad9d99a3fa1d8a1d167930aa44e66f517f71c3c5e43ccb649b2fe0"
+    },
+    {
+      "path": "docs/research/coverage-retirement-audit-2026-09-22/04_ACTIVE_WORK_AND_ERRATA.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/docs/research/coverage-retirement-audit-2026-09-22/04_ACTIVE_WORK_AND_ERRATA.md",
+      "sha256": "347c0b8fcdadc74343bed4690307739264040352faeccd093c98270c50cf06dc"
+    },
+    {
+      "path": "docs/research/coverage-retirement-audit-2026-09-22/05_CLEANUP_MANIFEST.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/docs/research/coverage-retirement-audit-2026-09-22/05_CLEANUP_MANIFEST.md",
+      "sha256": "b2e1318a053a67cdad36d14cbe315f5460358ec3a8c3220c548959aa1d8b9ee7"
+    },
+    {
+      "path": "docs/research/coverage-retirement-audit-2026-09-22/06_ADDITIONAL_MATERIAL_REVIEW_2026-09-23.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/docs/research/coverage-retirement-audit-2026-09-22/06_ADDITIONAL_MATERIAL_REVIEW_2026-09-23.md",
+      "sha256": "f842e733ccc50ad2a17de5a483d7780ccf369c70586a9ab6bb3c8db7b799974c"
+    },
+    {
+      "path": "docs/research/industry-engagement/MWENDO_PAMOJA_DCP_POSITIONING_AND_PEER_REFERENCE_NOTE.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/docs/research/industry-engagement/MWENDO_PAMOJA_DCP_POSITIONING_AND_PEER_REFERENCE_NOTE.md",
+      "sha256": "53fffc8dceaf09dc7b9b88019c4edd8337d6e73ed33f8b4496e4ab2e51ec05d0"
+    },
+    {
+      "path": "publications/linkedin/ADDITIONAL_PRICING_REVIEW_AND_CONTENT_PLAN_2026-09-25.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/publications/linkedin/ADDITIONAL_PRICING_REVIEW_AND_CONTENT_PLAN_2026-09-25.md",
+      "sha256": "50bc10a47855b6272dcd8f8854876f388b6737b7bc557d18e242200c92768866"
+    },
+    {
+      "path": "publications/linkedin/BEFORE_THE_RATIO_ENTITY_RESOLVED_CASHFLOW_UNDERWRITING.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/publications/linkedin/BEFORE_THE_RATIO_ENTITY_RESOLVED_CASHFLOW_UNDERWRITING.md",
+      "sha256": "e900676ecf937f4e7541a45afe42e0f8eab6cdc44458f87bd2691beef7f423aa"
+    },
+    {
+      "path": "publications/pdfs/README.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/publications/pdfs/README.md",
+      "sha256": "7bfa63326da43045e60eb9d1834efde0b546447fd8c4f5152f70f6140a8bb67d"
+    },
+    {
+      "path": "whitepapers/mwendo-pamoja/ADDITIONAL_PRICING_REVIEW_AND_CONTENT_PLAN_2026-09-25.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/whitepapers/mwendo-pamoja/ADDITIONAL_PRICING_REVIEW_AND_CONTENT_PLAN_2026-09-25.md",
+      "sha256": "f6ec6a544344c5d9095dfbe3ec3af3e219571a0bbcebb78893d4980923cb6de7"
+    },
+    {
+      "path": "whitepapers/mwendo-pamoja/ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "backup": "_archive/pending-resolution-2026-09-28/before-edit/whitepapers/mwendo-pamoja/ADDITIONAL_REVIEW_PRICING_AND_TREASURY_2026-09-23.md",
+      "sha256": "f7e4cc802546fd9a76da8a935b49661eb1e7443f367076c4a120818fc328e080"
+    }
+  ],
+  "stray_file": {
+    "source": "revised_with_sources/--",
+    "archive": "_archive/pending-resolution-2026-09-28/pandoc-generated-document.json",
+    "bytes": 688678,
+    "sha256": "A98BD36C30B49F84660C4682330037063F17C61279B165805F50D77EA6815EBE",
+    "format": "Pandoc JSON document AST",
+    "reason": "Generated intermediate accidentally named --; preserved outside active source tree",
+    "status": "archived-and-hash-verified"
+  },
+  "curated_pdfs": [
+    {
+      "path": "publications/pdfs/Bayesian_Credibility_and_Exposure_Normalised_Telematics_Relativities_CC_BY_NC_SA_4_0_2026-09-08.pdf",
+      "bytes": 830585,
+      "pages": 43,
+      "sha256": "9a48494a4c41ef9333ce9f0c9de7ad976ca59af8b554a9d257c76a1c77733dbc"
+    },
+    {
+      "path": "publications/pdfs/Mwendo_Pamoja_Continuous_Underwriting_White_Paper_CC_BY_NC_SA_4_0_2026-09-08.pdf",
+      "bytes": 4738823,
+      "pages": 187,
+      "sha256": "34f0dbe363f29da68fe38a25ceab7514388fc4e9baf9eae6d295bf602874bded"
+    },
+    {
+      "path": "publications/pdfs/Underwrite_for_Collection_MSME_Lifecycle_White_Paper_2026-09-15.pdf",
+      "bytes": 8575428,
+      "pages": 173,
+      "sha256": "ac8bf90be4bf5fa24bb3cd9634ec2d89ad6a1fabf1fafd5d85bc7298529a2852"
+    },
+    {
+      "path": "publications/linkedin/UNDERWRITE_FOR_COLLECTION.pdf",
+      "bytes": 94619,
+      "pages": 9,
+      "sha256": "686922801e05445f9840a699a623804f6e687a4168c368e186cc02fea1de8e0b"
+    }
+  ],
+  "limits": "Local link existence, JSON parsing and hash/page-count checks; original historical reports kept as dated evidence, not rerun claims. Licence smoke-build QA recorded separately."
+}

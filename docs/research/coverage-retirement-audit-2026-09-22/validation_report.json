@@ -1,0 +1,156 @@
+{
+  "files": {
+    "00_START_HERE.md": {
+      "words_approx": 571,
+      "mathml_count": 0,
+      "render_notes": ""
+    },
+    "01_POST_COVERAGE_MATRIX.md": {
+      "words_approx": 1102,
+      "mathml_count": 0,
+      "render_notes": ""
+    },
+    "02_SOURCE_RETIREMENT_LEDGER.md": {
+      "words_approx": 2242,
+      "mathml_count": 17,
+      "render_notes": ""
+    },
+    "03_RESEARCH_PROTOCOL_ADDENDUM.md": {
+      "words_approx": 2375,
+      "mathml_count": 39,
+      "render_notes": ""
+    },
+    "04_ACTIVE_WORK_AND_ERRATA.md": {
+      "words_approx": 759,
+      "mathml_count": 11,
+      "render_notes": ""
+    },
+    "05_CLEANUP_MANIFEST.md": {
+      "words_approx": 548,
+      "mathml_count": 0,
+      "render_notes": ""
+    }
+  },
+  "paragraphs": {
+    "count": 1765,
+    "contiguous": true,
+    "first": "P0001",
+    "last": "P1765",
+    "blocks": 19
+  },
+  "cleanup": {
+    "am focusing on the pure.docx": "hash verified",
+    "am focusing on the pure.md": "hash verified",
+    "Another unrelated question.md": "hash verified",
+    "Bayesian logistic regression modelling.docx": "hash verified",
+    "hierarchical bayesian modelling for continuous underwriting of credit risk for digital lenders.docx": "hash verified",
+    "hierarchical negative binomial gamma for usage based insurance motor premium pricing.docx": "hash verified",
+    "hierarchical negative binomial gamma for usage based insurance motor premium pricing.md": "hash verified",
+    "implementation_plan.md": "hash verified",
+    "Mathematical_Derivations.md": "hash verified",
+    "commit_msg.txt": "hash verified",
+    "git_diff.txt": "hash verified",
+    "git_untracked.txt": "hash verified",
+    "MWENDO_PAMOJA_DCP_POSITIONING_AND_PEER_REFERENCE_NOTE.md": "hash verified"
+  },
+  "protected_files": {
+    ".gitignore": "unchanged",
+    "whitepapers/mwendo-pamoja/build/build_whitepaper.ps1": "unchanged",
+    "whitepapers/mwendo-pamoja/build/whitepaper-header.tex": "unchanged",
+    "whitepapers/telematics-relativities/paper.md": "unchanged",
+    "whitepapers/telematics-relativities/scripts/postprocess_docx.py": "unchanged",
+    "publications/linkedin/BEFORE_THE_RATIO_ENTITY_RESOLVED_CASHFLOW_UNDERWRITING.md": "unchanged"
+  },
+  "limitations": [
+    "No loan data acquired or empirical models run.",
+    "Stored source thumbnails may contain unreadable small text; no such text was inferred."
+  ],
+  "programme_validation": {
+    "chapter_1": {
+      "subsection_targets": [
+        260,
+        190,
+        110,
+        270,
+        170
+      ],
+      "sum": 1000
+    },
+    "chapter_2": {
+      "subsection_targets": [
+        350,
+        450,
+        350,
+        400,
+        300,
+        300,
+        350
+      ],
+      "sum": 2500
+    },
+    "chapter_3": {
+      "subsection_targets": [
+        220,
+        280,
+        340,
+        320,
+        230,
+        230,
+        380
+      ],
+      "sum": 2000
+    },
+    "chapter_4": {
+      "subsection_targets": [
+        350,
+        450,
+        350,
+        500,
+        450,
+        450,
+        450
+      ],
+      "sum": 3000
+    },
+    "chapter_5": {
+      "subsection_targets": [
+        450,
+        250,
+        300,
+        250,
+        250
+      ],
+      "sum": 1500
+    },
+    "appendices": {
+      "targets": [
+        600,
+        500,
+        650,
+        400,
+        650,
+        550,
+        500,
+        350,
+        350,
+        450
+      ],
+      "sum": 5000
+    }
+  },
+  "root_files_after": [
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    "README.md",
+    "So picking the hierachical bayesian logistic regression with my econometric.docx"
+  ],
+  "status": "Passed paragraph coverage, move checksums, preserved-file hashes, links, math delimiters, rendering and original manuscript word-budget checks.",
+  "html_link_and_anchor_checks": {
+    "pages": 14,
+    "local_links_checked": 323,
+    "errors": [],
+    "completed": "2026-09-23"
+  },
+  "visual_preview": "Computer-use preview failed Windows sandbox initialization; HTML generation and structural/link/MathML checks passed."
+}

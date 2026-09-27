@@ -1,0 +1,144 @@
+{
+  "date": "2026-09-23",
+  "changed": [
+    "docs/research/coverage-retirement-audit-2026-09-22/06_ADDITIONAL_MATERIAL_REVIEW_2026-09-23.md",
+    "output/coverage_retirement_audit_2026-09-22/additional_material_validation.json"
+  ],
+  "source_files_unchanged": {
+    "docs/controlled-specifications/CREDIT_RISK_MODEL_AND_LOSS_ARCHITECTURE_SPECIFICATION.md": "28012027525387607926f40c394c37447cf5b633804cb4da80c041caca750c3c",
+    "whitepapers/mwendo-pamoja/parts/Part_2a_Deep_Temporal_Representation_and_Feature_Engineering.md": "5503ecd2e96087620db816d458e391091775f48d550b4238e87dce2ad8e7d76d",
+    "whitepapers/mwendo-pamoja/parts/Part_2b_Bayesian_Underwriting_and_Asymmetric_Copulas.md": "288488dd0afb43a1ed5ceaf78d03a225840fe7214161b0a4fdd663681daefee9",
+    "whitepapers/mwendo-pamoja/parts/Part_3_Regulatory_Orchestration_and_Interventions.md": "35e1ba2a714d45b404211f6b4cd24bf0c7a416cc7d2f43878d09cfb992ed7057",
+    "whitepapers/mwendo-pamoja/parts/Part_4_Enterprise_ERP_and_Telemetry.md": "2d318a86da11359d0fd6595e2f628294a2c89b1537c301bb4bf241e4f2f08e80",
+    "whitepapers/mwendo-pamoja/parts/Part_5_KESONIA_Pricing_and_Capital_Orchestration.md": "8cd850f5f80bd9ab5f32d9d988c4485cd778459511fbe08331a49f1d4d3c63ab",
+    "behavioural credit scoring - underwrite to collect rct/series/parts/Part_1_MSME_Credit_Lifecycle_and_Collection_Cascades.md": "305222ed5b2a199a4bd7f37b4dd7897ef454de174a1900681588754e27c0976a",
+    "behavioural credit scoring - underwrite to collect rct/series/parts/Part_2b_Hierarchical_Bayesian_Underwriting_Causal_Identification_and_Lifecycle_Dependence.md": "167d30a945a337c2cb6dfcbbe5c875def2f29c4671d6840d4a6bf0c7a3109d22",
+    "behavioural credit scoring - underwrite to collect rct/series/parts/Part_3_Regulatory_Orchestration_Fair_Intervention_and_Collection_Governance.md": "fbd820de24766cc4039ea628d8bd7db90232a1f665a569e5d1bf163aa0e5d416",
+    "behavioural credit scoring - underwrite to collect rct/series/parts/Part_4_Bank_Controlled_Research_Sandboxes_and_Enterprise_Credit_Architecture.md": "a2ae5c8a2626f35fee1f78f5022b73fa09a6e59b44f3e3f4a79f09f511b589a7",
+    "behavioural credit scoring - underwrite to collect rct/series/parts/Part_5_KESONIA_Pricing_Expected_Credit_Loss_Capital_and_Funding.md": "d5278e16d6a593e8863a8c4df564c07337a0e9bb3eb7a81adb2e89cb38cf2afa",
+    "publications/linkedin/BEFORE_THE_RATIO_ENTITY_RESOLVED_CASHFLOW_UNDERWRITING.md": "e900676ecf937f4e7541a45afe42e0f8eab6cdc44458f87bd2691beef7f423aa",
+    "whitepapers/telematics-relativities/paper.md": "ef155755da4b1907c34c8a127d4c394cd84a551bdbdb7a014b3c2191947a16a4"
+  },
+  "rendered": {
+    "00_START_HERE.md": {
+      "words_approx": 629,
+      "notes": "",
+      "mathml": 0
+    },
+    "01_POST_COVERAGE_MATRIX.md": {
+      "words_approx": 1157,
+      "notes": "",
+      "mathml": 0
+    },
+    "02_SOURCE_RETIREMENT_LEDGER.md": {
+      "words_approx": 2242,
+      "notes": "",
+      "mathml": 17
+    },
+    "03_RESEARCH_PROTOCOL_ADDENDUM.md": {
+      "words_approx": 2515,
+      "notes": "",
+      "mathml": 39
+    },
+    "04_ACTIVE_WORK_AND_ERRATA.md": {
+      "words_approx": 947,
+      "notes": "",
+      "mathml": 11
+    },
+    "05_CLEANUP_MANIFEST.md": {
+      "words_approx": 548,
+      "notes": "",
+      "mathml": 0
+    },
+    "06_ADDITIONAL_MATERIAL_REVIEW_2026-09-23.md": {
+      "words_approx": 3581,
+      "notes": "",
+      "mathml": 19
+    }
+  },
+  "link_checks": {
+    "html_pages": 15,
+    "local_href_count": 387,
+    "errors": []
+  },
+  "word_budget_checks": {
+    "chapter_1": {
+      "subsection_targets": [
+        260,
+        190,
+        110,
+        270,
+        170
+      ],
+      "sum": 1000
+    },
+    "chapter_2": {
+      "subsection_targets": [
+        350,
+        450,
+        350,
+        400,
+        300,
+        300,
+        350
+      ],
+      "sum": 2500
+    },
+    "chapter_3": {
+      "subsection_targets": [
+        220,
+        280,
+        340,
+        320,
+        230,
+        230,
+        380
+      ],
+      "sum": 2000
+    },
+    "chapter_4": {
+      "subsection_targets": [
+        350,
+        450,
+        350,
+        500,
+        450,
+        450,
+        450
+      ],
+      "sum": 3000
+    },
+    "chapter_5": {
+      "subsection_targets": [
+        450,
+        250,
+        300,
+        250,
+        250
+      ],
+      "sum": 1500
+    },
+    "appendices": {
+      "targets": [
+        600,
+        500,
+        650,
+        400,
+        650,
+        550,
+        500,
+        350,
+        350,
+        450
+      ],
+      "sum": 5000
+    }
+  },
+  "retirement_recheck": {
+    "paragraphs": 1765,
+    "archived_or_relocated_files": 13,
+    "checksums": "verified"
+  },
+  "visual_qa": "Pandoc HTML generation, MathML and all local links/anchors checked. No screenshot-based browser visual inspection performed in this update.",
+  "empirical_status": "No data acquisition, model fitting or empirical validation performed by this review."
+}
