@@ -1,0 +1,12 @@
+{
+  "caption_reconciled": true,
+  "article_prose_and_equations_unchanged": true,
+  "embedded_images_unchanged": {
+    "word/media/image1.png": "5a51cce5707b5e6aee88eb43d440499e22796d14c016d1ccd26c0ec0241df35b",
+    "word/media/image2.png": "f810b8da613eafdedb2a96cb654e334c67f821549f2584275331c5f9fce8176a"
+  },
+  "caption_paragraphs": 1,
+  "word_sha256": "984c2d60c55133faec1337f50c038264575c638dbe8ad09071d5867548057b10",
+  "currency_paragraph_plain_unicode": true,
+  "word_math_objects": 0
+}
