@@ -1,6 +1,6 @@
 # Making each lending cycle strengthen the business: an Underwrite for Collection application for 4G Capital
 
-**Nevil Maloba | 13 October 2026**
+**Nevil Maloba | Updated 18 October 2026**
 
 <!-- ARTICLE_BODY_START -->
 
@@ -24,12 +24,35 @@ Cash available for repayment = opening unrestricted cash + settled operating rec
 
 All quantities use the same currency and time window. Stock purchases already included among operating payments are counted once. The merchant’s margin calculation separately records sales less the cost of goods sold; remaining inventory carries its own value and uncertainty. This distinction connects profitability to cash availability and gives an officer a way to discuss a payment date using the business’s actual operating calendar.
 
-Consider a hypothetical merchant starting with KES 20,000 unrestricted cash and receiving KES 100,000 of financed stock. The assumed sale proceeds total KES 125,000, of which KES 90,000 arrives by day twenty-one. After KES 10,000 operating payments and KES 8,000 household commitments, cash available is KES 92,000. An illustrative KES 105,000 contractual payment creates a KES 13,000 gap; preserving a KES 10,000 operating floor requires KES 23,000. These are teaching assumptions; the stated charges belong to this illustration. The remaining KES 35,000 receipt would change the cash position when settled. The useful decision concerns payment alignment, interim liquidity and the evidence supporting that receipt. The figures use a single currency, recognise each receipt once and preserve the difference between cash shortages and losses.
+The reproducible companion now follows twelve synthetic merchants through 180 operating days, up to six lending opportunities and a runoff to day 300. Six merchants have stable trading assumptions, three experience delayed sales under stress and three experience weaker conversion. One merchant has an explicitly ineligible guarantee record. Every loan begins with distributor payment and an equal inventory receipt. The merchant's cash ledger records subsequent settled sales, operating expenses, household withdrawals, repayment and negotiated recovery. This makes the lender's advance, the merchant's goods and the eventual customer cash separately traceable. All commercial amounts, fees, stress responses and claim-processing assumptions belong to this teaching case.
+
+The first baseline cycle starts with KES 20,000 cash and KES 100,000 of stock financed directly to the distributor. A 25% markup on cost produces KES 125,000 of sales, settled by day twenty. Daily operating needs of KES 200 and household needs of KES 150 total KES 4,200 and KES 3,150 over twenty-one days. The assumed contractual fee is KES 5,000. After paying principal and that fee, closing cash is:
+
+C₂₁ = 20,000 + 125,000 − 4,200 − 3,150 − 100,000 − 5,000 = KES 32,650
+
+The principal finances stock directly and appears once in the repayment calculation. Sales revenue and cost of goods sold produce the merchant's trading margin; principal repayment settles financing. The daily ledger also carries inventory and sales receivables, allowing a reader to distinguish a sale, its settlement and the liquidity needed until settlement. Accrued operating expenses and unpaid balances remain visible when cash becomes tight. Household consumption shortfalls have their own measure. At a workout, available cash first meets accrued operating payables; recovery then uses the amount remaining above the minimum operating cash floor. These distinctions matter because a comfortable cash balance can coexist with outstanding obligations or goods whose value still depends on sale.
 
 
-![Figure 1. A separate, smaller KUZA-style illustration follows KES 30,000 of supplier finance and KES 10,000 of opening cash through stock, sales and repayment; product charge F remains symbolic.](../../industry-engagement/4g_2026-10-13/charts/4G_KUZA_30_DAY_SYNTHETIC_CASH_BRIDGE.png)
+![The first cycle reconciles distributor-financed inventory, settled sales, household needs and repayment.](../../industry-engagement/4g_2026-10-13/charts/4G_01_FIRST_CYCLE_CASH_BRIDGE.png)
 
-*Figure 1. A separate, smaller KUZA-style illustration follows KES 30,000 of supplier finance and KES 10,000 of opening cash through stock, sales and repayment; product charge F remains symbolic.*
+*Figure 1. The first cycle reconciles distributor-financed inventory, settled sales, household needs and repayment.*
+
+## Repeat borrowing follows observed cash conversion
+
+A repeat opportunity opens after the previous loan settles, the relevant sales receipts arrive and the cooling period ends. The case projects repayment-window cash using the previous completed cycle's observed selling margin, inventory conversion and settlement timing. It approves a limit only when projected cash after expenses and debt service retains the KES 10,000 operating floor. A timely borrower with sufficient surplus can receive an increment, subject to the KES 120,000 teaching cap. A weaker forecast reduces the proposed amount or defers the next loan. This executable gate uses transparent cash arithmetic; the Bayesian extension described below adds a validated distribution around the quantities being forecast.
+
+The baseline generates 72 loans, including 60 repeat loans, and ends with KES 1,140,000 aggregate merchant cash. The sales-and-settlement shock begins in cycle three and produces 60 loans and 3 defaults. Support combined with a fourteen-day extension produces 66 loans and 0 defaults under its assumed improvement in stock conversion. The simulation specifies that improvement as an input. A prospective study would estimate whether the offered support actually changes sales, cash and repayment, at what cost, and for which merchants. Extension alone has its own scenario so the cost of waiting can be compared with a change in the trading process.
+
+
+![Merchant V01 illustrates how the same starting business develops through baseline, stressed and supported repeat cycles.](../../industry-engagement/4g_2026-10-13/charts/4G_02_MERCHANT_CASH_THROUGH_REPEAT_CYCLES.png)
+
+*Figure 2. Merchant V01 illustrates how the same starting business develops through baseline, stressed and supported repeat cycles.*
+
+
+
+![Repeat lending and default outcomes vary with sales, margins, support and the timing of the next facility.](../../industry-engagement/4g_2026-10-13/charts/4G_04_REPEAT_LOANS_AND_DEFAULTS.png)
+
+*Figure 3. Repeat lending and default outcomes vary with sales, margins, support and the timing of the next facility.*
 
 ## Establish whose cash the evidence describes
 
@@ -69,24 +92,49 @@ The disclosure’s narrative describes a portfolio of approximately US$44.4 mill
 
 A useful protection ledger begins when an eligible loan enters the covered population. It follows outstanding principal, arrears, recoveries and any event establishing a claim. Subsequent states include notification, document completion, acceptance, recognised receivable and settled cash. Each state has an amount, date, evidence owner and destination account. The lender can therefore assess both ultimate risk sharing and the liquidity required while a claim progresses. Short merchant loans can still produce a longer protection and recovery cycle. Portfolio management benefits from seeing those clocks together, particularly when repeated lending continues while earlier claims await settlement.
 
-For illustration, a simplified loss-layer calculation is:
+The companion contains an explicit two-layer teaching schedule. A KES 4,440,000 cumulative inclusion budget is divided into a first KES 220,000 loss layer with KES 200,000 maximum protection and a further KES 4,220,000 layer with KES 420,000 maximum protection. These KES values preserve disclosed layer proportions for demonstration; they are a separate scale illustration. The assumed within-layer sharing percentages are 200/220 and 420/4,220. Eligibility, origination cutoffs, processing delays, fees and recovery allocation are independently configurable. Loading the executed agreement would replace those teaching conventions with its specific definitions, beneficiary rights and cash processes.
 
-Illustrative claim = min(cap, share × max(eligible loss − attachment, 0))
+For cumulative eligible gross loss L, the teaching allocation is:
 
-The cap is the maximum claim amount, share is the covered fraction, and attachment is the loss borne before the illustrated cover begins. An actual agreement may require several layers, exclusions, cumulative limits and recovery adjustments. Each would receive its own calculation. The model records gross loss, contractual claim, settled protection and retained loss separately. Fees, administration and the funding cost of claim delay then enter the economic assessment. This provides a transparent route from contractual protection to the contribution retained by the lender.
+G(L) = (200/220) × min(L, 220,000) + (420/4,220) × min(max(L − 220,000, 0), 4,220,000)
 
-Recovery sharing deserves its own transaction record. Cash collected after a guarantee payment may belong partly to the guarantor under subrogation or sharing terms. The ledger should allocate recoveries, collection costs and any repayment of protection in the correct order. It should also track expiry, eligible origination periods, concentration and unused capacity. A claim linked to an incomplete delivery record or inconsistent borrower identifier creates a practical reason to improve evidence at origination. Underwrite for Collection connects those records across the facility’s life, allowing the lending team to prepare a complete claim from evidence already maintained for sound servicing.
+A new loss receives the increment G(L after the loss) − G(L before the loss). The ledger allocates simultaneous losses in a stated order and records each loan's covered fraction. The inclusion budget counts covered originations cumulatively, so repeat loans consume additional capacity. Recovery reduces the beneficiary's net protection through pre-settlement adjustment or later remittance. The model elects no reinstatement of capacity after recovery. Its parameter file, claim rows and tests expose these choices so another researcher can reproduce the result or change one contractual convention without changing the merchant model.
+
+In the delayed-sales case, loan V01-C03 defaults on day 107 with KES 37,900 unpaid principal. Its teaching allocation is KES 34,455. Submission occurs on day 112, acceptance on day 122 and cash settlement on day 152. The workout on day 167 produces no borrower recovery after operating payables and the cash floor are respected. The accepted receivable, settled cash and recovery remittance have different dated entries. The model funds the lender throughout that interval rather than treating acceptance as immediate cash.
+
+Across the delayed-sales portfolio, gross written-off principal is KES 113,700, subsequent borrower recovery is KES 0, guarantee cash is KES 68,909 and recovery remittance is KES 0. Retained credit loss therefore equals KES 44,791. The long-claim scenario holds the merchant outcomes fixed and increases settlement delay from thirty to ninety days after acceptance. The ultimate protection amount is the same because this merchant path produces zero workout recovery; the later cash receipt changes the funding cost. The separate correlated-loss scenario reaches the second layer and produces KES 62,400 of borrower recoveries. For loan D01-C03, KES 4,727 is remitted to the guarantor on day 167 after an earlier KES 67,727 claim settlement. Total recovery remittances are KES 18,124. This case makes the recovery-sharing convention and residual lender exposure visible.
 
 
-![Figure 2. Illustrative guarantee fee, loss, claim and recovery timing; values are teaching assumptions.](../../industry-engagement/4g_2026-10-13/charts/4G_IFC_GUARANTEE_HYPOTHETICAL_CASH_CLOCK.png)
+![Claim settlement changes the date protection becomes available cash. The model also records recovery adjustments and remittances when recoveries occur.](../../industry-engagement/4g_2026-10-13/charts/4G_05_GUARANTEE_SETTLEMENT_AND_RECOVERY.png)
 
-*Figure 2. Illustrative guarantee fee, loss, claim and recovery timing; values are teaching assumptions.*
+*Figure 4. Claim settlement changes the date protection becomes available cash. The model also records recovery adjustments and remittances when recoveries occur.*
 
 ## Measure additionality alongside portfolio economics
 
 The programme creates an important evaluation question: which viable businesses receive finance, suitable limits or improved terms because risk sharing and advisory support are available? International guarantee principles emphasise clear eligibility, sound governance, efficient claims and systematic evaluation [10]. For this application, a comparison design would examine similar eligible businesses and distinguish changes in credit access from changes in business outcomes. Measurements could include first access, approval, limits, total cost, product fit, stock investment, profits and resilience through subsequent cycles. The design would record programme entry and policy changes so that observed improvements can be connected to specific decisions and mechanisms.
 
 The same analysis should report the lender’s retained economics. Customer receipts fund servicing, expected losses, funding costs and a return on the capital supporting the exposure. Protection can change retained loss and its uncertainty, while advisory improvements can change the underlying portfolio. Their contributions should be measured separately. Gross performance remains visible alongside covered performance, allowing management to assess underwriting quality, guarantee utilisation and commercial sustainability. The funding forecast then distinguishes borrower cash, recoveries, accepted claims and settled guarantee payments. Finance would apply the relevant accounting and prudential recognition requirements to the actual entity and instrument, alongside the model’s management analysis.
+
+## Reconcile profitability and the funding requirement
+
+The lender model separates principal movement from income. Fees collected contribute revenue. Origination, daily servicing, support, collections, guarantee fees and interest on opening borrowing contribute costs. Written-off principal and later recoveries form the realised credit-loss bridge. Guarantee settlement and recovery remittance then determine the protection contribution. The reported result is a synthetic realised contribution before tax, central overhead allocation and a capital hurdle. Accrued unpaid fees, unresolved default balances, performing principal and accepted unsettled claims appear separately. A reader can therefore reconcile the contribution to cash and remaining assets instead of treating every incoming shilling as profit.
+
+Π = collected fees − operating costs − funding cost − guarantee fees − written-off principal + borrower recoveries + guarantee cash − recovery remittances
+
+Under baseline assumptions, protected contribution is KES 320,096, compared with KES 322,671 without protection. Both use the same merchant paths; the difference reflects protection costs when losses are absent. Under the delayed-sales shock, contribution is KES 190,858 with protection and KES 124,471 without it. The supported scenario produces KES 256,838 after KES 21,600 of support costs. The correlated-loss scenario produces KES -568,864 with protection. This comparison gives management a concrete way to examine the interaction of product margin, customer support, risk sharing and concentrated stress.
+
+Liquidity has its own daily calculation. The case begins with zero lender cash and draws borrowing to meet disbursements and costs, applying a 12% annual teaching funding rate on opening debt. Incoming cash first reduces that borrowing, then accumulates as cash when the balance becomes positive. In the delayed-sales case, peak protected borrowing is KES 1,361,759. The long claim lag changes contribution by KES 204 through the funding path. A funding mandate could add commitment limits, liquidity reserves and the required return on committed equity. The current outputs show exactly where those decisions would enter.
+
+
+![Lender contribution compares identical merchant outcomes with and without the teaching guarantee, including concentrated stress.](../../industry-engagement/4g_2026-10-13/charts/4G_03_LENDER_CONTRIBUTION_BY_SCENARIO.png)
+
+*Figure 5. Lender contribution compares identical merchant outcomes with and without the teaching guarantee, including concentrated stress.*
+
+
+
+![Daily borrowing reflects disbursements, repayments, protection costs and the arrival of guarantee cash.](../../industry-engagement/4g_2026-10-13/charts/4G_06_FUNDING_REQUIREMENT_THROUGH_CLAIMS.png)
+
+*Figure 6. Daily borrowing reflects disbursements, repayments, protection costs and the arrival of guarantee cash.*
 
 ## Make the advisory connection operational
 
@@ -109,6 +157,10 @@ Financing a merchant’s business assesses how inventory, sales, expenses and ob
 A focused first project would select one product, a defined branch or distributor cohort and one repeat-lending or support decision. The team would reconcile historical orders, receipts, loan records and field observations, then establish baseline cash and lifecycle measures. Shadow recommendations would test explanations and operational fit. A controlled intervention stage would measure customer and lender outcomes with agreed precision and follow-up. In parallel, a protection module would reproduce the executed guarantee terms and stress settlement delays, recoveries and concentration. The final evidence pack would connect product performance, advisory improvements, guarantee additionality and retained economics, giving management a clear basis for its next investment.
 
 The proposition for 4G Capital is therefore a practical one: examine whether each lending cycle leaves the merchant better able to operate and repay, identify the support that improves that outcome, and connect the evidence to institutional risk sharing and funding. Underwrite for Collection provides the main research architecture. Mwendo Pamoja contributes complementary methods for uncertainty, decision thresholds and financial reconciliation. Together, they offer a structured way to turn a short loan into a longer learning relationship with the business. A partnership can begin with one decision and expand as the evidence demonstrates value for merchants, frontline teams, the lender and its funding partners.
+
+## Reproduce the evidence before a pilot
+
+The companion publishes its assumptions, daily merchant ledgers, loan records, protection events and paired lender cash flows [13]. Its tests reconcile merchant cash, inventory, receivables, principal and lender contribution, and exercise guarantee caps, eligibility, recovery timing and unsettled claims. The article and deck use those outputs directly. A partner can first run the synthetic example, inspect a loan and alter a timing assumption, then map an approved historical extract into the same definitions. The proposed agentic workflow prepares evidence and routes exceptions; validated calculation services generate results, authorised staff approve material decisions, and execution receipts preserve the action taken.
 
 <!-- ARTICLE_BODY_END -->
 
@@ -138,8 +190,10 @@ The proposition for 4G Capital is therefore a practical one: examine whether eac
 
 [12] Republic of Kenya, *Data Protection (General) Regulations*, Legal Notice No. 263 of 2021, especially reg. 22. [Online]. Available: https://www.odpc.go.ke/wp-content/uploads/2024/03/THE-DATA-PROTECTION-GENERAL-REGULATIONS-2021-1.pdf
 
+[13] N. Maloba, "4G-inspired merchant cycle and risk-sharing reproducible case," 2026. [Online]. Available: https://github.com/TheAlchemistNerd/mwendo-pamoja-continuous-underwriting/tree/main/research_lab/four_g_merchant_finance_case
+
 ## Publication record
 
-Main article word count: **3,000 words**. Count includes section headings, research questions and displayed equations between the body markers, excluding title, byline, citations, references and this record. Whitespace tokens containing a Unicode letter or number count as words; standalone operators are excluded and hyphenated terms count once.
+Main article word count: **4,125 words**. Updated with the reproducible merchant, lending and guarantee case. Count includes headings and captions, excluding image-link markup and references.
 
 Licence: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International, https://creativecommons.org/licenses/by-nc-sa/4.0/.

@@ -1,0 +1,20 @@
+{
+  "assumptions_sha256": "a8778ebe20a1e5d14630c87389a9b0f96f247b46e485a366e810ca3f64170faa",
+  "source_sha256": {
+    "model.py": "72dd546ea8c82c3338a4a4de5e004ba79ed970b1dc4a8d4a3af7727e4650fc4b",
+    "run_case.py": "5bd6ff8ce08b3da970a1b73c5a486d7895674ea22ea9f8bdf85d13c6011f1c91"
+  },
+  "scenarios": [
+    "baseline",
+    "delayed_sales",
+    "margin_squeeze",
+    "forbearance_only",
+    "support_and_reschedule",
+    "long_claim_delay",
+    "correlated_loss"
+  ],
+  "currency": "KES",
+  "rounding": "12 decimal places in exports; Decimal precision 40 internally",
+  "merchant_rows_per_scenario": 3612,
+  "summary_rows": 14
+}

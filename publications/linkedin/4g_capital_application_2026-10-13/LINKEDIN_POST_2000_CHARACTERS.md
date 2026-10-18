@@ -1,16 +1,23 @@
-A working-capital loan should help a merchant complete the next trading cycle.
+Can each lending cycle leave a merchant better able to trade and repay?
 
-That is the practical lens I apply to 4G Capital’s UPIA and KUZA models in the accompanying article. The analysis follows financed stock from order and distributor payment through delivery, sales, settled receipts, operating needs and repayment. It asks whether the loan leaves the merchant able to replenish inventory, meet essential commitments and continue trading.
+My application of Underwrite for Collection to 4G Capital now includes a reproducible merchant, repeat-lending and guarantee case, drawing on Mwendo Pamoja's operating and financing work.
 
-A hypothetical KUZA-style example separates cash receipts from margin and stock value. It shows how a loan can be repaid on schedule while still leaving a short-term liquidity gap, or how a payment date can collide with a merchant’s next stock purchase. The right question is how the facility fits the cash-conversion cycle, not simply whether the account shows enough gross inflows.
+Twelve synthetic merchants move through distributor-financed stock, sales, settled receipts, business expenses, household needs and repayment. The model follows 180 operating days, up to six cycles and claims and recoveries through day 300.
 
-The article also explores what Underwrite for Collection can add: transaction provenance, purpose and amount checks, repeated-cycle evidence, post-disbursement monitoring, fair servicing and measurable collection outcomes. It examines how a risk-sharing arrangement with IFC could be evaluated through additional lending, borrower reach, claim performance, liquidity and the lender’s retained exposure, using the public project documents as the source for the proposed structure.
+Three research questions guide it:
 
-The research agenda is built around three questions:
-• Does each facility support a sustainable operating cycle?
-• Which support or repayment design improves business and customer outcomes?
-• How does risk sharing translate into additional, sustainable credit?
+1. Which cash-flow evidence supports a sustainable next loan and an appropriate limit?
+2. How do sales delays, repayment extensions and business support change merchant outcomes and lender profitability?
+3. How do guarantee eligibility, settlement timing and recovery sharing affect retained losses and funding needs?
 
-Underwrite for Collection whitepaper: https://doi.org/10.5281/zenodo.23343888
+The first cycle reconciles to KES 32,650 after expenses, household commitments, principal and the assumed fee. Across the baseline, 72 loans produce KES 320,096 lender contribution with protection. A sales shock produces 60 loans and three defaults: contribution is KES 190,858 with protection and KES 124,471 without it.
 
-#MSMECredit #WorkingCapital #DigitalCredit #FinancialInclusion #IFC #Kenya
+Support plus rescheduling produces 66 loans and KES 256,838 contribution after support costs, under an explicit assumed improvement in trading. This gives a prospective study a concrete effect to test.
+
+The IFC partnership provides the institutional context. A configurable teaching agreement traces inclusion, loss layers, claims, cash settlement and recovery remittances. Its parameters can be replaced with the executed terms.
+
+Python calculations, daily ledgers, tests and charts connect each result to its inputs. The article and partnership deck show how this could inform a focused pilot with credit, operations, finance and customer teams.
+
+Whitepaper: https://doi.org/10.5281/zenodo.23343888
+
+#MSMEFinance #CreditRisk #CashFlowLending #4GCapital #FinancialInclusion

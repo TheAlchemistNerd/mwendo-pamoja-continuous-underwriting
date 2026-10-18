@@ -1,6 +1,6 @@
 # 4G Capital article: source and coverage record
 
-13 October 2026.
+Original research 13 October 2026. Reproducible case and publication update 18 October 2026.
 
 ## Supplied material
 
@@ -15,7 +15,7 @@ SHA-256: `8AC7A417F8F1423F478359C795707AB749A076D1B5D53815080D2FE370B38047`.
 | Underwrite for Collection leads; Mwendo supports | Opening, uncertainty section and conclusion explain their respective contribution |
 | UPIA, KUZA and touch-tech | Verified product descriptions, short cycles, in-person support and repeat lending |
 | Inventory-to-repayment chain | Order, delivery, quantities, stock sales, customer receipts, commitments and next lending cycle |
-| Business liquidity | Same-period cash identity plus a separate hypothetical merchant calculation |
+| Business liquidity | Same-period cash identity, daily merchant reconciliation and seven repeat-lending scenarios |
 | Bayesian partial pooling and limit decisions | Full hierarchy explanation, credible and predictive intervals, posterior cap-exceedance probability |
 | Survival and timing | Distinct arrears, cure, default, recovery and settlement states; censoring and equivalent horizons |
 | Training and support evaluation | Local experiment protocol supported by peer-reviewed training research and causal-inference literature |
@@ -29,7 +29,7 @@ SHA-256: `8AC7A417F8F1423F478359C795707AB749A076D1B5D53815080D2FE370B38047`.
 
 ## Research corpus inspected
 
-Read-only inspection covered the canonical Underwrite for Collection manuscripts and research lab: Part 1's operating and institutional cash story; Part 2a's economic-entity graph and explicit features; Part 2b's observation units, selective labels, hierarchy, causal estimands and policy boundary; Part 3's intervention contract and evaluation protocol; Part 4's controlled research environment, event fabric and decision authority; Part 5's pricing, protection, claim-delay and optional receivables-financing architecture. The research-lab README and canonical case inputs were inspected. The new merchant illustration uses separate, fully stated amounts appropriate to a short stock-finance example.
+Read-only inspection covered the canonical Underwrite for Collection manuscripts and research lab: Part 1's operating and institutional cash story; Part 2a's economic-entity graph and explicit features; Part 2b's observation units, selective labels, hierarchy, causal estimands and policy boundary; Part 3's intervention contract and evaluation protocol; Part 4's controlled research environment, event fabric and decision authority; Part 5's pricing, protection, claim-delay and optional receivables-financing architecture. The research-lab README and canonical case inputs were inspected. The reproducible companion now follows twelve synthetic merchants through 180 operating days and runoff to day 300, retaining the direct stock-payment and merchant cash distinction.
 
 The Mwendo hierarchy, liquidity, decision and financing chapters inspected for the earlier Moove article supplied the supporting cross-project connection.
 
@@ -41,15 +41,16 @@ The Campos et al. article was verified through the original author version hoste
 
 ## Verification
 
-The article has exactly 3,000 words between the body markers, including section headings, research questions and formula words. The title, byline, numerical citation markers, reference list and publication record are excluded. Count whitespace tokens containing at least one Unicode letter or number after removing Markdown heading/emphasis symbols and citation markers. Standalone operators are excluded; hyphenated terms count once.
+The expanded article contains 4,125 words between the body markers under the builder's convention: whitespace tokens containing a Unicode word character, including headings, captions and numerical citation markers, excluding image-link markup and references. References first appear sequentially from 1 to 13. The Word article embeds six final charts and uses Arial with plain Unicode formulas. Currency amounts remain ordinary text.
 
-References first appear sequentially from 1 to 12. The companion `ARTICLE_VERIFICATION.json` records the word count and merchant illustration inputs. The merchant arithmetic is:
+The companion `ARTICLE_VERIFICATION.json` records the current hashes and inputs. The twelve-merchant model and seven scenario pairs publish daily merchant, loan, claim and lender ledgers under `research_lab/four_g_merchant_finance_case` and `output/four_g_merchant_finance_case_2026-10-16`.
+
+The first-cycle reconciliation is:
 
 ```text
-20,000 + 90,000 − 10,000 − 8,000 = 92,000 cash available
-105,000 − 92,000 = 13,000 payment-date gap
-105,000 + 10,000 − 92,000 = 23,000 gap while preserving floor
-125,000 − 90,000 = 35,000 remaining sale proceeds
+20,000 + 125,000 - 4,200 - 3,150 - 100,000 - 5,000 = 32,650
 ```
 
-The KES 100,000 financed purchase is paid directly to the stock supplier and is not added to the merchant's unrestricted opening cash. The stated payment due is an invented teaching term. Any follow-on numerical case should preserve that separation.
+The KES 100,000 financed purchase goes directly to the stock supplier. The merchant receives inventory, followed by cash when sales settle. Accrued operating payables receive priority before workout recovery; the minimum operating cash floor remains part of that rule. The final model run therefore produces zero delayed-sales workout recovery, KES 190,858 protected contribution and KES 124,471 unprotected contribution. Correlated stress illustrates positive recovery sharing. Article, Word, post and charts use these final outputs.
+
+All commercial rates, volumes, stresses and agreement terms in the numerical case are synthetic assumptions. The IFC disclosure supplies the institutional context, while a participating lender would load its executed contractual definitions. Source links and IEEE references remain in the article.
