@@ -59,7 +59,7 @@ A synthetic case demonstrates the consequences of its stated assumptions. Explai
 2. How does the profit test include claim delay and reinsurance recovery? Follow one dated cash path and the reserve reconciliation.
 3. How much simulation evidence supports the tail estimate? Explain the number of simulated paths, tail sampling and the convergence checks that would precede a commercial decision.
 
-**Evidence to open:** [case README](../../../research_lab/mobility_insurance_profit_case/README.md), [profit-testing narrative](../MOOVE_BAYESIAN_INSURANCE_PROFIT_TESTING_CASE_2026-10-14.md), and `research_lab/mobility_insurance_profit_case/output`.
+**Evidence to open:** [case README](<C:/Users/Nevo/Downloads/bayesian-telematics-relativities/research_lab/mobility_insurance_profit_case/README.md>), [profit-testing narrative](../MOOVE_BAYESIAN_INSURANCE_PROFIT_TESTING_CASE_2026-10-14.md), and `research_lab/mobility_insurance_profit_case/output`.
 
 ## 3. 4G Capital × Underwrite for Collection — merchant cash flows, repeat lending and IFC risk sharing
 
@@ -80,7 +80,7 @@ A synthetic case demonstrates the consequences of its stated assumptions. Explai
 2. What happens while an accepted claim awaits settlement? Show the lender funding chart and the dated claim events.
 3. How do we establish the benefit of support and rescheduling? Separate the assumed trading improvement from the proposed prospective evaluation.
 
-**Evidence to open:** [case README](../../../research_lab/four_g_merchant_finance_case/README.md), [final article](../../../publications/linkedin/4g_capital_application_2026-10-13/UNDERWRITE_FOR_COLLECTION_4G_CAPITAL_LINKEDIN_ARTICLE_3000_WORDS.md), and [chart folder](../../../publications/industry-engagement/4g_2026-10-13/charts). Use the 18 October refresh: 24 passing model tests, 13 Word pages and 22 deck slides.
+**Evidence to open:** [case README](<C:/Users/Nevo/Downloads/behavioural credit scoring - underwrite to collect rct/research_lab/four_g_merchant_finance_case/README.md>), [final article](<C:/Users/Nevo/Downloads/behavioural credit scoring - underwrite to collect rct/publications/linkedin/4g_capital_application_2026-10-13/UNDERWRITE_FOR_COLLECTION_4G_CAPITAL_LINKEDIN_ARTICLE_3000_WORDS.md>), and [chart folder](<C:/Users/Nevo/Downloads/behavioural credit scoring - underwrite to collect rct/publications/industry-engagement/4g_2026-10-13/charts>). Use the 18 October refresh: 24 passing model tests, 13 Word pages and 22 deck slides.
 
 ## 4. Moniepoint × Underwrite for Collection — turning payment activity into repayment-capacity evidence
 
@@ -92,7 +92,7 @@ A synthetic case demonstrates the consequences of its stated assumptions. Explai
 
 **One calculation:** KES500,000 total credits contain KES45,000 owner funding, KES30,000 borrowing and KES15,000 refund credits. The remaining KES410,000 comprises the stated sales receipts. After KES270,000 supplier payments, KES70,000 operating expenses, KES20,000 owner/household commitments and KES25,000 existing debt payments, KES25,000 remains against a KES35,000 proposed payment. Explain how the dated cash forecast determines a workable alternative.
 
-**Scenario comparison:** Use the completed case outputs to compare a full source record, a missing payment channel and a genuine fall in sales. Walk through the corresponding evidence request or credit review. This comparison is being implemented alongside the current workflow; use its published verification manifest when recording numerical results.
+**Scenario comparison:** Compare the complete source record, missing wallet coverage and a genuine sales shock using the ten-scenario case. Then compare delayed settlement with an approved extension: contractual arrears fall from eight days to zero, while both scenarios retain a KES20,000 household shortfall. Explain why the payment arrangement and household recovery are separate outcomes. The case has 36 passing tests; use its verification manifest and current charts when recording.
 
 **Decision:** What evidence, terms and review route support a defensible facility decision, followed by proportionate monitoring and servicing?
 
@@ -103,7 +103,7 @@ A synthetic case demonstrates the consequences of its stated assumptions. Explai
 
 **Five-article connection:** Article 1 supplies experiments and assignment records; Article 2 supplies sequential servicing and decision uncertainty; Article 3 supplies selective-outcome and policy-evaluation diagnostics; Article 4 supplies the portfolio funding interface; Article 5 supplies controlled orchestration, review, execution and release. The source mapping accompanying the detailed workflow identifies the relevant sections.
 
-**Evidence to open:** [Moniepoint article](../../../publications/linkedin/moniepoint_cashflow_2026-10-14/MONIEPOINT_CASHFLOW_UNDERWRITE_FOR_COLLECTION_LINKEDIN_ARTICLE.md), its standalone workflow images, and the connected transaction case once its final validation is recorded.
+**Evidence to open:** [Moniepoint article](<C:/Users/Nevo/Downloads/behavioural credit scoring - underwrite to collect rct/publications/linkedin/moniepoint_cashflow_2026-10-14/MONIEPOINT_CASHFLOW_UNDERWRITE_FOR_COLLECTION_LINKEDIN_ARTICLE.md>), its standalone workflow images, [case code](<C:/Users/Nevo/Downloads/behavioural credit scoring - underwrite to collect rct/research_lab/moniepoint_cashflow_case/model.py>) and [verified outputs](<C:/Users/Nevo/Downloads/behavioural credit scoring - underwrite to collect rct/output/moniepoint_cashflow_case_2026-10-18/verification.json>).
 
 ## 5. Deposit Beta, KESONIA and Bank Risk — deposit behaviour, loan repricing and bank decisions
 
@@ -115,7 +115,7 @@ A synthetic case demonstrates the consequences of its stated assumptions. Explai
 
 **One calculation:** The existing static example produces KES1.240 million additional annual net interest income from the rate change, before runoff and credit effects. The additional replacement-funding cost is KES584,000 and the expected-loss increment is KES900,000. KES1,240,000 − KES584,000 − KES900,000 = −KES244,000. Explain the horizon and why an expected-loss increment is distinct from an immediate cash payment.
 
-**Scenario comparison:** Use the verified dynamic case to compare a rate rise, deposit withdrawal and a joint borrower/funding stress. Show the loan-reset dates, a cash chart and the balance-sheet reconciliation. The dynamic model is being completed; its final manifest supplies the recording version and results.
+**Scenario comparison:** Use the verified 24-month expected-cohort case to compare a rate rise, deposit withdrawal and joint borrower/funding stress. Baseline modelled profit is KES12.731 million; joint stress produces KES2.584 million. Controlled growth produces KES3.611 million while reducing new lending from KES120 million to KES90 million. Explain both the profit and lending-volume outcomes. Show reset dates, the cash chart and balance-sheet reconciliation. There are 21 passing tests, nine main scenario/policy cases and nine sensitivity cases.
 
 **Decision:** Which funding action, customer-term review or lending-capacity adjustment should each responsible function consider under the shared scenario?
 
@@ -161,3 +161,9 @@ Chapters: [replace with the actual recording timestamps]
 Three discussion questions: [use the audience questions above or the final article research questions].
 
 Use the attribution and licence specified in the relevant publication. Identify the case version and link its sources so the viewer can reproduce the numbers.
+
+## Current file locations
+
+[Complete publication and recording index](<C:/Users/Nevo/Downloads/insuretech & embedded finance/publications/industry-engagement/APPLICATIONS_AND_RECORDING_INDEX_2026-10-18.md>)
+
+4G and Moniepoint are maintained in Underwrite for Collection; the Moove insurance case is in Bayesian Relativities; the Moove operating case remains in Mwendo Pamoja; Deposit Beta remains in RegTech KESONIA.

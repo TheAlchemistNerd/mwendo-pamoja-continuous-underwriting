@@ -1,0 +1,22 @@
+{
+  "body_word_count": 3000,
+  "expected_body_words": 3000,
+  "reference_first_appearance": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+  ],
+  "count_convention": "Whitespace tokens containing Unicode letter or number; remove in-text numerical citations and markdown emphasis/heading syntax; hyphenated tokens count as one; body markers define scope",
+  "embedded_python_charts": 4,
+  "companion_word_contains_all_figures": true,
+  "figure_captions_excluded_from_article_word_count": true
+}
